@@ -6,7 +6,7 @@
             <div class="col-lg-6 text-center text-lg-start">
                 <h1 class="display-3 text-white animated slideInLeft">Bayi Senang<br>Ibu pun Tenang</h1>
                 <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
+                <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Lihat Sekarang</a>
             </div>
             <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                 <img class="img-fluid" src="img/hero.png" alt="">
@@ -86,7 +86,7 @@
         </div>
         <div class="col-lg-6">
             <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
-            <h1 class="mb-4">Welcome to <i class="fa fa-utensils text-primary me-2"></i>Restoran</h1>
+            <h1 class="mb-4">Welcome to ByMeals</h1>
             <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.</p>
             <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
             <div class="row g-4 mb-4">
@@ -104,7 +104,7 @@
                         <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">50</h1>
                         <div class="ps-4">
                             <p class="mb-0">Popular</p>
-                            <h6 class="text-uppercase mb-0">Master Chefs</h6>
+                            <h6 class="text-uppercase mb-0">Menus</h6>
                         </div>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                             <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
                             <div class="w-100 d-flex flex-column text-start ps-4">
                                 <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Chicken Burger</span>
+                                    <span>Chicken Hamburger</span>
                                     <span class="text-primary">$115</span>
                                 </h5>
                                 <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
@@ -547,16 +547,16 @@
 <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
         <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5>
-        <h1 class="mb-5">Our Master Chefs</h1>
+        <h1 class="mb-5">Our Team</h1>
     </div>
-    <div class="row g-4">
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="team-item text-center rounded overflow-hidden">
                 <div class="rounded-circle overflow-hidden m-4">
                     <img class="img-fluid" src="img/team-1.jpg" alt="">
                 </div>
-                <h5 class="mb-0">Full Name</h5>
-                <small>Designation</small>
+                <h5 class="mb-0">Alfito</h5>
+                <small>Programmer</small>
                 <div class="d-flex justify-content-center mt-3">
                     <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -564,13 +564,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="team-item text-center rounded overflow-hidden">
                 <div class="rounded-circle overflow-hidden m-4">
                     <img class="img-fluid" src="img/team-2.jpg" alt="">
                 </div>
-                <h5 class="mb-0">Full Name</h5>
-                <small>Designation</small>
+                <h5 class="mb-0">Liefran</h5>
+                <small>Programmer</small>
                 <div class="d-flex justify-content-center mt-3">
                     <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -578,13 +578,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
             <div class="team-item text-center rounded overflow-hidden">
                 <div class="rounded-circle overflow-hidden m-4">
                     <img class="img-fluid" src="img/team-3.jpg" alt="">
                 </div>
-                <h5 class="mb-0">Full Name</h5>
-                <small>Designation</small>
+                <h5 class="mb-0">Michael</h5>
+                <small>Programmer</small>
                 <div class="d-flex justify-content-center mt-3">
                     <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -592,13 +592,27 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
             <div class="team-item text-center rounded overflow-hidden">
                 <div class="rounded-circle overflow-hidden m-4">
                     <img class="img-fluid" src="img/team-4.jpg" alt="">
                 </div>
-                <h5 class="mb-0">Full Name</h5>
-                <small>Designation</small>
+                <h5 class="mb-0">Putri</h5>
+                <small>Programmer</small>
+                <div class="d-flex justify-content-center mt-3">
+                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="team-item text-center rounded overflow-hidden">
+                <div class="rounded-circle overflow-hidden m-4">
+                    <img class="img-fluid" src="img/team-4.jpg" alt="">
+                </div>
+                <h5 class="mb-0">Fesa</h5>
+                <small>Programmer</small>
                 <div class="d-flex justify-content-center mt-3">
                     <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -622,12 +636,12 @@
     <div class="owl-carousel testimonial-carousel">
         <div class="testimonial-item bg-transparent border rounded p-4">
             <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-            <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+            <p>ByMeals merupakan aplikasai yang sangat luar biasa, saya sangat terbantu dengan adanya ByMeals</p>
             <div class="d-flex align-items-center">
                 <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;">
                 <div class="ps-3">
-                    <h5 class="mb-1">Client Name</h5>
-                    <small>Profession</small>
+                    <h5 class="mb-1">Alice</h5>
+                    <small>Wanita Karir</small>
                 </div>
             </div>
         </div>
