@@ -17,7 +17,19 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'title'=>'Home'
+    ]);
+});
+Route::get('/about', function () {
+    return view('about', [
+        'title'=>'About'
+    ]);
+});
+Route::get('/blog', function () {
+    return view('blog', [
+        'title'=>'Blog'
+    ]);
 });
 // Route::get('/login', function () {
 //     return view('register.login');
