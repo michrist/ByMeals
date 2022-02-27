@@ -71,6 +71,7 @@ Route::get('/create', function () {
 });
 Route::get('/blog', [PostModelController::class, 'index']);
 Route::post('/add', [DashboardPostController::class, 'store']);
+Route::post('/edit', [DashboardPostController::class, 'edit']);
 // Route::get('/login', function () {
 //     return view('register.login');
 // });

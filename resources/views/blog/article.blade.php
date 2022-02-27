@@ -31,7 +31,9 @@
                 <div class="card bg-light">
                     <div class="card-body">
                         <!-- Comment form-->
-                        <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                        <form class="mb-4" method="POST" action="/edit">
+                            <textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea>
+                        </form>
                         <!-- Comment with nested comments-->
                         <div class="d-flex mb-4">
                             <!-- Parent comment-->

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\PostModel;
@@ -47,6 +48,16 @@ class DashboardPostController extends Controller
         PostModel::create($validatedData);
         return redirect('/blog') -> with('success', 'New post has been added');
     }
+    public function edit(PostModel $post)
+    {
+        if($post->author->id !== auth()->user()->id) {
+            abort(403);
+       }
+        return view('blog.edit', [
+            'post' => $post,
+            'categories' => Category::all()
+        ]);
+    }
 
     /**
      * Display the specified resource.
@@ -65,10 +76,6 @@ class DashboardPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
