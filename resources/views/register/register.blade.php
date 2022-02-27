@@ -5,6 +5,7 @@
     <title>Register</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
     <link rel="stylesheet" href="{{ asset('css/regin.css') }}">
+    <link rel="icon" href="{{ asset('img/bymeals-logo.png') }}">
 
 
 
@@ -24,9 +25,20 @@
     <div class="form-floating">
         <input value="{{ old('name') }}" type="text" name="name" class="form-control @error('name')
         is-invalid
-        @enderror" id="name" placeholder="name@example.com">
+        @enderror" id="name">
         <label for="name">Name</label>
         @error('name')
+        <div class="invalid-feedback">
+           {{ $message }}
+        </div>
+        @enderror
+      </div>
+      <div class="form-floating">
+        <input value="{{ old('username') }}" type="text" name="username" class="form-control @error('username')
+        is-invalid
+        @enderror" id="username">
+        <label for="username">Username</label>
+        @error('username')
         <div class="invalid-feedback">
            {{ $message }}
         </div>

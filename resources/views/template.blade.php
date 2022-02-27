@@ -10,7 +10,7 @@
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
-    <link rel="icon" href="img/bymeals-logo.png">
+    <link rel="icon" href="{{ asset('img/bymeals-logo.png') }}">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,12 @@
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/trix.css') }}">
+    <style>
+        trix-toolbar [data-trix-button-group="file-tools"]{
+            display: none
+        }
+    </style>
 </head>
 
 <body>
@@ -128,6 +134,7 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="{{ asset('js/trix.js') }}"></script>
 
     <!-- Template Javascript -->
     <script src="{{ asset('js/main.js') }}"></script>
