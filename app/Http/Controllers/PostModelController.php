@@ -6,6 +6,7 @@ use App\Models\PostModel;
 use App\Http\Requests\StorePostModelRequest;
 use App\Http\Requests\UpdatePostModelRequest;
 use App\Models\Category;
+use App\Models\Comment;
 
 class PostModelController extends Controller
 {
@@ -25,7 +26,8 @@ class PostModelController extends Controller
         return view('blog.article', [
         'title'=>'Blog',
         'posts'=>PostModel::find($id),
-        'categories'=>Category::all()
+        'categories'=>Category::all(),
+        'comments'=>Comment::all()
         ]);
     }
 }

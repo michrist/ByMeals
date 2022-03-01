@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardPostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostModelController;
 use App\Http\Controllers\RegisterController;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\PostModel;
 use App\Models\User;
 
@@ -34,7 +36,8 @@ Route::get('/article', function () {
     return view('blog.article', [
         'title'=>'Blog',
         'posts'=>PostModel::all(),
-        'categories' => Category::all()
+        'categories' => Category::all(),
+        'comments' => Comment::all()
     ]);
 });
 Route::get('/article/{id}',[PostModelController::class, 'show']);
@@ -71,7 +74,9 @@ Route::get('/create', function () {
 });
 Route::get('/blog', [PostModelController::class, 'index']);
 Route::post('/add', [DashboardPostController::class, 'store']);
-Route::post('/edit', [DashboardPostController::class, 'edit']);
+Route::get('/edit/{id}', [DashboardPostController::class, 'edit']);
+Route::put('/update/{id}', [DashboardPostController::class, 'update']);
+Route::post('/comment/{id}', [CommentController::class, 'store']);
 // Route::get('/login', function () {
 //     return view('register.login');
 // });

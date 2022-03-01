@@ -24,7 +24,9 @@
     bottom: 45px;
     z-index: 99;
 }
-
+.edit:hover{
+font-weight: bold;
+}
 
 /*** Spinner ***/
 #spinner {
@@ -142,7 +144,7 @@
         z-index: 999;
         background: transparent !important;
     }
-    
+
     .sticky-top.navbar-dark {
         position: fixed;
         background: var(--dark) !important;
@@ -162,10 +164,10 @@
     animation: imgRotate 50s linear infinite;
 }
 
-@keyframes imgRotate { 
-    100% { 
-        transform: rotate(360deg); 
-    } 
+@keyframes imgRotate {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .breadcrumb-item + .breadcrumb-item::before {

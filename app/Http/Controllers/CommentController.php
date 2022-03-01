@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
+use App\Models\PostModel;
+// use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
@@ -34,9 +37,15 @@ class CommentController extends Controller
      * @param  \App\Http\Requests\StoreCommentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCommentRequest $request)
+    public function store(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'comment' => 'required|max:255'
+        ]);
+        $validatedData['user_id'] = auth() -> user() -> id;
+        $validatedData['postmodel_id'] = $id;
+        Comment::create($validatedData);
+        return redirect('article/' .$id ) -> with('success', 'New comment has been added');
     }
 
     /**

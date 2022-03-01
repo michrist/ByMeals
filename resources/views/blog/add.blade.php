@@ -1,8 +1,9 @@
 @extends('template')
 @section('container')
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Add New Posts</h1>
-    </div>
+<div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
+    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Blog</h5>
+    <h1 class="mb-5">Add New Post</h1>
+</div>
 <div class="container">
     <form method="POST" action="/add">
         @csrf

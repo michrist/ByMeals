@@ -14,9 +14,16 @@
                     <div class="text-muted fst-italic mb-2">Posted by {{ $posts -> user -> name }}</div>
                     <!-- Post categories-->
                     <a class="badge bg-secondary text-decoration-none link-light" href="/categories/{{ $posts -> category -> slug }}">{{ $posts -> category -> name }}</a>
-                    @if ( $posts->user_id === Auth::user()->id)
-                        <a href="" class="badge bg-secondary text-decoration-none link-light">Edit Post</a>
+                    @if ( $posts->user_id === Auth::id())
+                        <a href="/edit/{{ $posts->id }}" class="badge bg-warning text-decoration-none link-light edit">Edit Post</a>
                     @endif
+                    <div class="container">
+                    @if(session()->has('success'))
+                    <div class="alert alert-success mt-3">
+                        {{ session()->get('success') }}
+                    </div>
+                    @endif
+                    </div>
                 </header>
                 <!-- Preview image figure-->
                 <figure class="mb-4"><img class="img-fluid rounded" src="https://source.unsplash.com/900x400?" alt="..." /></figure>
@@ -31,42 +38,48 @@
                 <div class="card bg-light">
                     <div class="card-body">
                         <!-- Comment form-->
-                        <form class="mb-4" method="POST" action="/edit">
-                            <textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea>
+                       @if (Auth::check())
+                       <form class="mb-4" method="POST" action="/comment/{{ $posts->id }}">
+                        @csrf
+                        <textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!" name="comment"></textarea>
+                        <button type="submit" class="btn btn-warning mt-3">Post</button>
                         </form>
+                        @else
+                        <form class="mb-4" method="POST" action="/comment/{{ $posts->id }}">
+                            @csrf
+                            <textarea readonly class="form-control" rows="3" placeholder="Please login first to join the discussion" name="comment"></textarea>
+                            <button type="submit" class="btn btn-warning mt-3">Post</button>
+                            </form>
+                       @endif
                         <!-- Comment with nested comments-->
+
                         <div class="d-flex mb-4">
                             <!-- Parent comment-->
-                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="ms-3">
-                                <div class="fw-bold">Commenter Name</div>
-                                If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
-                                <!-- Child comment 1-->
-                                <div class="d-flex mt-4">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
-                                    </div>
-                                </div>
-                                <!-- Child comment 2-->
-                                <div class="d-flex mt-4">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        When you put money directly to a problem, it makes a good headline.
-                                    </div>
-                                </div>
-                            </div>
+
+                            <h3>Comments</h3>
+
+
                         </div>
+
                         <!-- Single comment-->
+                        @foreach ($comments as $comment )
                         <div class="d-flex">
                             <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="ms-3">
-                                <div class="fw-bold">Commenter Name</div>
-                                When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                            <div class="ms-3 mb-3">
+                                <div class="fw-bold">{{ $comment->user->name }}</div>
+                                {{ $comment->comment }}
                             </div>
                         </div>
+                        @endforeach
+
+                        {{-- <div class="d-flex">
+                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="ms-3">
+                                <div class="fw-bold">Alfito</div>
+                                Mantab
+                            </div>
+                        </div> --}}
+
                     </div>
                 </div>
             </section>
