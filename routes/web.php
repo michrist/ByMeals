@@ -32,6 +32,8 @@ Route::get('/about', function () {
         'title'=>'About'
     ]);
 });
+Route::get('/user/profile/{id}', [RegisterController::class, 'show']);
+Route::put('/user/update/{id}', [RegisterController::class, 'update']);
 Route::get('/article', function () {
     return view('blog.article', [
         'title'=>'Blog',
@@ -77,16 +79,14 @@ Route::post('/add', [DashboardPostController::class, 'store']);
 Route::get('/edit/{id}', [DashboardPostController::class, 'edit']);
 Route::put('/update/{id}', [DashboardPostController::class, 'update']);
 Route::post('/comment/{id}', [CommentController::class, 'store']);
-// Route::get('/login', function () {
-//     return view('register.login');
-// });
+
+
+// Register and Login
 Route::get('/login', [LoginController::class, 'index'])->name('login') -> middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
-
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/registration', [RegisterController::class, 'store']);
-
 Route::get('/register', function () {
     return view('register.register');
 });

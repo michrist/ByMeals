@@ -19,6 +19,7 @@ class CreatePostModelsTable extends Migration
             $table->foreignId('user_id');
             $table->string('title');
             $table->string('slug');
+            $table->string('image')->nullable();
             $table->text('body');
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();

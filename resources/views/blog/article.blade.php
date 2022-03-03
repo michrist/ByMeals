@@ -11,7 +11,7 @@
                     <!-- Post title-->
                     <h1 class="fw-bolder mb-1">{{ $posts -> title }}</h1>
                     <!-- Post meta content-->
-                    <div class="text-muted fst-italic mb-2">Posted by {{ $posts -> user -> name }}</div>
+                    <div class="text-muted fst-italic mb-2">Posted by {{ $posts -> user -> name }} {{ $posts->created_at->diffForHumans() }}</div>
                     <!-- Post categories-->
                     <a class="badge bg-secondary text-decoration-none link-light" href="/categories/{{ $posts -> category -> slug }}">{{ $posts -> category -> name }}</a>
                     @if ( $posts->user_id === Auth::id())
@@ -25,8 +25,13 @@
                     @endif
                     </div>
                 </header>
-                <!-- Preview image figure-->
+                @if ($posts->image)
+                <figure class="mb-4"><img class="img-fluid rounded" src="{{ asset('storage/'.$posts->image) }}" alt="..." /></figure>
+                @else
                 <figure class="mb-4"><img class="img-fluid rounded" src="https://source.unsplash.com/900x400?" alt="..." /></figure>
+                @endif
+                <!-- Preview image figure-->
+
                 <!-- Post content-->
                 <section class="mb-5">
                     <p class="fs-5 mb-4" style="text-align: justify">{!! $posts->body !!}</p>
@@ -45,15 +50,15 @@
                         <button type="submit" class="btn btn-warning mt-3">Post</button>
                         </form>
                         @else
-                        <form class="mb-4" method="POST" action="/comment/{{ $posts->id }}">
+                        <form class="mb-4">
                             @csrf
-                            <textarea readonly class="form-control" rows="3" placeholder="Please login first to join the discussion" name="comment"></textarea>
+                            <textarea readonly class="form-control" rows="3" placeholder="Please login to join the discussion" name="comment"></textarea>
                             <button type="submit" class="btn btn-warning mt-3">Post</button>
                             </form>
                        @endif
                         <!-- Comment with nested comments-->
 
-                        <div class="d-flex mb-4">
+                        <div class="d-flex mb-3">
                             <!-- Parent comment-->
 
                             <h3>Comments</h3>
@@ -62,16 +67,22 @@
                         </div>
 
                         <!-- Single comment-->
-                        @foreach ($comments as $comment )
-                        <div class="d-flex">
-                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="ms-3 mb-3">
-                                <div class="fw-bold">{{ $comment->user->name }}</div>
-                                {{ $comment->comment }}
-                            </div>
-                        </div>
-                        @endforeach
+                       @if ($comments->count())
+                       @foreach ($comments as $comment )
+                       <div class="d-flex">
+                           <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                           <div class="ms-3 mb-3">
+                               <div class="fw-bold">{{ $comment->user->name }}</div>
+                               {{ $comment->comment }}
+                           </div>
+                       </div>
+                       @endforeach
+                       @else
+                       <div class="ms-3 mb-2">
+                        <div class="fw-bold">No comment found</div>
 
+                        </div>
+                       @endif
                         {{-- <div class="d-flex">
                             <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                             <div class="ms-3">
@@ -90,10 +101,13 @@
             <div class="card mb-4">
                 <div class="card-header">Search</div>
                 <div class="card-body">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                    </div>
+                    <form action="/blog" method="GET">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" name="search" value="{{ request('search') }}"/>
+                            <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+                        </div>
+                    </form>
+
                 </div>
             </div>
             <!-- Categories widget-->

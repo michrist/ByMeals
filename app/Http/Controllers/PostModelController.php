@@ -11,23 +11,40 @@ use App\Models\Comment;
 class PostModelController extends Controller
 {
     public function index(){
+        $posts = PostModel::latest();
+        if(request('search')){
+            $posts->where('title', 'like', '%'. request('search') . '%')
+            ->orWhere('body', 'like', '%'. request('search') . '%');
+        }
         return view('blog.blog', [
             // "title" => "All Posts",
             // "active"=> 'posts' ,
             // "posts" => PostModel::latest() -> filter(request(['search', 'category', 'author'])) -> paginate(7) -> withQueryString()
+
         'judul'=>'All Posts',
         'title'=>'Blog',
-        'posts'=>PostModel::latest()->paginate(5)
+        'posts'=>$posts->get()
         ]);
     }
+    // public function show($id){
+    //     // $posts = PostModel::find($id);
+    //     // return view('blog.article', ['posts'=>$posts]);
+    //     return view('blog.article', [
+    //     'title'=>'Blog',
+    //     'posts'=>PostModel::find($id),
+    //     'categories'=>Category::all(),
+    //     'comments'=>Comment::all()
+    //     ]);
+    // }
     public function show($id){
+        $posts = PostModel::find($id);
         // $posts = PostModel::find($id);
         // return view('blog.article', ['posts'=>$posts]);
         return view('blog.article', [
         'title'=>'Blog',
-        'posts'=>PostModel::find($id),
+        'posts'=>$posts,
         'categories'=>Category::all(),
-        'comments'=>Comment::all()
+        'comments'=>Comment::where('postmodel_id','=', $id)->get()
         ]);
     }
 }

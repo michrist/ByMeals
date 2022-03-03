@@ -5,7 +5,7 @@
     <h1 class="mb-5">Add New Post</h1>
 </div>
 <div class="container">
-    <form method="POST" action="/add">
+    <form method="POST" action="/add" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
@@ -37,6 +37,15 @@
                 @endforeach
               </select>
         </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image (Please use 900 * 400 px for a better picture)</label>
+            <input class="form-control" type="file" id="image" name="image">
+            @error('image')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+          @enderror
+          </div>
         <div class="mb-3">
             <label for="body" class="form-label">Body</label>
             <input id="body" type="hidden" name="body">
