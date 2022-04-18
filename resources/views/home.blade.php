@@ -1,7 +1,7 @@
 @extends('template')
 @section('container')
-<div class="container-xxl py-5 bg-dark hero-header mb-5">
-    <div class="container my-5 py-5">
+<div class="container-xxl py-5 bg-dark hero-header">
+    <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6 text-center text-lg-start">
                 <h1 class="display-3 text-white animated slideInLeft">Pencernaan Bayi Berkembang<br>Mama pun Tenang</h1>

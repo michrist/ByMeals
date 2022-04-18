@@ -53,7 +53,7 @@
                         <form class="mb-4">
                             @csrf
                             <textarea readonly class="form-control" rows="3" placeholder="Please login to join the discussion" name="comment"></textarea>
-                            <button type="submit" class="btn btn-warning mt-3">Post</button>
+                            <a href="/login" class="btn btn-warning mt-3">Login</a>
                             </form>
                        @endif
                         <!-- Comment with nested comments-->
