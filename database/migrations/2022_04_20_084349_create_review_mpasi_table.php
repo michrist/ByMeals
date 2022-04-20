@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentsTable extends Migration
+class CreateReviewMpasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('review_artikel', function (Blueprint $table) {
+        Schema::create('review_mpasi', function (Blueprint $table) {
             $table->id();
             $table->text('comment');
-            $table->foreignId('user_id');
-            $table->foreignId('postmodel_id');
+            $table->integer('like');
             $table->timestamps();
         });
     }
@@ -29,9 +28,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('review_artikel');
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('review_mpasi');
     }
-
-
 }
