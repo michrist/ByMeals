@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostModelController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TestController;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\PostModel;
@@ -90,3 +91,5 @@ Route::post('/registration', [RegisterController::class, 'store']);
 Route::get('/register', function () {
     return view('register.register');
 });
+
+Route::get('/test', [testController::class, 'index']);
