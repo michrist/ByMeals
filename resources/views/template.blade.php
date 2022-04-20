@@ -85,12 +85,12 @@
 
         </div>
         <footer class="bg-dark">
-            <div class="waves">
+            {{-- <div class="waves">
               <div class="wave" id="wave1"></div>
               <div class="wave" id="wave2"></div>
               <div class="wave" id="wave3"></div>
               <div class="wave" id="wave4"></div>
-            </div>
+            </div> --}}
             <ul class="social_icon">
               <li><a href=""><i class="fa fa-facebook"></i></a></li>
               <li><a href=""><i class="fa fa-twitter"></i></a></li>
