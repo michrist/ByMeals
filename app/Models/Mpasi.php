@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mpasi extends Model
 {
+    protected $table = 'mpasi';
     use HasFactory;
     protected $guarded = [
         'id'

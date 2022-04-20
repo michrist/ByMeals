@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jadwal extends Model
 {
+    protected $table = 'jadwal';
+
     use HasFactory;
     protected $guarded = [
         'id'

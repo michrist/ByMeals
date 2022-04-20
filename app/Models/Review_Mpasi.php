@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review_Mpasi extends Model
 {
+    protected $table = 'review_mpasi';
     use HasFactory;
     protected $guarded = [
         'id'
