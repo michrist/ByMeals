@@ -17,6 +17,7 @@ class CreateJadwal extends Migration
             $table->id();
             $table->datetime('waktu');
             $table->foreignId('mpasi_id');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

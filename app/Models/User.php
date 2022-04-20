@@ -49,4 +49,7 @@ class User extends Authenticatable
     public function mpasi(){
         return $this->hasMany(Mpasi::class);
     }
+    public function artikel(){
+        return $this->hasMany(PostModel::class);
+    }
 }

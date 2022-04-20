@@ -14,9 +14,10 @@ class CreatePostModelsTable extends Migration
     public function up()
     {
         Schema::create('post_models', function (Blueprint $table) {
-             $table->id();
+            $table->id();
             $table->foreignId('category_id');
             $table->foreignId('user_id');
+            $table->foreignId('comment_id');
             $table->string('title');
             $table->string('slug');
             $table->string('image')->nullable();

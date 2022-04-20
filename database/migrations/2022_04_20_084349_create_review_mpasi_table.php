@@ -17,6 +17,8 @@ class CreateReviewMpasiTable extends Migration
             $table->id();
             $table->text('comment');
             $table->integer('like');
+            $table->foreignId('user_id');
+            $table->foreignId('mpasi_id');
             $table->timestamps();
         });
     }

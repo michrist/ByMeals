@@ -30,6 +30,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->foreignId('mpasi_id');
+            $table->foreignId('jadwal_id');
         });
     }
 
