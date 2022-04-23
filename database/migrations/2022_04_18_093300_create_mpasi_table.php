@@ -22,6 +22,7 @@ class CreateMpasiTable extends Migration
             $table->text('kandungan');
             $table->text('manfaat');
             $table->text('prosedur');
+            $table->text('durasi');
             $table->char('kategori', 20);
             $table->char('gambar', 255);
             $table->timestamps();

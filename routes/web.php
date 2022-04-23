@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostModelController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\MenuController;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\PostModel;
@@ -93,3 +94,6 @@ Route::get('/register', function () {
 });
 
 Route::get('/test', [testController::class, 'index']);
+
+Route::get('/menu', [MenuController::class, 'index']);
+Route::get('/menu/detail', [MenuController::class, 'detail']);
