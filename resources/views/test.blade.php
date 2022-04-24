@@ -1,6 +1,6 @@
 @extends('template')
 @section('container')
-<table>
+{{-- <table>
     <tr>
         <th>nama</th>
         <th>age</th>
@@ -25,5 +25,6 @@
 <br>
 <br>
 <br>
-<br>
+<br> --}}
+
 @endsection
