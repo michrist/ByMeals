@@ -97,3 +97,4 @@ Route::get('/test', [testController::class, 'index']);
 
 Route::get('/menu', [MenuController::class, 'index']);
 Route::get('/menu/detail', [MenuController::class, 'detail']);
+
