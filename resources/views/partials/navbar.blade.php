@@ -33,9 +33,9 @@
         <div class="nav-item dropdown">
             <a style="color: white" href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
             <div class="dropdown-menu m-0">
-                <a href="booking.html" class="dropdown-item">Home</a>
-                <a href="team.html" class="dropdown-item">About</a>
-                <a href="testimonial.html" class="dropdown-item">Blog</a>
+                <a href="/" class="dropdown-item">Home</a>
+                <a href="/menu" class="dropdown-item">Menu</a>
+                <a href="/blog" class="dropdown-item">Blog</a>
                 <a href="/user/profile/{{ Auth::id() }}" class="dropdown-item">Profile</a>
                 <form action="/logout" method="POST">
                     @csrf

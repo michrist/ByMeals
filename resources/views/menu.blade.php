@@ -96,146 +96,141 @@ select:focus {
       $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
-  @import url('https://fonts.googleapis.com/css?family=Roboto');
+ /*****************
+    - Header -
+*****************/
+header {
+	position:relative;
+	left:0;
+	top:0;
+	width:100%;
+	min-height:120px;
+	padding:50px 0;
+	color:#fff;
+	    background: #383838 url(https://www.athenadesignstudio.com/plugins/switch/images/bg.jpg) no-repeat center center;
+	margin-bottom:30px
+}
+
+/* Logo */
+header .logo {
+	clear:both;
+    display:block;
+	text-align:center;
+    padding-bottom:10px;
+}
+
+/* Title */
+header h1 {
+    font-weight:300;
+    font-size:24px;
+    color:#eee;
+	letter-spacing:2px;
+	text-align:center;
+	text-transform:uppercase;
+	margin:0 !important;
+	padding-bottom:25px;
+}
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900|Open Sans:400,600,800');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+input,
+p,
+a {
+    font-family: "Open Sans";
+    margin: 0px;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+}
 
 body {
-  background-color: #2C3A47;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Roboto', sans-serif;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+    background-color: #F1F2F3;
 }
 
-.container1 {
-  position: relative;
-  height: 500px;
-  width: 500px;
-  overflow: hidden;
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
-  transition: box-shadow 0.3s ease-out;
+.container-fluid,
+.container {
+    max-width: 1200px;
 }
 
-.container1:hover {
-  box-shadow: 1px 2px 10px rgba(0,0,0,0.5);
+.card-container {
+    padding: 100px 0px;
+    -webkit-perspective: 1000;
+    perspective: 1000;
 }
 
-.img-container1 {
-  background-color: #000;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  transition: transform 0.3s ease-out;
-  z-index: 2;
+
+
+.profile-card-2 {
+    width: 500px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
-.img-container1:hover {
-	cursor: pointer;
+.profile-card-2 img {
+    transition: all linear 0.25s;
 }
 
-.container1:hover .img-container1 {
-	transform: translateY(-100px);
+.profile-card-2 .profile-name {
+    position: absolute;
+    left: 30px;
+    bottom: 70px;
+    font-size: 30px;
+    color: #FFF;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: all linear 0.25s;
 }
 
-.img-container1 > img {
-  height: 100%;
-  width: 100%;
-  transition: opacity 0.3s ease-out;
+.profile-card-2 .profile-icons {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    color: #FFF;
+    transition: all linear 0.25s;
 }
 
-.container1:hover > .img-container1 > img {
-  opacity: 0.5;
+.profile-card-2 .profile-username {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    color: #FFF;
+    font-size: 13px;
+    transition: all linear 0.25s;
 }
 
-.social-media {
-  display: flex;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  margin: 0;
-  padding: 0;
+.profile-card-2 .profile-icons .fa {
+    margin: 5px;
 }
 
-.social-media > li {
-  list-style: none;
+.profile-card-2:hover img {
+    filter: grayscale(100%);
 }
 
-.social-media > li > a {
-  display: block;
-  height: 50px;
-  width: 50px;
-  background-color: #FFF;
-  text-align: center;
-  color: #262626;
-  margin: 0 5px;
-  border-radius: 50%;
-  opacity: 0;
-  transform: translateY(200px);
-  transition: all 0.3s ease-out;
+.profile-card-2:hover .profile-name {
+    bottom: 80px;
 }
 
-.container1:hover > .social-media > li > a {
-  transform: translateY(0);
-  opacity: 1;
+.profile-card-2:hover .profile-username {
+    bottom: 60px;
 }
 
-.social-media > li > a > .fa {
-  font-size: 24px;
-  line-height: 50px;
-  transition: transform 0.3s ease-out;
-}
-
-.social-media > li > a:hover > .fa {
-  transform: rotateY(360deg);
-}
-
-.container1:hover .social-media li:nth-child(1) a {
-	transition-delay: 0s;
-}
-
-.container1:hover .social-media li:nth-child(2) a {
-	transition-delay: 0.1s;
-}
-
-.container1:hover .social-media li:nth-child(3) a {
-	transition-delay: 0.2s;
-}
-
-.container1:hover .social-media li:nth-child(4) a {
-	transition-delay: 0.3s;
-}
-
-.container1:hover .social-media li:nth-child(5) a {
-	transition-delay: 0.4s;
-}
-
-.user-info {
-  position: absolute;
-	bottom: 0;
-	left: 0;
-	background-color: #FFF;
-	height: 100px;
-	width: 100%;
-	box-sizing: border-box;
-	padding: 10px;
-  text-align: center
-}
-
-.user-info > h2 {
-  padding: 0;
-  margin: 10px 0;
-}
-
-.user-info > span {
-  color: #262626;
-  font-size: 16px;
-}
+.profile-card-2:hover .profile-icons {
+    right: 40px;
 }
 
 
@@ -263,92 +258,89 @@ body {
         <div class="tab-2">
           <label for="tab2-1" style="color: #ffb800">Jadwal Makan</label>
           <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
-        <div class="container" style="margin-left: 500px">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-                </li>
-              </ul>
+          <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
+                    <div class="profile-name">JOHN DOE</div>
+                    <div class="profile-username">@johndoesurname</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
+                    <div class="profile-name">JOHN DOE</div>
+                    <div class="profile-username">@johndoesurname</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
+                    <div class="profile-name">JOHN DOE</div>
+                    <div class="profile-username">@johndoesurname</div>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-          </div>
-          {{-- <div class="container ">
-              <div class="row justify-content center">
-                  <div class="col">
-                    <div class="container1">
-                        <div class="img-container1">
-                          <img src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" alt="">
-                        </div>
-                        <ul class="social-media">
-                                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                              </ul>
-                              <div class="user-info">
-                                  <h2>Aniket Singh</h2>
-                            <span>20-july</span>
-                              </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="container1">
-                        <div class="img-container1">
-                          <img src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" alt="">
-                        </div>
-                        <ul class="social-media">
-                                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                              <div class="user-info">
-                                  <h2>Aniket Singh</h2>
-                            <span>20-july</span>
-                              </div>
-                      </div>
-                  </div>
-                  <div class="col mt-4">
-                    <div class="container1">
-                        <div class="img-container1">
-                          <img src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" alt="">
-                        </div>
-                        <ul class="social-media">
-                                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                              </ul>
-                              <div class="user-info">
-                                  <h2>Aniket Singh</h2>
-                            <span>20-july</span>
-                              </div>
-                      </div>
-                  </div>
-              </div>
-          </div> --}}
-        </div>
+
+
+
         <div class="tab-2">
           <label for="tab2-2" style="color: #ffb800">Umur Bayi</label>
           <input id="tab2-2" name="tabs-two" type="radio">
           <div>
-            <h4>Tab Two</h4>
-            <p>Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non tellus. Mauris id iaculis quam. Donec eu felis quam. Morbi tristique lorem eget iaculis consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean at tellus eget risus tempus ultrices. Nam condimentum nisi enim, scelerisque faucibus lectus sodales at.</p>
+            <ul class="nav nav-tabs" role="tablist" style="margin-left: 500px">
+                <li class="nav-item">
+                  <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+                </li>
+              </ul>
+              <div class="tab-content" >
+                <div id="home" class="container tab-pane active"><br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu1" class="container tab-pane fade"><br>
+                  <h3>Menu 1</h3>
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div id="menu2" class="container tab-pane fade"><br>
+                  <h3>Menu 2</h3>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
+    </div>
 </div>
 <script>
   $('.fa.fa-expand').on("click", function(){
