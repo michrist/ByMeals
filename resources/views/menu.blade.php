@@ -166,9 +166,6 @@ body {
     -webkit-perspective: 1000;
     perspective: 1000;
 }
-
-
-
 .profile-card-2 {
     width: 500px;
     background-color: #FFF;
@@ -180,7 +177,6 @@ body {
     cursor: pointer;
     border-radius: 10px;
 }
-
 .profile-card-2 img {
     transition: all linear 0.25s;
 }

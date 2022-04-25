@@ -1,7 +1,7 @@
 @extends('template')
 @section('container')
 <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
-    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Blog</h5>
+    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Profile</h5>
     <h1 class="mb-5">Edit Profile</h1>
 </div>
 <div class="container">

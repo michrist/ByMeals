@@ -76,6 +76,7 @@ Route::get('/create', function () {
         'categories'=>Category::all()
     ]);
 });
+// Route::get('/blog', [PostModelController::class, 'index']);
 Route::get('/blog', [PostModelController::class, 'index']);
 Route::post('/add', [DashboardPostController::class, 'store']);
 Route::get('/edit/{id}', [DashboardPostController::class, 'edit']);

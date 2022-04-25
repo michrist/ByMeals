@@ -2,8 +2,9 @@
 @section('container')
 <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Blog</h5>
-    <h1 class="mb-5">Add New Post</h1>
+    <h1 class="mb-3">Add New Post</h1>
 </div>
+@if (Auth::check())
 <div class="container">
     <form method="POST" action="/add" enctype="multipart/form-data">
         @csrf
@@ -63,6 +64,11 @@
 
       </form>
 </div>
+@else
+<div class="container text-centers" style="margin-bottom: 300px">
+    <h4 class="text-center">You must <a href="login">login</a> to add a article</h4 class="text-center">
+</div>
+@endif
   <script>
     const title = document.querySelector('#title');
     const slug = document.querySelector('#slug');

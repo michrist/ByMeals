@@ -53,6 +53,7 @@
     background: url("{{ asset('img/wave.png') }}");
     background-size: 1000px 100px;
 }
+
     </style>
 </head>
 

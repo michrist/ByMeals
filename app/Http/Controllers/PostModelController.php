@@ -16,7 +16,7 @@ class PostModelController extends Controller
             $posts->where('title', 'like', '%'. request('search') . '%')
             ->orWhere('body', 'like', '%'. request('search') . '%');
         }
-        return view('blog.blog', [
+        return view('blog.home', [
             // "title" => "All Posts",
             // "active"=> 'posts' ,
             // "posts" => PostModel::latest() -> filter(request(['search', 'category', 'author'])) -> paginate(7) -> withQueryString()
@@ -45,6 +45,11 @@ class PostModelController extends Controller
         'posts'=>$posts,
         'categories'=>Category::all(),
         'comments'=>Comment::where('postmodel_id','=', $id)->get()
+        ]);
+    }
+    public function test(){
+        return view('blog.home', [
+            'title'=>'Blog'
         ]);
     }
 }
