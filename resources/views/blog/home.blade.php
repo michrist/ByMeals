@@ -97,6 +97,7 @@ box-shadow: 5px 5px 6px 4px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22
   font-size: 20px;
   margin-top: -80px;
   height: 40px;
+  color: black
 }
 
 .card1:hover {
@@ -155,32 +156,6 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
           </div>
         </div>
         @endforeach
-          <div class="card1 2">
-          <div class="card_image">
-            <img src="https://cdn.blackmilkclothing.com/media/wysiwyg/Wallpapers/PhoneWallpapers_FloralCoral.jpg" />
-            </div>
-          <div class="card_title title-white">
-            <p>Card Title</p>
-          </div>
-        </div>
-
-        <div class="card1 3">
-          <div class="card_image">
-            <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" />
-          </div>
-          <div class="card_title">
-            <p>Card Title</p>
-          </div>
-        </div>
-
-          <div class="card1 4">
-          <div class="card_image">
-            <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" />
-            </div>
-          <div class="card_title title-black">
-            <p>Card Title</p>
-          </div>
-          </div>
 
         </div>
 </div>
@@ -194,7 +169,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
           <div id="CarouselTest" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
+                <figure><img class="d-block" src="{{ asset('storage/'.$post->image) }}" alt="" width="400px"></figure>
               </div>
             </div>
           </div>

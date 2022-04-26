@@ -18,7 +18,7 @@
                 <a href="#" class="nav-link dropdown-toggle {{ ($title === "Blog") ? 'active' : '' }}" data-bs-toggle="dropdown">Blog</a>
                 <div class="dropdown-menu m-0">
                     <a href="/blog" class="dropdown-item">Blog & Articles</a>
-                    <a href="/categories" class="dropdown-item">Add Post</a>
+                    <a href="/create" class="dropdown-item">Add Post</a>
                 </div>
             </div>
             <div class="nav-item dropdown">

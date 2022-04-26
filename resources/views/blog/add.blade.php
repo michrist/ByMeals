@@ -17,15 +17,6 @@
           </div>
           @enderror
         </div>
-        <div class="mb-3" hidden>
-            <label for="slug" class="form-label">Slug</label>
-            <input hidden type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug">
-            @error('slug')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
-          </div>
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" name="category_id">

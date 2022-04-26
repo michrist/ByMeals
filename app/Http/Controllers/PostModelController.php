@@ -48,9 +48,12 @@ class PostModelController extends Controller
         ]);
     }
     public function test(){
+        $categories = Category::all();
+        $posts = PostModel::all();
         return view('blog.home', [
             'title'=>'Blog',
-            'categories'=>Category::all()
+            'categories'=>$categories,
+            'posts'=>$posts
         ]);
     }
 }

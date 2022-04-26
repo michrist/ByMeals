@@ -51,7 +51,7 @@ Route::get('/categories', function () {
     ]);
 });
 
-// Route::get('/blog', [PostModelController::class, 'test']);
+Route::get('/allpost', [PostModelController::class, 'test']);
 Route::get('/categories/{category:slug}', function(Category $category){
     return view('blog.blog', [
         'title'=>'Blog',
@@ -64,12 +64,6 @@ Route::get('/user/{user:username}', function (User $author) {
         'judul'=>"Post by author : $author->name",
         'title' => 'Profile',
         'posts' => $author -> posts -> load('category', 'user')
-    ]);
-});
-Route::get('/blog', function(){
-    return view('blog.home', [
-        'title' => 'Blog',
-        'categories'=>Category::all()
     ]);
 });
 Route::get('/create', function () {

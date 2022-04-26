@@ -20,6 +20,7 @@ class CreateMpasiTable extends Migration
             $table->integer('age');
             $table->text('bahan');
             $table->text('kandungan');
+            $table->text('deskripsi');
             $table->text('manfaat');
             $table->text('prosedur');
             $table->text('durasi');
