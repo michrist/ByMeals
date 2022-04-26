@@ -49,7 +49,8 @@ class PostModelController extends Controller
     }
     public function test(){
         return view('blog.home', [
-            'title'=>'Blog'
+            'title'=>'Blog',
+            'categories'=>Category::all()
         ]);
     }
 }

@@ -17,9 +17,9 @@
           </div>
           @enderror
         </div>
-        <div class="mb-3">
+        <div class="mb-3" hidden>
             <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug">
+            <input hidden type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug">
             @error('slug')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -58,7 +58,7 @@
             @enderror
         </div>
         @if (Auth::check())
-        <button type="submit" class="btn btn-primary">Add Post</button>
+        <button type="submit" class="btn btn-primary mb-4">Add Post</button>
         @else
         @endif
 
