@@ -83,7 +83,11 @@ select:focus {
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
   .tabs .tab-2 {
+<<<<<<< HEAD
     width:50%; }
+=======
+    width: 100%; }
+>>>>>>> 38917cb627d1e15dc048303dc6732af6bb220d0c
     .tabs .tab-2 [type="radio"] + div {
       width: 200%;
       margin-left: 200%; }
