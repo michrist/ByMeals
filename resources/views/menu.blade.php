@@ -278,18 +278,18 @@ body {
           <label for="tab2-1" style="color: #ffb800; font-size:30px">Jadwal Makan</label>
           <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
           <div>
-            <ul class="nav" role="tablist" style="margin-left: 500px">
+            <ul class="nav d-flex justify-content-center" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" data-bs-toggle="tab" href="#all">All</a>
+                  <a class="nav-link active" data-bs-toggle="tab" href="#all" style="font-size: 20px">All</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#breakfast">Breakfast</a>
+                  <a class="nav-link" data-bs-toggle="tab" href="#breakfast" style="font-size: 20px">Breakfast</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#lunch">Lunch</a>
+                  <a class="nav-link" data-bs-toggle="tab" href="#lunch" style="font-size: 20px">Lunch</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#dinner">Dinner</a>
+                    <a class="nav-link" data-bs-toggle="tab" href="#dinner" style="font-size: 20px">Dinner</a>
                 </li>
               </ul>
               <div class="tab-content" >
@@ -425,15 +425,15 @@ body {
           <label for="tab2-2" style="color: #ffb800; font-size:30px">Umur Bayi</label>
           <input id="tab2-2" name="tabs-two" type="radio">
           <div>
-            <ul class="nav" role="tablist" style="margin-left: 500px">
+            <ul class="nav d-flex justify-content-center" role="tablist" >
                 <li class="nav-item">
-                  <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+                  <a class="nav-link active" data-bs-toggle="tab" href="#home" style="font-size: 20px">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+                  <a class="nav-link" data-bs-toggle="tab" href="#menu1" style="font-size: 20px">Menu 1</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+                  <a class="nav-link" data-bs-toggle="tab" href="#menu2" style="font-size: 20px">Menu 2</a>
                 </li>
               </ul>
               <div class="tab-content" >
