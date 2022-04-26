@@ -278,7 +278,7 @@ body {
           <label for="tab2-1" style="color: #ffb800; font-size:30px">Jadwal Makan</label>
           <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
           <div>
-            <ul class="nav d-flex justify-content-center" role="tablist">
+            <ul class="nav justify-content-center h-100 w-100" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" data-bs-toggle="tab" href="#all" style="font-size: 20px">All</a>
                 </li>
@@ -436,7 +436,7 @@ body {
                   <a class="nav-link" data-bs-toggle="tab" href="#menu2" style="font-size: 20px">Menu 2</a>
                 </li>
               </ul>
-              <div class="tab-content" >
+              <div class="tab-content">
                 <div id="home" class="container tab-pane active"><br>
                     <div class="row">
                     <div class="col-md-4">
