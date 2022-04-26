@@ -38,7 +38,7 @@ select:focus {
   -moz-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0;
-  overflow: hidden; }
+  overflow: hidden;}
   .tabs [class^="tab"] label,
   .tabs [class*=" tab"] label {
     color: #efedef;
@@ -83,7 +83,7 @@ select:focus {
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
   .tabs .tab-2 {
-    width: 50%; }
+    width:50%; }
     .tabs .tab-2 [type="radio"] + div {
       width: 200%;
       margin-left: 200%; }
@@ -93,6 +93,7 @@ select:focus {
       margin-left: 100%; }
     .tabs .tab-2:last-child [type="radio"]:checked + div {
       margin-left: -100%; }
+
       $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
@@ -244,6 +245,7 @@ body {
    text-align: center;
 }
 
+
 </style>
 <div class="text-center mt-5">
     <h1 style="color: #000638; font-size:66px">Rekomendasi Menu MP-ASI</h1>
@@ -278,7 +280,7 @@ body {
           <label for="tab2-1" style="color: #ffb800; font-size:30px">Jadwal Makan</label>
           <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
           <div>
-            <ul class="nav justify-content-center h-100 w-100" role="tablist">
+            <ul class="nav justify-content-center" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" data-bs-toggle="tab" href="#all" style="font-size: 20px">All</a>
                 </li>
@@ -391,7 +393,6 @@ body {
             </div>
 
           </div>
-
 
 
 
