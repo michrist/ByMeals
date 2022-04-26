@@ -58,6 +58,85 @@ lex-direction: column;
 .btn {
 margin-top: auto;
 }
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card1 {
+  margin: 30px auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 40px;
+box-shadow: 5px 5px 6px 4px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card1 .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card1 .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card1 .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: -80px;
+  height: 40px;
+  color: black
+}
+
+.card1:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+/*
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+}
+*/
 </style>
 <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Blog</h5>
@@ -66,6 +145,19 @@ margin-top: auto;
 <div class="container">
     <h3>Categories</h3>
     <p>Pilih artikel berdasarkan kategori</p>
+</div>
+<div class="container">
+    <div class="cards-list">
+        @foreach ($categories as $category )
+        <div class="card1 1" onclick="location.href='/categories/{{ $category->slug }}';"        >
+          <div class="card_image"> <img src="{{ $category->picture }}" /> </div>
+          <div class="card_title title-white">
+            <p>{{ $category->name }}</p>
+          </div>
+        </div>
+        @endforeach
+
+        </div>
 </div>
 <div class="container mb-4">
     <!-- Card Start -->
@@ -77,7 +169,7 @@ margin-top: auto;
           <div id="CarouselTest" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block" src="https://picsum.photos/450/300?image=1072" alt="">
+                <figure><img class="d-block" src="{{ asset('storage/'.$post->image) }}" alt="" width="400px"></figure>
               </div>
             </div>
           </div>

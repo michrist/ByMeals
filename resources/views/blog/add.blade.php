@@ -18,15 +18,6 @@
           @enderror
         </div>
         <div class="mb-3">
-            <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug">
-            @error('slug')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
-          </div>
-        <div class="mb-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" name="category_id">
                 @foreach ($categories as $category )
@@ -58,7 +49,7 @@
             @enderror
         </div>
         @if (Auth::check())
-        <button type="submit" class="btn btn-primary">Add Post</button>
+        <button type="submit" class="btn btn-primary mb-4">Add Post</button>
         @else
         @endif
 

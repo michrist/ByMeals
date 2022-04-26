@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
 
         @if (Auth::check())
-        <div class="navbar-nav ms-auto py-0 pe-4" style="opacity: 0">
+        <div class="navbar-nav ms-auto py-0 pe-4">
             <a href="/" class="nav-item nav-link {{ ($title === "Home") ? 'active' : '' }}">Home</a>
             <a href="/about" class="nav-item nav-link {{ ($title === "About") ? 'active' : '' }}">About</a>
             {{-- <a href="/blog" class="nav-item nav-link {{ ($title === "Blog") ? 'active' : '' }}">Blog</a> --}}
@@ -18,7 +18,7 @@
                 <a href="#" class="nav-link dropdown-toggle {{ ($title === "Blog") ? 'active' : '' }}" data-bs-toggle="dropdown">Blog</a>
                 <div class="dropdown-menu m-0">
                     <a href="/blog" class="dropdown-item">Blog & Articles</a>
-                    <a href="/categories" class="dropdown-item">Add Post</a>
+                    <a href="/create" class="dropdown-item">Add Post</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
@@ -31,11 +31,8 @@
             </div>
         </div>
         <div class="nav-item dropdown">
-            <a style="color: white" href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
+            <a style="color:white" href="#" class="nav-link dropdown-toggle {{ ($title === "Profile") ? 'active' : '' }}" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
             <div class="dropdown-menu m-0">
-                <a href="/" class="dropdown-item">Home</a>
-                <a href="/menu" class="dropdown-item">Menu</a>
-                <a href="/blog" class="dropdown-item">Blog</a>
                 <a href="/user/profile/{{ Auth::id() }}" class="dropdown-item">Profile</a>
                 <form action="/logout" method="POST">
                     @csrf

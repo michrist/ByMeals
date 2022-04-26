@@ -40,7 +40,6 @@ class DashboardPostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'slug' => 'required|unique:post_models',
             'image'=> 'image|file|max:1024',
             'category_id' => 'required',
             'body' => 'required'
@@ -51,7 +50,7 @@ class DashboardPostController extends Controller
         $validatedData['user_id'] = auth() -> user() -> id;
         $validatedData['excerpt'] =Str::limit($request->body, 50);
         PostModel::create($validatedData);
-        return redirect('/blog') -> with('success', 'New post has been added');
+        return redirect('/allpost') -> with('success', 'New post has been added');
     }
     public function edit($id)
     {

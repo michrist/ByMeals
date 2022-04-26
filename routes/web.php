@@ -50,12 +50,8 @@ Route::get('/categories', function () {
         'title'=>'Blog'
     ]);
 });
-Route::get('/categories', function(){
-    return view('categories', [
-        'title' => 'Blog',
-        'categories' => Category::all()
-    ]);
-});
+
+Route::get('/allpost', [PostModelController::class, 'test']);
 Route::get('/categories/{category:slug}', function(Category $category){
     return view('blog.blog', [
         'title'=>'Blog',
@@ -66,7 +62,7 @@ Route::get('/categories/{category:slug}', function(Category $category){
 Route::get('/user/{user:username}', function (User $author) {
     return view('blog.blog', [
         'judul'=>"Post by author : $author->name",
-        'title' => 'Blog',
+        'title' => 'Profile',
         'posts' => $author -> posts -> load('category', 'user')
     ]);
 });
@@ -93,9 +89,7 @@ Route::post('/registration', [RegisterController::class, 'store']);
 Route::get('/register', function () {
     return view('register.register');
 });
-
 Route::get('/test', [testController::class, 'index']);
-
 Route::get('/menu', [MenuController::class, 'index']);
 Route::get('/menu/detail', [MenuController::class, 'detail']);
 
