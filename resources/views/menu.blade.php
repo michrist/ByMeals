@@ -297,24 +297,13 @@ body {
               <div class="tab-content" >
                 <div id="all" class="container tab-pane active"><br>
                     <div class="row">
+                        @foreach ($mpasis as $mpasi )
                         <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            </div>
-                        </div>
+                        @endforeach
                         </div>
                     </div>
                 <div id="breakfast" class="container tab-pane fade"><br>

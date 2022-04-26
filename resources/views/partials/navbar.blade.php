@@ -30,6 +30,7 @@
                 </div>
             </div>
         </div>
+        <a  href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><i class="fas fa-user-circle" style="font-size: 36px"></i></a>
         <div class="nav-item dropdown">
             <a style="color:white" href="#" class="nav-link dropdown-toggle {{ ($title === "Profile") ? 'active' : '' }}" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
             <div class="dropdown-menu m-0">
@@ -40,7 +41,7 @@
                 </form>
             </div>
         </div>
-        <a  href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><i class="material-icons" style="font-size:36px">person_outline</i></a>
+
         {{-- <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle btn btn-primary py-2 px-4" data-bs-toggle="dropdown">{{ Auth::user()->name }} </a>
             <div class="dropdown-menu m-0">
