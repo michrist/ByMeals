@@ -47,7 +47,7 @@ select:focus {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1em;
-    padding: 2rem 0;
+    padding: 1rem 0;
     text-align: center; }
   .tabs [class^="tab"] [type="radio"],
   .tabs [class*=" tab"] [type="radio"] {
@@ -162,12 +162,12 @@ body {
 }
 
 .card-container {
-    padding: 100px 0px;
+    padding: 10px 0px;
     -webkit-perspective: 1000;
     perspective: 1000;
 }
 .profile-card-2 {
-    width: 500px;
+    width: 350px;
     background-color: #FFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
     background-position: center;
@@ -228,13 +228,36 @@ body {
 .profile-card-2:hover .profile-icons {
     right: 40px;
 }
+::-webkit-input-placeholder {
+   text-align: center;
+}
 
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+}
 
 </style>
-<div class="text-center mt-4">
-    <h1 style="color: #000638">Rekomendasi Menu MP-ASI</h1>
-    <h6>Berbagai menu MP-ASI untuk si buah hati</h6>
+<div class="text-center mt-5">
+    <h1 style="color: #000638; font-size:66px">Rekomendasi Menu MP-ASI</h1>
+    <h6 class="mt-3" style="font-size:30px; color: #605C59">Berbagai menu MP-ASI untuk si buah hati</h6>
 </div>
+<div class="input-group container mt-5 d-flex justify-content-center">
+    <div class="form-outline" style="width: 30%">
+      <input type="search" style="background-color: #FFD600; border-top-left-radius: 15px; border-bottom-left-radius: 15px;" id="form1" class="form-control" placeholder="Pilih MP-ASI Favorit">
+
+    </div>
+    <button type="button" class="btn btn-primary" style="background-color: #FFD600; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
+      <i class="fas fa-search" style="color: black"></i>
+    </button>
+  </div>
 {{-- <div class="justify-content-center"> --}}
     {{-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -249,42 +272,160 @@ body {
 
 {{-- </div> --}}
 
-<div class="container">
+<div class="container mt-5">
     <div class="tabs">
         <div class="tab-2">
-          <label for="tab2-1" style="color: #ffb800">Jadwal Makan</label>
+          <label for="tab2-1" style="color: #ffb800; font-size:30px">Jadwal Makan</label>
           <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
-          <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
-                    <div class="profile-name">JOHN DOE</div>
-                    <div class="profile-username">@johndoesurname</div>
+          <div>
+            <ul class="nav" role="tablist" style="margin-left: 500px">
+                <li class="nav-item">
+                  <a class="nav-link active" data-bs-toggle="tab" href="#all">All</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#breakfast">Breakfast</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#lunch">Lunch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#dinner">Dinner</a>
+                </li>
+              </ul>
+              <div class="tab-content" >
+                <div id="all" class="container tab-pane active"><br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
-                    <div class="profile-name">JOHN DOE</div>
-                    <div class="profile-username">@johndoesurname</div>
+                <div id="breakfast" class="container tab-pane fade"><br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
                     </div>
+                  <h3>Menu 1</h3>
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
-                <div class="col-md-6">
-                    <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
-                    <div class="profile-name">JOHN DOE</div>
-                    <div class="profile-username">@johndoesurname</div>
-                    </div>
+                <div id="lunch" class="container tab-pane fade"><br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        </div>
+                  <h3>Menu 2</h3>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                 </div>
+                <div id="dinner" class="container tab-pane fade"><br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        </div>
+                  <h3>Menu 3</h3>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                 </div>
+              </div>
             </div>
-        </div>
+
+          </div>
+
+
+
+
+          {{-- <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                    <div class="profile-name">JOHN DOE</div>
+                    <div class="profile-username">@johndoesurname</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                    <div class="profile-name">JOHN DOE</div>
+                    <div class="profile-username">@johndoesurname</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                    <div class="profile-name">JOHN DOE</div>
+                    <div class="profile-username">@johndoesurname</div>
+                    </div>
+                </div>
+                </div>
+            </div> --}}
+
 
 
 
         <div class="tab-2">
-          <label for="tab2-2" style="color: #ffb800">Umur Bayi</label>
+          <label for="tab2-2" style="color: #ffb800; font-size:30px">Umur Bayi</label>
           <input id="tab2-2" name="tabs-two" type="radio">
           <div>
-            <ul class="nav nav-tabs" role="tablist" style="margin-left: 500px">
+            <ul class="nav" role="tablist" style="margin-left: 500px">
                 <li class="nav-item">
                   <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
                 </li>
@@ -298,35 +439,73 @@ body {
               <div class="tab-content" >
                 <div id="home" class="container tab-pane active"><br>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-                            </div>
-                        </div>
+                    <div class="col-md-4">
+                        <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                        <div class="profile-name">JOHN DOE</div>
+                        <div class="profile-username">@johndoesurname</div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-md-4">
+                        <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                        <div class="profile-name">JOHN DOE</div>
+                        <div class="profile-username">@johndoesurname</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                        <div class="profile-name">JOHN DOE</div>
+                        <div class="profile-username">@johndoesurname</div>
+                        </div>
+                    </div>
+                    </div>
+                    <h3>Menu Home</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    </div>
                 <div id="menu1" class="container tab-pane fade"><br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                    </div>
                   <h3>Menu 1</h3>
                   <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
                 <div id="menu2" class="container tab-pane fade"><br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">JOHN DOE</div>
+                            <div class="profile-username">@johndoesurname</div>
+                            </div>
+                        </div>
+                        </div>
                   <h3>Menu 2</h3>
                   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                 </div>
@@ -335,9 +514,8 @@ body {
 
           </div>
         </div>
-      </div>
     </div>
-</div>
+
 <script>
   $('.fa.fa-expand').on("click", function(){
   $('.card').toggleClass("expand");
