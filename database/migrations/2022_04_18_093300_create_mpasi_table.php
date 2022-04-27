@@ -14,19 +14,16 @@ class CreateMpasiTable extends Migration
     public function up()
     {
         Schema::create('mpasi', function (Blueprint $table) {
-
             $table->increments('id');
             $table->char('nama', 30);
-            $table->integer('age');
+            $table->integer('umur');
             $table->text('bahan');
             $table->text('kandungan');
             $table->text('deskripsi');
-            $table->text('manfaat');
             $table->text('prosedur');
             $table->text('durasi');
             $table->text('waktu');
-            $table->char('kategori', 20);
-            $table->char('gambar', 255);
+            $table->mediumText('gambar');
             $table->timestamps();
         });
     }
