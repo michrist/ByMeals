@@ -218,14 +218,15 @@ h1.heading {
             <div class="content">
                 <div class="container">
                     <div class="row">
+                        @foreach ($menu as $m )
                         <div class="col-xs-12 col-sm-4">
-                            <div class="card1">
+                            <div class="card1" onclick="location.href='/menu/detail/{{ $m->id }}';">
                                 <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
-                                <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                <img src="{{ $m->gambar }}" />
                               </a>
                                 <div class="card-content">
                                     <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html"> Material Design Responsive Menu
+                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html"> {{ $m->nama }}
                                       </a>
                                     </h4>
                                 </div>
@@ -233,16 +234,17 @@ h1.heading {
                                    <div class="row">
                                        <div class="col">
                                         <i class="fas fa-stopwatch"></i>
-                                           <span style="font-size: 1.25rem">30 min</span>
+                                           <span style="font-size: 1.25rem"> 30 min</span>
                                        </div>
                                        <div class="col">
                                         <i class="fas fa-utensils"></i>
-                                          <span style="font-size: 1.25rem">Breakfast</span>
+                                          <span style="font-size: 1.25rem;text-transform:capitalize"> {{ $m->waktu }}</span>
                                        </div>
                                    </div>
                                 </div> <br>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
