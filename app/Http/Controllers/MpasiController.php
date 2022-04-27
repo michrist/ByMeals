@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mpasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MpasiController extends Controller
 {

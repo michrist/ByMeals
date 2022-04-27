@@ -12,9 +12,11 @@ class MenuController extends Controller
     }
     public function detail($id){
         $mpasi = Mpasi::find($id);
+        $menu = Mpasi::all()->take(3);
         return view('menudetail', [
             'title'=>'Menu',
-            'mpasi'=>$mpasi
+            'mpasi'=>$mpasi,
+            'menu'=>$menu
         ]);
     }
 }
