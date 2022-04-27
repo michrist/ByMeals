@@ -92,5 +92,5 @@ Route::get('/register', function () {
 });
 Route::get('/test', [testController::class, 'index']);
 Route::get('/menu', [MpasiController::class, 'show']);
-Route::get('/menu/detail', [MenuController::class, 'detail']);
+Route::get('/menu/detail/{id}', [MenuController::class, 'detail']);
 

@@ -298,7 +298,7 @@ body {
                 <div id="all" class="container tab-pane active"><br>
                     <div class="row">
                         @foreach ($mpasis as $mpasi )
-                        <div class="col-md-4">
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->id }}';">
                             <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
                             <div class="profile-name">{{ $mpasi->nama }}</div>
                             </div>
