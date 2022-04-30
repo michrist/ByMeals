@@ -17,17 +17,17 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{ ($title === "Blog") ? 'active' : '' }}" data-bs-toggle="dropdown">Blog</a>
                 <div class="dropdown-menu m-0">
-                    <a href="/blog" class="dropdown-item">Blog & Articles</a>
+                    <a href="/allpost" class="dropdown-item">Blog & Articles</a>
                     <a href="/create" class="dropdown-item">Add Post</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Menu</a>
-                <div class="dropdown-menu m-0">
+                <a href="/menu" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Menu</a>
+                {{-- <div class="dropdown-menu m-0">
                     <a href="booking.html" class="dropdown-item">Booking</a>
                     <a href="team.html" class="dropdown-item">Our Team</a>
                     <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                </div>
+                </div> --}}
             </div>
         </div>
         <a  href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><i class="fas fa-user-circle" style="font-size: 36px"></i></a>

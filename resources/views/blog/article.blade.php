@@ -43,10 +43,11 @@
                 <div class="card bg-light">
                     <div class="card-body">
                         <!-- Comment form-->
-                       @if (Auth::check())
+                       {{-- @if (Auth::check())
                        <form class="mb-4" method="POST" action="/comment/{{ $posts->id }}">
                         @csrf
-                        <textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!" name="comment"></textarea>
+
+                        <textarea  class="form-control" rows="3" placeholder="Join the discussion and leave a comment!" name="comment"></textarea>
                         <button type="submit" class="btn btn-warning mt-3">Post</button>
                         </form>
                         @else
@@ -55,19 +56,21 @@
                             <textarea readonly class="form-control" rows="3" placeholder="Please login to join the discussion" name="comment"></textarea>
                             <a href="/login" class="btn btn-warning mt-3">Login</a>
                             </form>
-                       @endif
+                       @endif --}}
+                       <livewire:create-comment></livewire:create-comment>
                         <!-- Comment with nested comments-->
 
-                        <div class="d-flex mb-3">
+                        <div class="d-flex mb-3 mt-3">
                             <!-- Parent comment-->
 
                             <h3>Comments</h3>
 
 
                         </div>
+                         <livewire:list-comment>
 
                         <!-- Single comment-->
-                       @if ($comments->count())
+                       {{-- @if ($comments->count())
                        @foreach ($comments as $comment )
                        <div class="d-flex">
                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
@@ -82,7 +85,7 @@
                         <div class="fw-bold">No comment found</div>
 
                         </div>
-                       @endif
+                       @endif --}}
                         {{-- <div class="d-flex">
                             <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                             <div class="ms-3">
@@ -126,10 +129,6 @@
                 </div>
             </div>
             <!-- Side widget-->
-            <div class="card mb-4">
-                <div class="card-header">Side Widget</div>
-                <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
-            </div>
         </div>
     </div>
 </div>

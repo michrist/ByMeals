@@ -20,6 +20,7 @@ return array(
     'App\\Http\\Controllers\\RegisterController' => $baseDir . '/app/Http/Controllers/RegisterController.php',
     'App\\Http\\Controllers\\TestController' => $baseDir . '/app/Http/Controllers/TestController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
+    'App\\Http\\Livewire\\FavoriteInde' => $baseDir . '/app/Http/Livewire/FavoriteInde.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => $baseDir . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
@@ -36,10 +37,7 @@ return array(
     'App\\Http\\Requests\\UpdatePostModelRequest' => $baseDir . '/app/Http/Requests/UpdatePostModelRequest.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Comment' => $baseDir . '/app/Models/Comment.php',
-<<<<<<< HEAD
-=======
     'App\\Models\\Favorit' => $baseDir . '/app/Models/Favorit.php',
->>>>>>> a033822edbcb87b928877ca69c3e5d122e07091d
     'App\\Models\\Jadwal' => $baseDir . '/app/Models/Jadwal.php',
     'App\\Models\\Mpasi' => $baseDir . '/app/Models/Mpasi.php',
     'App\\Models\\PostModel' => $baseDir . '/app/Models/PostModel.php',

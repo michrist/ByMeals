@@ -142,6 +142,12 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Blog</h5>
     <h1 class="mb-5">Blog & Artikel</h1>
 </div>
+@if (session()->has('successs'))
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="container">
     <h3>Categories</h3>
     <p>Pilih artikel berdasarkan kategori</p>

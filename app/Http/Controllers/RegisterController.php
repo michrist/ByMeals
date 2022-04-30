@@ -16,7 +16,7 @@ class RegisterController extends Controller
    }
    public function show($id){
     return view('profile', [
-        'title' => "Register",
+        'title' => "Profile",
         'user' => User::find($id)
     ]);
 }
@@ -50,6 +50,7 @@ class RegisterController extends Controller
         $user->gender = $request->gender;
         $user->pekerjaan = $request->pekerjaan;
         $user->alamat = $request->alamat;
+        $user->image = $request->image;
         $user->save();
          $request->session()->flash('success', 'Your profile has been updated');
          return redirect('/');

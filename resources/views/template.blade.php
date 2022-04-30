@@ -54,6 +54,7 @@
 }
 
     </style>
+    @livewireStyles
 </head>
 
 <body>
@@ -147,7 +148,7 @@
             }
         })
     </script>
-
+@livewireScripts
 </body>
 
 </html>

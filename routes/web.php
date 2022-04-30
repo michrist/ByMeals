@@ -78,8 +78,8 @@ Route::get('/blog', [PostModelController::class, 'index']);
 Route::post('/add', [DashboardPostController::class, 'store']);
 Route::get('/edit/{id}', [DashboardPostController::class, 'edit']);
 Route::put('/update/{id}', [DashboardPostController::class, 'update']);
-Route::post('/comment/{id}', [CommentController::class, 'store']);
-
+// Route::post('/comment/{id}', [CommentController::class, 'store']);
+// Route::post('/comment/{id}', App\Http\Livewire\CreateComment::class);
 
 // Register and Login
 Route::get('/login', [LoginController::class, 'index'])->name('login') -> middleware('guest');

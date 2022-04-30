@@ -23,7 +23,7 @@ class PostModelController extends Controller
 
         'judul'=>'All Posts',
         'title'=>'Blog',
-        'posts'=>$posts->get()
+        'posts'=>$posts
         ]);
     }
     // public function show($id){

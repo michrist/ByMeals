@@ -17,5 +17,4 @@ class FavoritController extends Controller
         }
         return view ('favorituser',compact(['favorit']) );
     }
-
 }

@@ -351,14 +351,34 @@ h1 {
             <div class="title">
                 <h1>Upload your profile picture</h1>
             </div>
-
+            {{-- <form action="/user/update/{{ $user->id }}" method="POST" enctype="multipart/form-data">
             <div class="dropzone">
-                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                <input type="file" class="upload-input" />
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" id="preview-image"/>
+                <input type="file" class="form-control" name="image" />
             </div>
 
             <button type="button" class="btn btn-warning" name="uploadbutton">Upload file</button>
+            </form> --}}
+            <form method="POST" enctype="multipart/form-data" id="image-upload-preview" action="/user/update/{{ $user->id }}" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="file" name="image" placeholder="Choose image" id="image">
+                        @error('name')
+                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
 
+                <div class="col-md-12 mb-2">
+                    <img id="preview-image" src="http://100dayscss.com/codepen/upload.svg"
+                        alt="preview image" style="max-height: 250px;">
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
         </div>
     </div>
     <!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
@@ -383,5 +403,16 @@ h1 {
 
   // Get the element with id="defaultOpen" and click on it
   document.getElementById("defaultOpen").click();
+  </script>
+   <script type="text/javascript">
+    $('#image').change(function(){
+
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      $('#preview-image').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(this.files[0]);
+
+   });
   </script>
 @endsection

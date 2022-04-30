@@ -52,6 +52,9 @@
             <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
             </div>
         </div>
+        <div class="col-2 d-flex justify-content-end">
+            <livewire:favorite-inde></livewire:favorite-inde>
+        </div>
         </div>
     </div>
 </div>
