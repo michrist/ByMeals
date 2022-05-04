@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -15,10 +16,14 @@ class RegisterController extends Controller
         ]);
    }
    public function show($id){
-    return view('profile', [
-        'title' => "Profile",
-        'user' => User::find($id)
-    ]);
+    if(Auth::check() && auth()->user()->id=$id){
+        return view('profile', [
+            'title' => "Profile",
+            'user' => User::find($id)
+        ]);
+    } else{
+        return abort('403');
+    }
 }
    public function store(Request $request){
     $validatedData=  $request->validate([

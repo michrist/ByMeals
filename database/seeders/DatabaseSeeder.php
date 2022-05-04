@@ -73,5 +73,7 @@ class DatabaseSeeder extends Seeder
             'waktu'=>'lunch',
             'gambar'=>'https://cdn.discordapp.com/attachments/879961214334156842/968539268542767184/bubur_merah.jpg'
         ]);
+
     }
+
 }

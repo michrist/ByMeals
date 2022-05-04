@@ -94,10 +94,10 @@
               <div class="wave" id="wave4"></div>
             </div> --}}
             <ul class="social_icon">
-              <li><a href=""><i class="fa fa-facebook"></i></a></li>
-              <li><a href=""><i class="fa fa-twitter"></i></a></li>
-              <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-              <li><a href=""><i class="fa fa-github"></i></a></li>
+              <li><a href=""><i class="fas fa-facebook"></i></a></li>
+              <li><a href=""><i class="fas fa-twitter"></i></a></li>
+              <li><a href=""><i class="fas fa-linkedin"></i></a></li>
+              <li><a href=""><i class="fas fa-github"></i></a></li>
             </ul>
             <ul class="menu" style="display: flex; justify-content:space-between" >
               <li><a href="">Home</a></li>

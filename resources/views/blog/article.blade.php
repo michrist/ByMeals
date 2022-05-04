@@ -46,7 +46,6 @@
                        {{-- @if (Auth::check())
                        <form class="mb-4" method="POST" action="/comment/{{ $posts->id }}">
                         @csrf
-
                         <textarea  class="form-control" rows="3" placeholder="Join the discussion and leave a comment!" name="comment"></textarea>
                         <button type="submit" class="btn btn-warning mt-3">Post</button>
                         </form>
@@ -57,7 +56,10 @@
                             <a href="/login" class="btn btn-warning mt-3">Login</a>
                             </form>
                        @endif --}}
-                       <livewire:create-comment></livewire:create-comment>
+                       @php
+                           $posts = $posts->id ;
+                       @endphp
+                       <livewire:create-comment :posts="$posts"></livewire:create-comment>
                         <!-- Comment with nested comments-->
 
                         <div class="d-flex mb-3 mt-3">
@@ -67,7 +69,7 @@
 
 
                         </div>
-                         <livewire:list-comment>
+                         <livewire:list-comment :posts="$posts">
 
                         <!-- Single comment-->
                        {{-- @if ($comments->count())
@@ -83,7 +85,6 @@
                        @else
                        <div class="ms-3 mb-2">
                         <div class="fw-bold">No comment found</div>
-
                         </div>
                        @endif --}}
                         {{-- <div class="d-flex">

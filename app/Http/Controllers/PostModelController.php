@@ -49,7 +49,7 @@ class PostModelController extends Controller
     }
     public function test(){
         $categories = Category::all();
-        $posts = PostModel::all();
+        $posts = PostModel::latest()->get();
         return view('blog.home', [
             'title'=>'Blog',
             'categories'=>$categories,

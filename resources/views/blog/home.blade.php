@@ -187,7 +187,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
                 {!! Str::limit($post->body, 250) !!}
               </p>
               <br>
-              <a href="/article/{{ $post->id }}" class="mt-auto btn btn-primary  ">Read More</a>
+              <a href="/article/{{ $post->id }}" class="mt-auto btn btn-primary" wire:click="getComment({{ $post->id }})">Read More</a>
             </div>
           </div>
         <!-- End of carousel -->
