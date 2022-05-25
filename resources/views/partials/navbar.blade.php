@@ -65,12 +65,12 @@
                 </div>
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ ($title === "Menu") ? 'active' : '' }}" data-bs-toggle="dropdown">Menu</a>
-                <div class="dropdown-menu m-0">
+                <a href="/menu" class="nav-link nav-item {{ ($title === "Menu") ? 'active' : '' }}" data-bs-toggle="dropdown">Menu</a>
+                {{-- <div class="dropdown-menu m-0">
                     <a href="booking.html" class="dropdown-item">Booking</a>
                     <a href="team.html" class="dropdown-item">Our Team</a>
                     <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                </div>
+                </div> --}}
             </div>
         </div>
         <a href="/login" class="btn btn-primary py-2 px-4">Login</a>
