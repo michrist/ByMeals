@@ -14,7 +14,7 @@ class CreateMpasiTable extends Migration
     public function up()
     {
         Schema::create('mpasi', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('idmpasi');
             $table->char('nama', 30);
             $table->integer('umur');
             $table->text('bahan');
