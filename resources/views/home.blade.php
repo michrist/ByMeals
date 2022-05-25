@@ -6,62 +6,15 @@
             <div class="col-lg-6 text-center text-lg-start">
                 <h1 class="display-3 text-white animated slideInLeft">Pencernaan Bayi Berkembang<br>Mama pun Tenang</h1>
                 <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Lihat Sekarang</a>
             </div>
             <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                <img class="img-fluid" src="img/hero.png" alt="">
+                <img class="img-fluid" src="img/piring-muter.png" alt="">
             </div>
         </div>
     </div>
 </div>
 </div>
 <!-- Navbar & Hero End -->
-
-
-<!-- Service Start -->
-<div class="container-xxl py-5">
-<div class="container">
-    <div class="row g-4">
-        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="service-item rounded pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
-                    <h5>Master Chefs</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="service-item rounded pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
-                    <h5>Quality Food</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="service-item rounded pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
-                    <h5>Online Order</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="service-item rounded pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-headset text-primary mb-4"></i>
-                    <h5>24/7 Service</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!-- Service End -->
 
 
 <!-- About Start -->
@@ -71,16 +24,16 @@
         <div class="col-lg-6">
             <div class="row g-3">
                 <div class="col-6 text-start">
-                    <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/about-1.jpg">
+                    <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/Puree-Alpukat.jpg">
                 </div>
                 <div class="col-6 text-start">
-                    <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="img/about-2.jpg" style="margin-top: 25%;">
+                    <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="img/bayam-jagung.jpeg" style="margin-top: 25%;">
                 </div>
                 <div class="col-6 text-end">
-                    <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="img/about-3.jpg">
+                    <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="img/kentang-salmon.jpg">
                 </div>
                 <div class="col-6 text-end">
-                    <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="img/about-4.jpg">
+                    <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="img/sup-kentang.jpg">
                 </div>
             </div>
         </div>
