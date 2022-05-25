@@ -5,8 +5,17 @@
     --dark: #0F172B;
 }
 
+.kotak {
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-top: 100px;
+    margin-right: 10px;
+}
+
 .ff-secondary {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Merriweather';
+    font-weight: 1000;
+    font-size: 48;
 }
 
 .fw-medium {
