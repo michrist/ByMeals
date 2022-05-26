@@ -15,7 +15,7 @@ class CreateMpasiTable extends Migration
     {
         Schema::create('mpasi', function (Blueprint $table) {
             $table->increments('idmpasi');
-            $table->char('nama', 30);
+            $table->text('nama', 100);
             $table->integer('umur');
             $table->text('bahan');
             $table->text('kuantitas');
@@ -26,6 +26,7 @@ class CreateMpasiTable extends Migration
             $table->text('waktu');
             $table->mediumText('gambar');
             $table->timestamps();
+            $table->integer('kategorirentang');
         });
     }
 

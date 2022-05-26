@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MpasiController;
+use App\Http\Controllers\IndexController;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\PostModel;
@@ -25,11 +26,7 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'title'=>'Home'
-    ]);
-});
+Route::get('/',[IndexController::class, 'viewMenu']);
 Route::get('/about', function () {
     return view('about', [
         'title'=>'About'

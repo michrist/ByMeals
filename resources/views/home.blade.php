@@ -76,36 +76,19 @@
         <h1 class="text-center" >Rekomendasi MP-ASI</h1>
         <p class="text-center mb-4" style="font-size:1.3rem">Berbagai menu MP-ASI untuk si buah hati</p>
         <div class="row">
+            @foreach ($menu as $m)
             <div class="col-6">
                 <div class="row">
-                    <div class="col-6">
-                        <img width="250px" height="330px" src="{{asset('img/bayam-jagung.jpeg')}}" alt="" style="border-radius: 10px">
+                    <div class="col-6 my-auto">
+                        <img width="250px" height="250px" src="{{$m->gambar}}" alt="" style="border-radius: 10px">
                     </div>
                     <div class="col-5">
-                        <h3>Crochet Projects for Noodle Lovers</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim </p>
-                        <div class="row">
-                            <div class="col-5" style="font-size: 0.8rem">Wade Warr</div> 
-                            <div class="col-7" style="font-size: 0.8rem">12 November 2021</div>
-                        </div>
+                        <h3>{{$m->nama}}</h3>
+                        <p>{{$m->deskripsi}} </p>
                     </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-6">
-                        <img width="250px" height="330px" src="{{asset('img/bayam-jagung.jpeg')}}" alt="" style="border-radius: 10px">
-                    </div>
-                    <div class="col-5">
-                        <h3>Crochet Projects for Noodle Lovers</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim </p>
-                        <div class="row">
-                            <div class="col-5" style="font-size: 0.8rem">Wade Warr</div> 
-                            <div class="col-7" style="font-size: 0.8rem">12 November 2021</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -132,7 +115,7 @@
     <div class="col-md-6 bg-warning d-flex align-items-center">
         <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
             <div class="" style="color: #000638">
-                <h1 class="text-white mb-4">Planner</h1> 
+                <h1 class="text-white mb-4">Planner</h1>
                  <h1 class="fw-bold" style="font-size:60px;margin-top:-20px">Best Free Meal Planning App</h1>
             </div>
             <p style="font-size:1.2rem;color:#605C59">Plan your baby’s meals for the week all while barely lifting a finger.</p>
@@ -166,28 +149,16 @@
     <p class="text-center  mb-5">Deretan artikel tentang fakta, MP-ASI, dan tips untuk bayi</p>
     <div class="container">
         <div class="row">
+            @foreach ($artikel as $a)
             <div class="col-6">
                 <img class="mb-3" height="500px" width="532px"  src="{{asset('img/baby-eating.jpg')}}" alt="">
-                <a href="" class="btn btn-primary" style="background: white;color:black;border:1px solid black">Read More</a>
-                <h1>Why MPASI?</h1>
+                <a href="/article/{{$a->id}}" class="btn btn-primary" style="background: white;color:black;border:1px solid black">Read More</a>
+                <h1>{{$a->title}}</h1>
                 <p>
-                    The provision of complementary feeding (MPASI) or formula milk is 
-                    one of the important periods in the first 1000 days of a child's life. Research shows that 
-                    during this transition period, many babies experience growth failure due to poor quality complementary foods. 
-                    This period is also a critical moment for your little one to learn to eat.
+                    {!! Str::limit($a->body, 350) !!}
                 </p>
             </div>
-            <div class="col-6">
-                <img class="mb-3" height="500px" width="532px"  src="{{asset('img/buah_naga.jpg')}}" alt="">
-                <a href="" class="btn btn-primary" style="background: white;color:black;border:1px solid black">Read More</a>
-                <h1>Why MPASI?</h1>
-                <p>
-                    The provision of complementary feeding (MPASI) or formula milk is 
-                    one of the important periods in the first 1000 days of a child's life. Research shows that 
-                    during this transition period, many babies experience growth failure due to poor quality complementary foods. 
-                    This period is also a critical moment for your little one to learn to eat.
-                </p>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

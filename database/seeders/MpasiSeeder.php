@@ -61,7 +61,7 @@ class MpasiSeeder extends Seeder
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968883222593282129/Puree_Alpukat_Kembang_Kol1.jpg'
         ]);
-        "Mpasi::create([
+        Mpasi::create([
             'nama'=>'Bubur Sayur',
             'umur'=>'10',
             'bahan'=>'Beras---Air---Wortel---Bayam',
@@ -71,8 +71,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Masak beras sampai menjadi bubur---2. Langkah Kedua---Masukan wortel dan bayam yang sudah diblender, aduk merata---3. Langkah Ketiga---Untuk tambahan protein, bisa tambahkan ikan salmon atau dada ayam yang dihaluskan',
             'durasi'=>'PREP TIME---10 min---COOK TIME---20 min---VEGETABLE',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968884722749018142/bubur_sayur.jpeg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree Alpukat dan Ubi Jalar',
             'umur'=>'13',
             'bahan'=>'Ubi jalar, potong dadu---Alpukat---Air',
@@ -82,8 +82,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Pindahkan ubi jalar ke dalam wadah untuk dimasak bersama dengan air dan rebus selama 25 menit. Saring ubi jalar dari air dan biarkan dingin---2. Langkah Kedua---Masukkan buah alpukat ke dalam blender dan tambahkan secangkir air---3. Langkah Ketiga---Tambahkan ubi jalar rebus ke dalam blender berisi buah alpukat, lalu haluskan---4. Langkah Keempat---Tuangkan lebih banyak air jika diperlukan, hingga mendapatkan konsistensi puree yang diinginkan',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968886272879919154/Puree_Alpukat_dan_Ubi_Jalar.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Sup Labu',
             'umur'=>'14',
             'bahan'=>'Labu kuning---Air---Kayu manis',
@@ -93,8 +93,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Haluskan labu dengan blender---2. Langkah Kedua---Jika labu sudah halus, masukkan ke dalam panci dan tambahkan sedikit air dan ¼ sdt kayu manis untuk menambah rasa---3. Langkah Ketiga---Panaskan sampai mendidih, angkat---4. Langkah Keempat---Tunggu sampai tidak terlalu panas dan sup labu kuning siap disantap Si Kecil',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---VEGETABLE',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968887501882269706/Sup_Labu.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree Wortel dan Alpukat',
             'umur'=>'17',
             'bahan'=>'Wortel, potong dadu---Alpukat---Air',
@@ -104,8 +104,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Rebus wortel dalam air selama 20 menit dengan api sedang---2. Langkah Kedua---Dinginkan wortel di dalam air rebusannya---3. Langkah Ketiga---Masukkan alpukat ke dalam blender, tambahkan wortel dan sedikit rebusannya untuk dihaluskan---4. Langkah Keempat---Haluskan hingga mencapai konsistensi yang diinginkan---5. Langkah Kelima---Apabila telah matang siap disajikan!',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968893663851708427/wortel_apukat.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree Kentang Wortel',
             'umur'=>'18',
             'bahan'=>'Nasi putih---Seledri---Wortel---Kentang---ASI',
@@ -115,8 +115,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Cuci bersih seledri, wortel, dan kentang---2. Langkah Kedua---Masak nasi putih hingga menjadi bubur, lalu tambahkan seledri---3. Langkah Ketiga---Kukus wortel dan kentang sampai empuk. Setelah matang, saring bubur, wortel dan kentang---4. Langkah Keempat---Campur semua bahan dengan susu formula atau ASI sesuai selera. Aduk hingga rata',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---POTATO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968896162302165083/wortel_kentang.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree Alpukat dan Pisang',
             'umur'=>'21',
             'bahan'=>'Pisang---Alpukat',
@@ -126,8 +126,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Masukkan buah alpukat dan pisang ke dalam mangkuk, lalu haluskan dengan menggunakan garpu---2. Langkah Kedua---Tambahkan sedikit air atau susu formula jika ingin mendapatkan konsistensi MPASI bayi 6 bulan yang lebih halus---3. Langkah Ketiga---Siap disajikan!',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968896819511853096/alpukat_pisang.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Sereal Salmon',
             'umur'=>'22',
             'bahan'=>'Oat---Daging Ikan Salmon---Air matang---Bawang putih, geprek---Jeruk nipis, peras---Seledri',
@@ -137,8 +137,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Lumuri ikan salmon dengan air jeruk nipis selama 10 menit---2. Langkah Kedua---Kukus salmon yang telah dilumuri dengan air jeruk nipis bersama bawang putih geprek dan seledri---3. Langkah Ketiga---Kukus selama 30 menit---4. Langkah Keempat---Selagi menunggu salmon siap, masak oat hingga matang---5. Langkah Kelima---Campur salmon dan oat dalam satu wadah---6. Langkah Keenam---Blender salmon dan oat hingga lunak, kemudian saring---7. Langkah Ketujuh---Siap disajikan',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---FISH',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968898172653010974/sereal_salmon.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Nasi Tim Ikan Dori',
             'umur'=>'25',
             'bahan'=>'Ikan dori---Beras---Bawang bombay---Jahe---Seledri---Air',
@@ -148,8 +148,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Rebus air dan masak beras putih. Aduk hingga nasi setengah lembek---2. Langkah Kedua---Masukkan ikan dori, bawang bombay yang sudah dicincang, dan jahe secukupnya untuk menghilangkan amis pada ikan---3. Langkah Ketiga---Aduk hingga beras menjadi bubur ikan yang tercampur rata. Masukkan seledri untuk menambah aroma---4. Langkah Keempat---Aduk hingga kekentalan bubur dirasa pas. Biarkan setengah dingin kemudian saring---5. Langkah Kelima---Sajikan selagi hangat',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---FISH',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968899994578993172/ikan_dori.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Jagung Manis, Tahu, dan Telur',
             'umur'=>'7',
             'bahan'=>'Jagung manis pipil---Tahu putih---Telur---Bawang putih',
@@ -159,8 +159,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Rebus telur sampai matang, kupas dan sisihkan (ambil 25 gram)---2. Langkah Kedua---Kukus jagung manis pipil dan juga tahu---3. Langkah Ketiga---Tumis bawang putih dan campurkan jagung manis, tahu, dan telur---4. Langkah Keempat---Blender hingga halus dan saring. Sajikan',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---CORN',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968900880105627699/jagung_tahu_telur.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Sup Krim Kentang',
             'umur'=>'8',
             'bahan'=>'Kentang kecil, haluskan---Jagung manis, haluskan---Labu siam, haluskan---Daging ayam cincang, haluskan---Kembang kol, cincang halus---Daun bayam, cincang halus---Seledri, cincang halus---Bawang bombay, cincang halus---Bawang putih---Tepung terigu---Susu UHT---Kaldu---Keju parut',
@@ -170,8 +170,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Tumis bawang bombay dan putih dengan unsalted butter hingga wangi---2. Langkah Kedua---Masukan daging ayam cincang, aduk sampai daging ayam berubah warna---3. Langkah Ketiga---Tambahkan tepung terigu, aduk cepat lalu masukan susu UHT. Aduk terus agar tepung terigu bergerindil---4. Langkah Keempat---Tambahkan kaldu, masukkan kentang dan labu siam, aduk aduk sampai susu dan kaldu menyusut---5. Langkah Kelima---Masukan jagung manis, daun bayam, dan seledri. Masak hingga semua bahan matang---6. Langkah Keenam---Apabila bahan belum matang dan cairan sudah menyusut dapat ditambah air sampai kekentalan yang diinginkan---7. Langkah Ketujuh---Masukan keju untuk bayi sesaat sebelum diangkat. Saring bila diperlukan---8. Langkah Kedelapan---Sajikan!',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---POTATO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968902464264880168/sup_kentang.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree Alpukat dan Tahu',
             'umur'=>'11',
             'bahan'=>'Tahu---Alpukat---Minyak zaitun---Jeruk nipis',
@@ -181,8 +181,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Haluskan buah alpukat dengan menggunakan garpu---2. Langkah Kedua---Campurkan buah alpukat dan tofu ke dalam wadah. Tambahkan sedikit perasan jeruk nipis---3. Langkah Ketiga---Haluskan semua bahan dengan garpu atau gunakan blender untuk mendapatkan konsistensi yang lebih lembut---4. Langkah Keempat---Siap disantap!',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968903492519485470/alpukat_tahu.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Bubur Hati Ayam Edamame',
             'umur'=>'12',
             'bahan'=>'Nasi putih---Hati ayam, kukus---Brokoli---Edamame---Bawang putih',
@@ -192,8 +192,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Campurkan dengan 3 sdm nasi putih dan tambahkan air secukupnya. Masak hingga teksturnya menjadi bubur dan pisahkan---2. Langkah Kedua---Kukus edamame dan brokoli sampai empuk---3. Langkah Ketiga---Tumis bawang putih dan masukkan potongan hati ayam hingga matang---4. Langkah Keempat---Blender semua bahan kecuali bubur nasi hingga lembut dan saring---5. Langkah Kelima---Sajikan lengkap bubur nasi yang sudah disaring dengan hati dan sayuran',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968904684251263036/hati_ayam_edamame.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree Nanas Segar',
             'umur'=>'15',
             'bahan'=>'Potongan nanas segar---Yoghurt plain',
@@ -203,8 +203,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Blender potongan nanas sampai jadi halus---2. Langkah Kedua---Tambahkan yogurt, kembali blender sampai tercampur rata---3. Langkah Ketiga---Bila masih terlalu asam, tambahkan pisang ke dalamnya---4. Langkah Keempat---Sajikan',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968906103209480232/nanas_segar.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Sup Kentang Daging Kacang Merah',
             'umur'=>'16',
             'bahan'=>'Daging sapi giling---Kentang---Wortel---Kacang merah---Bawang putih---Air---Keju---Butter---Daun seledri',
@@ -214,8 +214,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Iris dan tumis bawang merah putih kemudian sisihkan---2. Langkah Kedua---Didihkan air di panci. Setelah mendidih, masukkan kacang merah lalu tunggu hingga empuk---3. Langkah Ketiga---Setelah itu, masukkan kentang yang sudah dipotong-potong, lalu tunggu hingga setengah empuk---4. Langkah Keempat---Kemudian, masukkan potongan wortel dan daging giling hingga matang---5. Langkah Kelima---Sebelum api dimatikan, masukkan cincangan daun seledri, bawang merah, dan bawang putih yang sebelumnya sudah ditumis---6. Langkah Keenam---Tunggu air didihan hingga sedikit surut---7. Langkah Ketujuh---Jika sudah tidak terlalu panas, blender semua bahan hingga hancur. Jika sudah, sajikan---8. Langkah Kedelapan---Taburkan keju atau unsalted butter agar lebih gurih',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---POTATO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968907655135506502/bubur_hati_ayam.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree Buah Naga',
             'umur'=>'18',
             'bahan'=>'Naga merah---Biskuit bayi',
@@ -225,8 +225,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Dalam wadah lumatkan biskuit dengan air secukupnya---2. Langkah Kedua---Masukkan potongan buah naga ke dalam wadah---3. Langkah Ketiga---Aduk hingga merata dan tidak menggumpal---4. Langkah Keempat---Sajikan untuk Si Kecil!',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---FRUITS',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968908973015187586/buah_naga.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Nasi Tim Ayam',
             'umur'=>'19',
             'bahan'=>'Potongan sawi---Beras---Ayam suir---Wortel---Garam',
@@ -237,8 +237,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Buatlah nasi tim dari beras putih yang dimasak hingga empuk---2. Langkah Kedua---Blender ayam hingga halus---3. Langkah Ketiga---Tambahkan sayur sawi rebus, sedikit garam, dan 2 sdm suwiran ayam ke dalam panci---4. Langkah Keempat---Masak sampai matang. Siap disantap Si Kecil!',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---CHICKEN',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968912361379495987/nasi_tim_ayam.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Apple stew dengan cinnamon',
             'umur'=>'20',
             'bahan'=>'Apel---Air---Bubuk kayu manis',
@@ -248,8 +248,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Kukus irisan apel yang telah dikupas dan dipotong dadu---2. Langkah Kedua---Haluskan apel yang telah dikukus dengan blender atau food processor. Jika sudah halus, saringlah apel dengan alat penyaring berlubang kecil---3. Langkah Ketiga---Setelah tersaring dengan halus, tambahkan sejumput bubuk kayu manis. Aduk rata dan sajikan',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968916645064106116/apple_stew.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree jagung manis dan bayam',
             'umur'=>'21',
             'bahan'=>'Jagung manis---Daun bayam---Air',
@@ -259,8 +259,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Cuci bersih jagung manis dan bayam---2. Langkah Kedua---Rebus jagus manis sampai empuk dan mengeluarkan aroma, kemudian serut---3. Langkah Ketiga---Masukan bayam ke dalam air mendidih, masak dengan api kecil kira-kira selama 10 menit---4. Langkah Keempat---Campur bayam dengan jagung, dan masukan 5 sdm air matang---5. Langkah Kelima---Blender sampai halus---6. Langkah Keenam---Saring sampai tidak ada serat-serat kasar yang tersisa---7. Langkah Ketujuh---Sajikan',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968919065018114118/jagung_bayam1.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree nasi kentang dan wortel',
             'umur'=>'23',
             'bahan'=>'Nasi putih---Seledri---Wortel---Kentang---ASI',
@@ -270,8 +270,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Cuci bersih seledri, wortel, dan kentang---2. Langkah Kedua---Masak nasi putih hingga menjadi bubur, lalu tambahkan seledri---3. Langkah Ketiga---Kukus wortel dan kentang sampai empuk. Setelah matang, saring bubur, wortel dan kentang---4. Langkah Keempat---Campur semua bahan dengan susu formula atau ASI sesuai selera. Aduk hingga rata---5. Langkah Kelima---Siap disajikan',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/968921516202930206/kentang_wortel.jpg'
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Puree brokoli, kentang, dan kaldu ikan',
             'umur'=>'24',
             'bahan'=>'Kentang---Brokoli---Ati ayam',
@@ -281,8 +281,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah Pertama---Cuci bersih kentang dan brokoli---2. Langkah Kedua---Potong kentang menjadi beberapa bagian---3. Langkah Ketiga---Kukus brokoli bersama kentang yang sudah dipotong-potong selama kurang lebih 10 menit---4. Langkah Keempat---Angkat kentang dan brokoli kukus---5. Langkah Kelima---Rebus ati ayam sampai matang---6. Langkah Keenam---Blender semua bahan hingga halus. Pindahkan ke mangkuk. Sajikan',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>''
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Potato cream soup',
             'umur'=>'6',
             'bahan'=>'Kentang kecil, haluskan---Jagung manis, haluskan---Labu---Daging ayam cincang---Kembang kol---Daun bayam---Seledri---Bawang bombay---Bawang putih---Tepung terigu---Susu UHT---Kaldu---Keju parut',
@@ -292,10 +292,9 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah pertama---Tumis bawang bombay dan bawang putih dengan unsalted butter hingga wangi---2. Langkah kedua---Masukan daging ayam cincang, aduk sampai daging ayam berubah warna---3. Langkah ketiga---Tambahkan tepung terigu, aduk cepat lalu masukan susu UHT, aduk terus agar tepung terigu bergerindil---4. Langkah keempat---Tambahkan kaldu, masukan kentang dan labu siam, aduk aduk sampai susu dan kaldu menyusut---5. Langkah kelima---Masukan jagung manis, daun bayam dan seledri, masak hingga semua bahan matang---6. Langkah keenam---Apabila bahan belum matang dan cairan sudah menyusut dapat ditambah air sampai kekentalan yang diinginkan---7. Langkah ketujuh---Masukan keju sesaat sebelum diangkat. Saring bila diperlukan---8. Langkah kedelapan---Sajikan kepada bayi.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>''
-        ]);"
-        "Mpasi::create([
-            'nama'=>'Banana rise raisin
-',
+        ]);
+        Mpasi::create([
+            'nama'=>'Banana rise raisin',
             'umur'=>'9',
             'bahan'=>'Pisang (ukuran sedang)---Nasi---ASI---Kayu manis---Kismis',
             'kuantitas'=>'1 buah---200 gr---secukupnya---1 sdm---1 sdm',
@@ -304,8 +303,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah pertama---Kupas dan potong pisang menjadi bagian kecil---2. Langkah kedua---Setelah itu, siapkan blender untuk menghaluskan pisang bersama seluruh bahan lainnya---3. Langkah ketiga---Kemudian Mama bisa saring makanan yang telah dihaluskan tadi. Setelahnya tambahkan---4. Langkah keempat---ASI secukupnya agar tekstur tidak terlalu kental---5. Langkah kelima---MPASI dengan bahan pisang pun siap disajikan untuk bayi mama.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>''
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Chicken bolognese',
             'umur'=>'10',
             'bahan'=>'Ayam kampung (cincang)---Wortel, diparut---Kentang, dikukus---Kacang merah---Air---Bawang putih---Bawang bombay---Oregano powder---Olive oil',
@@ -315,8 +314,8 @@ class MpasiSeeder extends Seeder
             'prosedur'=>'1. Langkah pertama---Siapkan dan panaskan olive oil, kemudian masukkan bawang putih dan bawang bombay. Tmuis hingga harum---2. Langkah kedua---Setelah itu, masukkan potongan ayam kampung dan tumis ayam sampai matang---3. Langkah ketiga---Masukkan juga wortel parut, lalu tuangkan tomat yang sudah diblender---4. Langkah keempat---Aduk rata sebentar, baru setelahnya tambahkan air dan kacang merah. Mama juga bisa menambahkan sedikit garam dan aduk rata kembali seluruhnya---5 Langkah kelima---Setelah air mendidih, masukkan kentang dan tambahkan oregano secukupnya---6. Langkah keenam---Jika semua sudah siap, blender dan saring agar tekstur menjadi lebih lembut. Chicken bolognese pun siap disajikan.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>''
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Bubur ayam jamur',
             'umur'=>'8',
             'bahan'=>'Beras---Daging ayam---Jamur Shitake---Brokoli---Tomat ceri---Bawang merah---Bawang putih---Daun jeruk---Butter---Olive oil',
@@ -327,8 +326,8 @@ class MpasiSeeder extends Seeder
 Ketika sudah matang, blender kemudian saring bubur hingga benar-benar halus---5. Langkah kelima---Sebelum disajikan pada si Kecil Mama bisa menambahkan butter dan olive oil untuk menambah cita rasa---6. Langkah keenam---Bubur ayam jamur pun siap disajikan!',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>''
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Nasi Tim Salmon',
             'umur'=>'11',
             'bahan'=>'Beras---Minyak---Air---Filet Salmon---Labu kuning, parut---Tempe---Tomat---Keju, parut',
@@ -339,8 +338,8 @@ Ketika sudah matang, blender kemudian saring bubur hingga benar-benar halus---5.
 Nasi tim salmon siap disajikan.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>''
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Bubur Tim Ayam Keju',
             'umur'=>'12',
             'bahan'=>'Beras---Air---Dada ayam---Jagung manis---Daun sawi hijau---Bawang putih---Keju---Parsley',
@@ -350,8 +349,8 @@ Nasi tim salmon siap disajikan.',
             'prosedur'=>'1. Langkah pertama---Masukan beras dan air ke dalam slowcooker, set 2 jam---2. Langkah kedua---Panaskan margarin ,masukkan bawang putih, masak hingga harum---3. Langkah ketiga---Masukkan ayam dan jagung, tambahkan sedikit air, kemudian masukkan keju, sawi, parsley, masak hingga air menyusut---4. Langkah keempat---Kemudian campurkan tumisan ayam ke dalam slowcooker. Setelah matang bagi menjadi 3 porsi.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>''
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Cream Soup Bayam',
             'umur'=>'15',
             'bahan'=>'Bayam, dibuat puree---Butter---Tepung terigu---Susu UHT full cream---Bawang bombay---Lada---Heavy cream---Garam',
@@ -361,8 +360,8 @@ Nasi tim salmon siap disajikan.',
             'prosedur'=>'1. Langkah pertama---Panaskan butter/margarin---2. Langkah kedua---Tumis bawang bombai hingga harum---3. Langkah ketiga---Masukkan tepung terigu dan aduk hinnga rata---4. Langkah keempat---Tuang susu sedikit demi sedikit sambil diaduk, masak hingga mendidih---5. Langkah keenam---Masukkan puree bayam---6. Langkah keenam---Masukan lada, garam dan kaldu jamur. Masak hingga mendidih---7. Langkah ketujuh---Matikan kompor dan masukkan cream sambil diaduk.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>''
-        ]);"
-        "Mpasi::create([
+        ]);
+        Mpasi::create([
             'nama'=>'Nasi Tim Ati Ayam',
             'umur'=>'16',
             'bahan'=>'Beras putih---Ati ayam---Wortel---Kacang merah---Air kaldu---Bawang putih---Bawang merah---Daun salam---Butter',
@@ -373,6 +372,6 @@ Nasi tim salmon siap disajikan.',
 Potong dadu semua bahan---3. Langkah ketiga---Panaskan Unsalted butter, tumis bumbu aromatik sampai harum---4. Langkah keempat---Masukkan ati ayam, masak hingga berubah warna---5. Langkah kelima---Sebelumnya rebus kacang merah---6. langkah keenam---Kalau sudah matang tata di mangkok kecil, masukkan nasi dan lauk, kukus 15 menit---7. Langkah ketujuh---Sajikan.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'gambar'=>''
-        ]);"
+        ]);
     }
 }

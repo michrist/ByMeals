@@ -280,7 +280,7 @@ body {
           <label for="tab2-1" style="color: #ffb800; font-size:30px">Jadwal Makan</label>
           <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
           <div>
-            <ul class="nav justify-content-center" role="tablist">
+            <ul class="nav" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" data-bs-toggle="tab" href="#all" style="font-size: 20px">All</a>
                 </li>
@@ -298,7 +298,7 @@ body {
                 <div id="all" class="container tab-pane active"><br>
                     <div class="row">
                         @foreach ($mpasis as $mpasi )
-                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->id }}';">
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
                             <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
                             <div class="profile-name">{{ $mpasi->nama }}</div>
                             </div>
@@ -308,75 +308,36 @@ body {
                     </div>
                 <div id="breakfast" class="container tab-pane fade"><br>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
+                        @foreach ($breakfast as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            </div>
+                        @endforeach
                         </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            </div>
-                        </div>
-                    </div>
-                  <h3>Menu 1</h3>
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
                 <div id="lunch" class="container tab-pane fade"><br>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
+                        <div class="row">
+                            @foreach ($lunch as $mpasi )
+                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                                <div class="profile-name">{{ $mpasi->nama }}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
+                            @endforeach
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            </div>
-                        </div>
-                        </div>
-                  <h3>Menu 2</h3>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                 </div>
                 <div id="dinner" class="container tab-pane fade"><br>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
+                        <div class="row">
+                            @foreach ($dinner as $mpasi )
+                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                                <div class="profile-name">{{ $mpasi->nama }}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
+                            @endforeach
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            </div>
-                        </div>
-                        </div>
-                  <h3>Menu 3</h3>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                 </div>
               </div>
             </div>
@@ -415,89 +376,92 @@ body {
           <label for="tab2-2" style="color: #ffb800; font-size:30px">Umur Bayi</label>
           <input id="tab2-2" name="tabs-two" type="radio">
           <div>
-            <ul class="nav d-flex justify-content-center" role="tablist" >
+            <ul class="nav" role="tablist" >
                 <li class="nav-item">
-                  <a class="nav-link active" data-bs-toggle="tab" href="#home" style="font-size: 20px">Home</a>
+                    <a class="nav-link active" data-bs-toggle="tab" href="#allmenu" style="font-size: 20px">All</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#home" style="font-size: 20px">6-9</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#menu1" style="font-size: 20px">Menu 1</a>
+                  <a class="nav-link" data-bs-toggle="tab" href="#menu1" style="font-size: 20px">10-13</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#menu2" style="font-size: 20px">Menu 2</a>
+                  <a class="nav-link" data-bs-toggle="tab" href="#menu2" style="font-size: 20px">14-17</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#menu3" style="font-size: 20px">18-21</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#menu4" style="font-size: 20px">22-25</a>
+                  </li>
               </ul>
               <div class="tab-content">
-                <div id="home" class="container tab-pane active"><br>
+                <div id="allmenu" class="container tab-pane active"><br>
                     <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                        <div class="profile-name">JOHN DOE</div>
-                        <div class="profile-username">@johndoesurname</div>
+                        @foreach ($mpasis as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
+                            </div>
+                        </div>
+                        @endforeach
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                        <div class="profile-name">JOHN DOE</div>
-                        <div class="profile-username">@johndoesurname</div>
+                    <div id="home" class="container tab-pane fade"><br>
+                        <div class="row">
+                            @foreach ($category1 as $mpasi )
+                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                                <div class="profile-name">{{ $mpasi->nama }}</div>
+                                </div>
+                            </div>
+                            @endforeach
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                        <div class="profile-name">JOHN DOE</div>
-                        <div class="profile-username">@johndoesurname</div>
-                        </div>
-                    </div>
-                    </div>
-                    <h3>Menu Home</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                    </div>
                 <div id="menu1" class="container tab-pane fade"><br>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
+                        @foreach ($category2 as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            </div>
+                        @endforeach
                         </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            </div>
-                        </div>
-                    </div>
-                  <h3>Menu 1</h3>
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
                 <div id="menu2" class="container tab-pane fade"><br>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
+                        @foreach ($category3 as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
+                        @endforeach
+                        </div>
+              </div>
+              <div id="menu3" class="container tab-pane fade"><br>
+                <div class="row">
+                    @foreach ($category4 as $mpasi )
+                    <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                        <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                        <div class="profile-name">{{ $mpasi->nama }}</div>
+                        </div>
+                    </div>
+                    @endforeach
+                    </div>
+                </div>
+                <div id="menu4" class="container tab-pane fade"><br>
+                    <div class="row">
+                        @foreach ($category5 as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                            <div class="profile-name">JOHN DOE</div>
-                            <div class="profile-username">@johndoesurname</div>
-                            </div>
+                        @endforeach
                         </div>
-                        </div>
-                  <h3>Menu 2</h3>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                 </div>
               </div>
             </div>

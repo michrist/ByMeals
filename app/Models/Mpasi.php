@@ -9,6 +9,7 @@ class Mpasi extends Model
 {
     protected $table = 'mpasi';
     use HasFactory;
+    protected $primarykey = "idmpasi";
     protected $guarded = [
         'id'
     ];
