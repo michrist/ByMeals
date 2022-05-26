@@ -10,6 +10,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MpasiController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\JadwalController;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\PostModel;
@@ -90,4 +91,6 @@ Route::get('/register', function () {
 Route::get('/test', [testController::class, 'index']);
 Route::get('/menu', [MpasiController::class, 'show']);
 Route::get('/menu/detail/{idmpasi}', [MenuController::class, 'detail']);
+
+Route::get('/jadwal', [JadwalController::class, 'displayList']); //Halaman List Jadwal
 

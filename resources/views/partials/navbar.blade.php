@@ -22,6 +22,7 @@
                 </div>
             </div>
             <a href="/menu" class="nav-item nav-link {{ ($title === "Menu") ? 'active' : '' }}">Menu</a>
+            <a href="/jadwal" class="nav-item nav-link {{ ($title === "Jadwal") ? 'active' : '' }}">Jadwal</a>
             {{-- <div class="nav-item dropdown">
                 <a href="/menu" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Menu</a>
                 <div class="dropdown-menu m-0">
