@@ -163,7 +163,7 @@ font-weight: bold;
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(238, 238, 239, 0.38), rgba(238, 238, 239, 0.38)), url(../img/bg-bymeals.jpeg);
+    background: linear-gradient(rgba(238, 238, 239, 0.38), rgba(238, 238, 239, 0.38)), url(../img/bg.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
