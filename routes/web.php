@@ -27,48 +27,48 @@ use App\Models\User;
 |
 */
 
-Route::get('/',[IndexController::class, 'viewMenu']);
+Route::get('/', [IndexController::class, 'viewMenu']);
 Route::get('/about', function () {
     return view('about', [
-        'title'=>'About'
+        'title' => 'About'
     ]);
 });
 Route::get('/user/profile/{id}', [RegisterController::class, 'show']);
 Route::put('/user/update/{id}', [RegisterController::class, 'update']);
 Route::get('/article', function () {
     return view('blog.article', [
-        'title'=>'Blog',
-        'posts'=>PostModel::all(),
+        'title' => 'Blog',
+        'posts' => PostModel::all(),
         'categories' => Category::all(),
         'comments' => Comment::all()
     ]);
 });
-Route::get('/article/{id}',[PostModelController::class, 'show']);
+Route::get('/article/{id}', [PostModelController::class, 'show']);
 Route::get('/categories', function () {
     return view('categories', [
-        'title'=>'Blog'
+        'title' => 'Blog'
     ]);
 });
 
 Route::get('/allpost', [PostModelController::class, 'test']);
-Route::get('/categories/{category:slug}', function(Category $category){
+Route::get('/categories/{category:slug}', function (Category $category) {
     return view('blog.blog', [
-        'title'=>'Blog',
+        'title' => 'Blog',
         'judul' => "Post by category : $category->name",
-        'posts' => $category -> posts -> load('category', 'user')
+        'posts' => $category->posts->load('category', 'user')
     ]);
 });
 Route::get('/user/{user:username}', function (User $author) {
     return view('blog.blog', [
-        'judul'=>"Post by author : $author->name",
+        'judul' => "Post by author : $author->name",
         'title' => 'Profile',
-        'posts' => $author -> posts -> load('category', 'user')
+        'posts' => $author->posts->load('category', 'user')
     ]);
 });
 Route::get('/create', function () {
     return view('blog.add', [
         'title' => 'Blog',
-        'categories'=>Category::all()
+        'categories' => Category::all()
     ]);
 });
 // Route::get('/blog', [PostModelController::class, 'index']);
@@ -80,7 +80,7 @@ Route::put('/update/{id}', [DashboardPostController::class, 'update']);
 // Route::post('/comment/{id}', App\Http\Livewire\CreateComment::class);
 
 // Register and Login
-Route::get('/login', [LoginController::class, 'index'])->name('login') -> middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
@@ -93,4 +93,7 @@ Route::get('/menu', [MpasiController::class, 'show']);
 Route::get('/menu/detail/{idmpasi}', [MenuController::class, 'detail']);
 
 Route::get('/jadwal', [JadwalController::class, 'displayList']); //Halaman List Jadwal
-
+//fitur jadwal
+Route::get('/report-jadwal', [JadwalController::class, 'index']);
+Route::get('/add-jadwal', [JadwalController::class, 'addJadwal']);
+Route::post('add-jadwal', [JadwalController::class, 'storeJadwal']);
