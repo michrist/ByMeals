@@ -23,20 +23,32 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $i = 1;
+                    @endphp
                     @foreach ($schedules as $schedule)
                         <tr>
+                            <td> {{$i}} </td>
                             <td>{{ $schedule->tanggal }}</td>
-                            <td>{{ $schedule->menu_pagi_id }}</td>
-                            <td>{{ $schedule->menu_siang_id }}</td>
-                            <td>{{ $schedule->menu_malam_id }}</td>
-                            @if ($peserta->tryoutUser->status_absen == 'belum_absen')
-                                <td class="text-warning">Belum Absen</td>
-                            @elseif($peserta->tryoutUser->status_absen == 'hadir')
-                                <td class="text-success">Hadir</td>
-                            @else
-                                <td class="text-danger">Tidak Hadir</td>
-                            @endif
+                            @foreach ($menus as $menu)
+                                @if ($menu->idmpasi === $schedule->menu_pagi_id)
+                                <td>{{ $menu->nama }}</td>
+                                @endif
+                            @endforeach
+                            @foreach ($menus as $menu)
+                                @if ($menu->idmpasi === $schedule->menu_siang_id)
+                                <td>{{ $menu->nama }}</td>
+                                @endif
+                            @endforeach
+                            @foreach ($menus as $menu)
+                                @if ($menu->idmpasi === $schedule->menu_malam_id)
+                                <td>{{ $menu->nama }}</td>
+                                @endif
+                            @endforeach
                         </tr>
+                        @php
+                            $i++;
+                        @endphp
                     @endforeach
                     {{-- <tr>
                         <th scope="row">1</th>

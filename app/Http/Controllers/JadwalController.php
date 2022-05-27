@@ -8,6 +8,8 @@ use App\Models\Jadwal;
 use App\Models\User;
 use App\Models\Schedule;
 use App\Models\Mpasi;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class JadwalController extends Controller
 {
@@ -16,19 +18,18 @@ class JadwalController extends Controller
     }
     public function index()
     {
+
         $check = Schedule::count();
         $menus = Mpasi::all();
-        $schedule = Schedule::where([
-            'menu_pagi_id', $menus->id,
-            'menu_siang_id', $menus->id,
-            'menu_malam_id', $menus->id,
-        ])->get();
+        $schedule = DB::table('schedule')->where('user_id', Auth::id())->get();
         return view('jadwal.report-jadwal', [
             'title' => 'Jadwal',
             'check' => $check,
-            'schedules' => $schedule
+            'schedules' => $schedule,
+            'menus' => $menus
         ]);
     }
+
     public function addJadwal()
     {
         $menus = Mpasi::all();
