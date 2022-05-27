@@ -11,6 +11,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MpasiController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\FavoritController;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\PostModel;
@@ -97,3 +98,6 @@ Route::get('/jadwal', [JadwalController::class, 'displayList']); //Halaman List 
 Route::get('/report-jadwal', [JadwalController::class, 'index']);
 Route::get('/add-jadwal', [JadwalController::class, 'addJadwal']);
 Route::post('add-jadwal', [JadwalController::class, 'storeJadwal']);
+
+Route::get('/favorit', [FavoritController::class, 'favorit']);
+Route::get('user/favorit/hapus/{idbookmark}',[FavoritController::class,'hapusfavorit']);
