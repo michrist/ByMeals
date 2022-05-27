@@ -20,10 +20,10 @@ class CreateScheduleTable extends Migration
             // $table->foreign('menu_pagi_id')->references('id')->on('mpasi');
             $table->time('waktu_pagi');
             $table->unsignedBigInteger('menu_siang_id');
-            $table->foreign('menu_siang_id')->references('id')->on('mpasi');
+            $table->foreign('menu_siang_id')->references('idmpasi')->on('mpasi');
             $table->time('waktu_siang');
             $table->unsignedBigInteger('menu_malam_id');
-            $table->foreign('menu_malam_id')->references('id')->on('mpasi');
+            $table->foreign('menu_malam_id')->references('idmpasi')->on('mpasi');
             $table->time('waktu_malam');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
