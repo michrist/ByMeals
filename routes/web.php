@@ -101,3 +101,5 @@ Route::post('add-jadwal', [JadwalController::class, 'storeJadwal']);
 
 Route::get('/favorit', [FavoritController::class, 'favorit']);
 Route::get('user/favorit/hapus/{idbookmark}',[FavoritController::class,'hapusfavorit']);
+Route::get('hapusJadwal/{scheduleId}', [JadwalController::class, 'hapusjadwal']); //Hapus jadwal
+Route::get('editJadwal/{scheduleId}', [JadwalController::class, 'editjadwal']); //Hapus jadwal

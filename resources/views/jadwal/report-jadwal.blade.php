@@ -18,7 +18,6 @@
                         <th scope="col">Makan Pagi</th>
                         <th scope="col">Makan Siang</th>
                         <th scope="col">Makan Malam</th>
-                        <th scope="col">Status</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -45,6 +44,7 @@
                                 <td>{{ $menu->nama }}</td>
                                 @endif
                             @endforeach
+                            <td><a href="editJadwal/{{$schedule->id}}"><button class="rounded-3 btn btn-warning m-lg-2">Edit</button></a><a href="hapusJadwal/{{$schedule->id}}"><button class="rounded-3 btn btn-danger rounded">Hapus</button></a></td>
                         </tr>
                         @php
                             $i++;

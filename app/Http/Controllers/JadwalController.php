@@ -72,4 +72,28 @@ class JadwalController extends Controller
         // Schedule::create($validatedData);
         // return redirect('/report-jadwal')->with('success', 'New post has been added');
     }
+
+    public function hapusJadwal($scheduleId){
+        $schedule = Schedule::find($scheduleId)->delete();
+
+        return redirect()->back();
+    }
+
+    public function editjadwal($scheduleId){
+        $menus = Mpasi::all();
+        $menuPagi = Mpasi::where('waktu', 'breakfast')->get();
+        $menuSiang = Mpasi::where('waktu', 'lunch')->get();
+        $menuMalam = Mpasi::where('waktu', 'dinner')->get();
+        $schedule = Schedule::where('id', $scheduleId)->get();
+        //dd($schedule);
+
+        return view('jadwal.edit-jadwal', [
+            'title' => 'Jadwal',
+            'schedule' => $schedule,
+            'menus' => $menus,
+            'menusPagi' => $menuPagi,
+            'menusSiang' => $menuSiang,
+            'menusMalam' => $menuMalam
+        ]);
+    }
 }
