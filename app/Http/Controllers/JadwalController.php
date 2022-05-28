@@ -8,7 +8,9 @@ use App\Models\Jadwal;
 use App\Models\User;
 use App\Models\Schedule;
 use App\Models\Mpasi;
+use DateTime;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 
 class JadwalController extends Controller
@@ -95,5 +97,21 @@ class JadwalController extends Controller
             'menusSiang' => $menuSiang,
             'menusMalam' => $menuMalam
         ]);
+    }
+
+    public function updatejadwal($scheduleId, Request $request){
+        $updatedDate = new DateTime();
+        $schedule = Schedule::find($scheduleId);
+        $schedule->tanggal = $request->tanggal;
+        $schedule->menu_pagi_id = $request->menu_pagi_id;
+        $schedule->menu_siang_id = $request->menu_siang_id;
+        $schedule->menu_malam_id = $request->menu_malam_id;
+        $schedule->waktu_pagi = $request->waktu_pagi;
+        $schedule->waktu_siang = $request->waktu_siang;
+        $schedule->waktu_malam = $request->waktu_malam;
+        $schedule->updated_at = $updatedDate;
+        $schedule->save();
+
+        return redirect()->back()->with('status', 'Jadwal Updated Successfully');
     }
 }

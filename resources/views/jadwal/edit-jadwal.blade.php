@@ -7,8 +7,11 @@
         @if (session('status'))
             <h6 class="alert alert-success">{{ session('status') }}</h6>
         @endif
-        <form action="{{ url('add-jadwal') }}" method="POST" class="  row g-3" style="padding: 50px">
-            @csrf
+        <form action="/editJadwal/{{$schedule->id}}" method="POST" class="  row g-3" style="padding: 50px">
+            {{ csrf_field() }}
+            {{ method_field('PUT') }}
+
+
             <div class="col-12">
                 <label for="inputDate" class="form-label">Tanggal</label>
                 <input type="date" class="form-control" id="inputDate" name="tanggal" value="{{$schedule->tanggal}}">
@@ -62,7 +65,7 @@
             </div>
 
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Tambahkan</button>
+                <button type="submit" class="btn btn-primary">Perbarui</button>
             </div>
         </form>
     </div>
