@@ -175,7 +175,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
           <div id="CarouselTest" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <figure><img class="d-block" src="{{ asset('storage/'.$post->image) }}" alt="" width="400px"></figure>
+                <figure><img class="d-block" src="{{ url('/data_file/'.$post->image) }}" alt="" width="400px"></figure>
               </div>
             </div>
           </div>
@@ -194,6 +194,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
       </div>
     </div>
     @endforeach
+    
+    {{-- {{$posts->links()}} --}}
     <!-- End of card -->
 
   </div>
