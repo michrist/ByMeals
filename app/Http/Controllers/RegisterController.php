@@ -45,7 +45,19 @@ class RegisterController extends Controller
         //      'berat'=>'required',
         //      'gender'=>'required'
         //  ]);
+      
+
         $user = User::find($id);
+        $validatedData = $request->validate([
+            'image'=>'image|file|max:1024'
+        ]);
+        $file = $request->file('image');
+
+        $nama_file = time()."_".$file->getClientOriginalName();
+
+        $tujuan_upload = 'data_file';
+        
+     $file->move($tujuan_upload,$nama_file);
         $user->name = $request->name;
         $user->namebayi = $request->namebayi;
         $user->date1 = $request->date1;
@@ -55,9 +67,11 @@ class RegisterController extends Controller
         $user->gender = $request->gender;
         $user->pekerjaan = $request->pekerjaan;
         $user->alamat = $request->alamat;
-        $user->image = $request->image;
         $user->save();
+        $user->update([
+            'image' => $nama_file
+        ]);
          $request->session()->flash('success', 'Your profile has been updated');
-         return redirect('/');
+         return redirect()->back();
         }
 }

@@ -10,11 +10,22 @@ class FavoritController extends Controller
     {
         $favorit='';
         if (auth()->user() != null) {
-            $favorit = DB::table('favorits')
-            ->join('mpasi','mpasi.id','=','favorits.idmpasi')
+            $favorit = DB::table('favoritS')
+            ->join('mpasi','mpasi.idmpasi','=','favorits.idmpasi')
             ->where('favorits.id','=',auth()->user()->id)
-            ->get();
+            ->paginate(12);
         }
-        return view ('favorituser',compact(['favorit']) );
+        return view ('favorituser', [
+            'favorit'=>$favorit,
+            'title'=>'Menu'
+        ] );
+
+    }
+
+    public function hapusfavorit($idfavorit)
+    {
+ DB::table('favorits')->where('idfavorit',$idfavorit)->delete();
+
+ return back()->with('info','MPASI Favorit Telah Dihapus');
     }
 }

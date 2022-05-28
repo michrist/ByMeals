@@ -1,6 +1,6 @@
 @extends('template')
 @section('container')
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
 <div class="container-xxl py-5 bg-dark hero-header">
 <div class="kotak">
     <div class="container">
@@ -119,7 +119,14 @@
                  <h1 class="fw-bold" style="font-size:60px;margin-top:-20px">Best Free Meal Planning App</h1>
             </div>
             <p style="font-size:1.2rem;color:#605C59">Plan your baby’s meals for the week all while barely lifting a finger.</p>
+            @Auth
             <a href="/jadwal" class="btn btn-primary" style="background: #FEA116: color:white">Plan yours</a>
+            @else
+            {{-- <a data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary" style="background: #FEA116: color:white">Plan yours</a> --}}
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Plan yours
+              </button>
+            @endauth
         </div>
     </div>
 </div>
@@ -163,4 +170,34 @@
     </div>
 </div>
 </section>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-left:-80px;">
+    <div class="modal-dialog" role="document" style="">
+      <div class="modal-content" style="width: 700px;border-radius:20px;background:#E5E5E5">
+        <div class="modal-header">
+          <div class="d-flex justify-content-center">
+            <h5 class="modal-title text-center" id="exampleModalLabel" style="margin-left: 57px">Ups, Anda belum masuk</h5>
+          </div>
+          
+        </div>
+        <div class="modal-body">
+          <div class="d-flex justify-content-center mb-4">
+              <a href="/login" class="btn btn-primary">Login</a>
+              
+          </div>
+          <p class="text-center mx-4">Atau</p>
+          <div class="d-flex justify-content-center">
+            <a href="/register" class="btn btn-primary mb-4">Register</a>
+        </div>
+        <p class="text-center" style="font-size: 1.2rem">untuk membuat jadwal  dan simpan wishlist MPASI bayi Anda!</p>
+        </div>
+        <div class="modal-footer">
+          {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 @endsection
