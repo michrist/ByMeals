@@ -76,15 +76,12 @@
                         <option value="{{ $menuPagi->id }}">{{ $menuPagi->nama }}</option>
                     @endforeach
                 </select> --}}
-                @foreach ($menusPagi as $menuPagi)
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="menu_pagi_id[]" value="{{ $menuPagi->nama }}"
-                            id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            {{ $menuPagi->nama }}
-                        </label>
-                    </div>
-                @endforeach
+                <select name="menu_pagi_id" id="inputMakanPagi" class="form-select">
+                    <option selected>Pilih Menu</option>
+                    @foreach ($menusPagi as $menuPagi)
+                        <option value="{{ $menuPagi->idmpasi }}">{{ $menuPagi->nama }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="col-md-6">
                 <label for="inputWaktuPagi" class="form-label">Waktu Makan Pagi</label>
@@ -95,7 +92,7 @@
                 <select name="menu_siang_id" id="inputMakanSiang" class="form-select">
                     <option selected>Pilih Menu</option>
                     @foreach ($menusSiang as $menuSiang)
-                        <option value="{{ $menuSiang->id }}">{{ $menuSiang->nama }}</option>
+                        <option value="{{ $menuSiang->idmpasi }}">{{ $menuSiang->nama }}</option>
                     @endforeach
                 </select>
             </div>
@@ -106,10 +103,10 @@
             </div>
             <div class="col-md-6">
                 <label for="inputMakanMalam" class="form-label">Makan Malam</label>
-                <select name="menu_malam_id" id="inputMakanMalam" class="form-select">
-                    <option selected>Pilih Menu</option>
+                <select name="menu_malam_id" id="inputMakanMalam" class="form-select menu_malam">
+                    <option selected class="menu_malam">Pilih Menu</option>
                     @foreach ($menusMalam as $menuMalam)
-                        <option value="{{ $menuMalam->id }}">{{ $menuMalam->nama }}</option>
+                        <option value="{{ $menuMalam->idmpasi }}">{{ $menuMalam->nama }}</option>
                     @endforeach
                 </select>
             </div>

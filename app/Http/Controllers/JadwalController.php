@@ -47,12 +47,10 @@ class JadwalController extends Controller
     }
     public function storeJadwal(Request $request)
     {
-        dd($request->all());
         $jadwal = new Schedule();
         $jadwal->user_id = auth()->user()->id;
         $jadwal->tanggal = $request->input('tanggal');
-        $jadwal['menu_pagi_id'] = $request->input('menu_pagi_id');
-        // $jadwal->menu_pagi_id = $request->input('menu_pagi_id');
+        $jadwal->menu_pagi_id = $request->input('menu_pagi_id');
         $jadwal->waktu_pagi = $request->input('waktu_pagi');
         $jadwal->menu_siang_id = $request->input('menu_siang_id');
         $jadwal->waktu_siang = $request->input('waktu_siang');
