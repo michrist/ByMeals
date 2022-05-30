@@ -264,3 +264,31 @@ h1.heading {
   <div class="modal-dialog" role="document" style="">
     <div class="modal-content" style="width: 700px;border-radius:20px;background:#E5E5E5">
       <div class="modal-header">
+        <div class="d-flex justify-content-center">
+          <h5 class="modal-title text-center" id="exampleModalLabel" style="margin-left: 57px">Ups, Anda belum masuk</h5>
+        </div>
+        
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-center mb-4">
+            <a href="/login" class="btn btn-primary">Login</a>
+            
+        </div>
+        <p class="text-center mx-4">Atau</p>
+        <div class="d-flex justify-content-center">
+          <a href="/register" class="btn btn-primary mb-4">Register</a>
+      </div>
+      <p class="text-center" style="font-size: 1.2rem">untuk membuat jadwal  dan simpan wishlist MPASI bayi Anda!</p>
+      </div>
+      <div class="modal-footer">
+        {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+@endsection
+
