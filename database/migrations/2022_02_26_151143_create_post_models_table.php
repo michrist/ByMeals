@@ -20,6 +20,7 @@ class CreatePostModelsTable extends Migration
             // $table->foreignId('comment_id');
             $table->string('title');
             $table->string('image')->nullable();
+            $table->string('image_upload')->nullable();
             $table->text('body');
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();
