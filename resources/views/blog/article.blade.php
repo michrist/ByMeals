@@ -61,13 +61,9 @@
                        @endphp
                        <livewire:create-comment :posts="$posts"></livewire:create-comment>
                         <!-- Comment with nested comments-->
-
                         <div class="d-flex mb-3 mt-3">
                             <!-- Parent comment-->
-
                             <h3>Comments</h3>
-
-
                         </div>
                          <livewire:list-comment :posts="$posts">
 
