@@ -20,7 +20,7 @@
 .card {
  font-size: 1em;
  overflow: hidden;
- padding: 5;
+ height: 350px;
  border: none;
  border-radius: .28571429rem;
  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
@@ -53,7 +53,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.
 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 lex-direction: column;
-}
+
 
 .btn {
 margin-top: auto;
@@ -175,7 +175,12 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
           <div id="CarouselTest" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <figure><img class="d-block" src="{{ url('/data_file/'.$post->image) }}" alt="" width="400px"></figure>
+                @if(count((array)$post->image_upload))
+                <figure><img class="d-block" src="{{ url('/data_file/'.$post->image_upload) }}" alt="" width="400px"></figure>
+                @else
+                <figure><img class="d-block" src="{{ $post->image }}" alt="" width="400px" ></figure>
+                @endif
+                
               </div>
             </div>
           </div>
@@ -184,7 +189,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
             <div class="card-block px-6">
               <h4 class="card-title">{{ $post->title }}</h4>
               <p class="card-text">
-                {!! Str::limit($post->body, 250) !!}
+                {!! Str::limit($post->body, 300) !!}
               </p>
               <br>
               <a href="/article/{{ $post->id }}" class="mt-auto btn btn-primary" wire:click="getComment({{ $post->id }})">Read More</a>
