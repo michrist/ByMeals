@@ -157,7 +157,11 @@ h1.heading {
                     <p class="btn mt-4" style="border-radius: 10px; background-color:#FFD600; color:black; width:200px"><i class="fas fa-clock"></i> <span style="margin-left: 10px"> :</span><span style="margin-left: 10px;text-transform:uppercase">{{ $mpasi->waktu }}</span></p>
                 </div>
                 <div class="col-4">
-                  <livewire:favorite-index :idmpasi="$idmpasi"></livewire:favorite-index>
+                 @auth
+                 <livewire:favorite-index :idmpasi="$idmpasi"></livewire:favorite-index>
+                 @else
+                 <button data-toggle="modal" data-target="#exampleModal" class="btn mt-4" style="border-radius: 10px; background-color:#FEA116; color:black; width:140px"><i class="far fa-bookmark"></i> <span style="margin-left: 10px"> Save </span></button>
+                 @endauth
                 </div>
             </div>
             <p class="mt-3 " style="color: black; font-size: 17px; text-align: justify; margin-right:55px">{{ $mpasi->deskripsi }}</p>
@@ -256,5 +260,7 @@ h1.heading {
 <br>
 <br>
 </div>
-@endsection
-
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-left:-80px;">
+  <div class="modal-dialog" role="document" style="">
+    <div class="modal-content" style="width: 700px;border-radius:20px;background:#E5E5E5">
+      <div class="modal-header">
