@@ -177,12 +177,12 @@
           <div class="d-flex justify-content-center">
             <h5 class="modal-title text-center" id="exampleModalLabel" style="margin-left: 57px">Ups, Anda belum masuk</h5>
           </div>
-          
+
         </div>
         <div class="modal-body">
           <div class="d-flex justify-content-center mb-4">
               <a href="/login" class="btn btn-primary">Login</a>
-              
+
           </div>
           <p class="text-center mx-4">Atau</p>
           <div class="d-flex justify-content-center">

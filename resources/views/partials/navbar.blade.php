@@ -23,7 +23,15 @@
                         <a href="/create" class="dropdown-item">Add Post</a>
                     </div>
                 </div>
-                <a href="/menu" class="nav-item nav-link {{ $title === 'Menu' ? 'active' : '' }}">Menu</a>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle {{ $title === 'Menu' ? 'active' : '' }}"
+                        data-bs-toggle="dropdown">Menu</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="/menu" class="dropdown-item">Lihat Menu</a>
+                        <a href="/tambah-menu" class="dropdown-item">Tambah Menu</a>
+                    </div>
+                </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ $title === 'Jadwal' ? 'active' : '' }}"
                         data-bs-toggle="dropdown">Jadwal</a>

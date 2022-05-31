@@ -18,14 +18,15 @@ class FavoritController extends Controller
         return view ('favorituser', [
             'favorit'=>$favorit,
             'title'=>'Menu'
-        ] );
+            ] );
+
+        }
+
+        public function hapusfavorit($idfavorit)
+        {
+            DB::table('favorits')->where('idfavorit',$idfavorit)->delete();
+
+            return back()->with('info','MPASI Favorit Telah Dihapus');
+        }
 
     }
-
-    public function hapusfavorit($idfavorit)
-    {
- DB::table('favorits')->where('idfavorit',$idfavorit)->delete();
-
- return back()->with('info','MPASI Favorit Telah Dihapus');
-    }
-}

@@ -22,7 +22,8 @@ class JadwalController extends Controller
     {
 
         $check = Schedule::count();
-        $menus = Mpasi::all();
+        //$menus = Mpasi::all();
+        $menus = DB::table('mpasi')->get();
         $schedule = DB::table('schedule')->where('user_id', Auth::id())->get();
         return view('jadwal.report-jadwal', [
             'title' => 'Jadwal',

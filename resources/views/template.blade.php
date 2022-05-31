@@ -11,7 +11,6 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
     <link rel="icon" href="{{ asset('img/bymeals-logo.png') }}">
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
