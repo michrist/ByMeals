@@ -178,9 +178,9 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
                 @if(count((array)$post->image_upload))
                 <figure><img class="d-block" src="{{ url('/data_file/'.$post->image_upload) }}" alt="" width="400px"></figure>
                 @else
-                <figure><img class="d-block" src="{{ $post->image }}" alt="" width="400px" ></figure>
+                <figure><img class="d-block" src="{{ $post->image }}" alt="" style="height: 350px" ></figure>
                 @endif
-
+                
               </div>
             </div>
           </div>
@@ -199,7 +199,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
       </div>
     </div>
     @endforeach
-
+    
     {{-- {{$posts->links()}} --}}
     <!-- End of card -->
 
