@@ -2,35 +2,49 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Input;
 use App\Models\Mpasi;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class MpasiController extends Controller
+class MenuController extends Controller
 {
-    public function show(){
-        $mpasis = Mpasi::all();
-        $breakfast = Mpasi::where('waktu','breakfast')->get();
-        $lunch = Mpasi::where('waktu','lunch')->get();
-        $dinner = Mpasi::where('waktu','dinner')->get();
-        $category1 = Mpasi::where('kategorirentang',1)->get();
-        $category2 = Mpasi::where('kategorirentang',2)->get();
-        $category3 = Mpasi::where('kategorirentang',3)->get();
-        $category4 = Mpasi::where('kategorirentang',4)->get();
-        $category5 = Mpasi::where('kategorirentang',5)->get();
-        $title = 'Menu';
-        return view('menu', compact(['mpasis', 'title', 'breakfast', 'lunch', 'dinner', 'category1', 'category2', 'category3', 'category4', 'category5']));
+    public function index(){
+        return view('menu', [ 'title'=>'Menu']);
     }
-    public function cari(Request $request){
-        $cari = $request->cari;
-        $mpasi = DB::table('mpasi')
-		->where('nama','like',"%".$cari."%")
-		->get();
-        return view('carimenu', [
-            'mpasi'=>$mpasi,
+    public function detail($idmpasi){
+        $mpasi = DB::table('mpasi')->where('idmpasi', $idmpasi)->first();
+        $menu = Mpasi::all()->take(3);
+        return view('menudetail', [
             'title'=>'Menu',
-            'cari'=>$cari
+            'mpasi'=>$mpasi,
+            'menu'=>$menu,
+            'idmpasi'=>$idmpasi
         ]);
+    }
 
+    public function tambahmenu(){
+        return view('tambahmenu', [
+            'title' => 'Menu'
+        ]);
+    }
+
+    public function storemenu(Request $request){
+        $today = new DateTime();
+        $input = new Input();
+        $input->user_id = Auth::id();
+        $input->status = 0;
+        $input->nama_menu = $request->namaMenu;
+        $input->deskripsi_menu = $request->deskripsi;
+        $input->umur_bayi = $request->umurBayi;
+        $input->bahan_menu = $request->bahan;
+        $input->langkah_memasak = $request->langkah;
+        $input->created_at = $today;
+        $input->updated_at = $today;
+        $input->save();
+
+        return redirect()->back()->with('status', 'Menu Added Successfully');
     }
 }

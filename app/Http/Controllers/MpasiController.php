@@ -21,4 +21,16 @@ class MpasiController extends Controller
         $title = 'Menu';
         return view('menu', compact(['mpasis', 'title', 'breakfast', 'lunch', 'dinner', 'category1', 'category2', 'category3', 'category4', 'category5']));
     }
+    public function cari(Request $request){
+        $cari = $request->cari;
+        $mpasi = DB::table('mpasi')
+		->where('nama','like',"%".$cari."%")
+		->get();
+        return view('carimenu', [
+            'mpasi'=>$mpasi,
+            'title'=>'Menu',
+            'cari'=>$cari
+        ]);
+
+    }
 }
