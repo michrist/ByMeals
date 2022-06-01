@@ -85,25 +85,22 @@
     </div>
 
         </div>
-        <footer class="bg-dark " style="bottom: 0">
-            {{-- <div class="waves">
-              <div class="wave" id="wave1"></div>
-              <div class="wave" id="wave2"></div>
-              <div class="wave" id="wave3"></div>
-              <div class="wave" id="wave4"></div>
-            </div> --}}
+        <footer class="bg-dark" style="bottom: 0">
+            <ul class="menu mt-4" style="display: flex; justify-content:space-between; ">
+              <li class="mx-5"><a href="" style="font-size:1.4rem">ABOUT US</a></li>
+              <li class="mx-5"><a href="" style="font-size:1.4rem">HOME</a></li>
+              <li class="mx-5"><a href="" style="font-size:1.4rem">ARTICLE</a></li>
+              <li class="mx-5"><a href="" style="font-size:1.4rem">MENU</a></li>
+              <li class="mx-5"><a href="" style="font-size:1.4rem">FAQ</a></li>
+            </ul>
             <ul class="social_icon">
-              <li><a href=""><i class="fab fa-facebook"></i></a></li>
-              <li><a href=""><i class="fab fa-twitter"></i></a></li>
-              <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-              <li><a href=""><i class="fab fa-github"></i></a></li>
-            </ul>
-            <ul class="menu" style="display: flex; justify-content:space-between" >
-              <li><a href="">Home</a></li>
-              <li><a href="">Products</a></li>
-              <li><a href="">About</a></li>
-            </ul>
-            <p> &copy; 2022 ByMeals | All Right Reserved</p>
+                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                <li><a href=""><i class="fab fa-telegram"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            <p class="text-secondary mt-3"> &copy; 2022 ByMeals | All Right Reserved</p>
               </footer>
 
 

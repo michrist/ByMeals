@@ -97,9 +97,9 @@ select:focus {
       $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
- /*****************
+ /*******
     - Header -
-*****************/
+*******/
 header {
 	position:relative;
 	left:0;
@@ -251,29 +251,16 @@ body {
     <h1 style="color: #000638; font-size:66px">Rekomendasi Menu MP-ASI</h1>
     <h6 class="mt-3" style="font-size:30px; color: #605C59">Berbagai menu MP-ASI untuk si buah hati</h6>
 </div>
+<form action="/menu/cari" method="GET">
 <div class="input-group container mt-5 d-flex justify-content-center">
     <div class="form-outline" style="width: 30%">
-      <input type="search" style="background-color: #FFD600; border-top-left-radius: 15px; border-bottom-left-radius: 15px;" id="form1" class="form-control" placeholder="Pilih MP-ASI Favorit">
-
+      <input type="search" style="background-color: #FFD600; border-top-left-radius: 15px; border-bottom-left-radius: 15px;" id="form1" name="cari" class="form-control" placeholder="Pilih MP-ASI Favorit">
     </div>
-    <button type="button" class="btn btn-primary" style="background-color: #FFD600; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
+    <button type="submit" class="btn btn-primary" style="background-color: #FFD600; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
       <i class="fas fa-search" style="color: black"></i>
     </button>
   </div>
-{{-- <div class="justify-content-center"> --}}
-    {{-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#jadwal" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Jadwal Makan</button>
-        </li>
-
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#umur" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Umur Bayi</button>
-        </li>
-      </ul> --}}
-
-
-{{-- </div> --}}
-
+</form>
 <div class="container mt-5">
     <div class="tabs">
         <div class="tab-2">
@@ -341,37 +328,7 @@ body {
                 </div>
               </div>
             </div>
-
           </div>
-
-
-
-          {{-- <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                    <div class="profile-name">JOHN DOE</div>
-                    <div class="profile-username">@johndoesurname</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                    <div class="profile-name">JOHN DOE</div>
-                    <div class="profile-username">@johndoesurname</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                    <div class="profile-name">JOHN DOE</div>
-                    <div class="profile-username">@johndoesurname</div>
-                    </div>
-                </div>
-                </div>
-            </div> --}}
-
-
-
-
         <div class="tab-2">
           <label for="tab2-2" style="color: #ffb800; font-size:30px">Umur Bayi</label>
           <input id="tab2-2" name="tabs-two" type="radio">
