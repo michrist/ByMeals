@@ -97,9 +97,9 @@ select:focus {
       $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
- /*****************
+ /*******
     - Header -
-*****************/
+*******/
 header {
 	position:relative;
 	left:0;
@@ -142,13 +142,14 @@ h6,
 div,
 input,
 p,
-.amenu {
+a {
+    font-family: "Open Sans";
     margin: 0px;
 }
 
-.amenu,
-.amenu:hover,
-.amenu:focus {
+a,
+a:hover,
+a:focus {
     color: inherit;
 }
 
@@ -246,204 +247,44 @@ body {
 
 
 </style>
-<div style="font-family:Open Sans">
-    <div class="text-center mt-5">
-        <h1 style="color: #000638; font-size:66px">Rekomendasi Menu MP-ASI</h1>
-        <h6 class="mt-3" style="font-size:30px; color: #605C59">Berbagai menu MP-ASI untuk si buah hati</h6>
+<div class="text-center mt-5">
+    <h1 style="color: #000638; font-size:66px">Rekomendasi Menu MP-ASI</h1>
+    <h6 class="mt-3" style="font-size:30px; color: #605C59">Berbagai menu MP-ASI untuk si buah hati</h6>
+</div>
+<form action="/menu/cari" method="GET">
+<div class="input-group container mt-5 d-flex justify-content-center">
+    <div class="form-outline" style="width: 30%">
+      <input type="search" style="background-color: #FFD600; border-top-left-radius: 15px; border-bottom-left-radius: 15px;" id="form1" name="cari" class="form-control" placeholder="Pilih MP-ASI Favorit">
     </div>
-    <div class="input-group container mt-5 d-flex justify-content-center">
-        <div class="form-outline" style="width: 30%">
-          <input type="search" style="background-color: #FFD600; border-top-left-radius: 15px; border-bottom-left-radius: 15px;" id="form1" class="form-control" placeholder="Pilih MP-ASI Favorit">
-
-        </div>
-        <button type="button" class="btn btn-primary" style="background-color: #FFD600; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
-          <i class="fas fa-search" style="color: black"></i>
-        </button>
-      </div>
-    {{-- <div class="justify-content-center"> --}}
-        {{-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#jadwal" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Jadwal Makan</button>
-            </li>
-
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#umur" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Umur Bayi</button>
-            </li>
-          </ul> --}}
-
-
-    {{-- </div> --}}
-
-    <div class="container mt-5">
-        <div class="tabs">
-            <div class="tab-2">
-              <label for="tab2-1" style="color: #ffb800; font-size:30px">Jadwal Makan</label>
-              <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
-              <div>
-                <ul class="nav" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active amenu" data-bs-toggle="tab" href="#all" style="font-size: 20px">All</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link amenu" data-bs-toggle="tab" href="#breakfast" style="font-size: 20px">Breakfast</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link amenu" data-bs-toggle="tab" href="#lunch" style="font-size: 20px">Lunch</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link amenu" data-bs-toggle="tab" href="#dinner" style="font-size: 20px">Dinner</a>
-                    </li>
-                  </ul>
-                  <div class="tab-content" >
-                    <div id="all" class="container tab-pane active"><br>
-                        <div class="row">
-                            @foreach ($mpasis as $mpasi )
-                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
-                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
-                                <div class="profile-name">{{ $mpasi->nama }}</div>
-                                </div>
-                            </div>
-                            @endforeach
-                            </div>
-                        </div>
-                    <div id="breakfast" class="container tab-pane fade"><br>
-                        <div class="row">
-                            @foreach ($breakfast as $mpasi )
-                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
-                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
-                                <div class="profile-name">{{ $mpasi->nama }}</div>
-                                </div>
-                            </div>
-                            @endforeach
-                            </div>
-                    </div>
-                    <div id="lunch" class="container tab-pane fade"><br>
-                            <div class="row">
-                                @foreach ($lunch as $mpasi )
-                                <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
-                                    <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
-                                    <div class="profile-name">{{ $mpasi->nama }}</div>
-                                    </div>
-                                </div>
-                                @endforeach
-                                </div>
-                    </div>
-                    <div id="dinner" class="container tab-pane fade"><br>
-                            <div class="row">
-                                @foreach ($dinner as $mpasi )
-                                <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
-                                    <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
-                                    <div class="profile-name">{{ $mpasi->nama }}</div>
-                                    </div>
-                                </div>
-                                @endforeach
-                                </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-
-
-              {{-- <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                        <div class="profile-name">JOHN DOE</div>
-                        <div class="profile-username">@johndoesurname</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                        <div class="profile-name">JOHN DOE</div>
-                        <div class="profile-username">@johndoesurname</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="profile-card-2"><img src="https://images.unsplash.com/photo-1495615080073-6b89c9839ce0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3F1YXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" width="350px" height="350px" class="img img-responsive">
-                        <div class="profile-name">JOHN DOE</div>
-                        <div class="profile-username">@johndoesurname</div>
-                        </div>
-                    </div>
-                    </div>
-                </div> --}}
-
-
-
-
-            <div class="tab-2">
-              <label for="tab2-2" style="color: #ffb800; font-size:30px">Umur Bayi</label>
-              <input id="tab2-2" name="tabs-two" type="radio">
-              <div>
-                <ul class="nav" role="tablist" >
-                    <li class="nav-item">
-                        <a class="nav-link active amenu" data-bs-toggle="tab" href="#allmenu" style="font-size: 20px">All</a>
-                      </li>
-                    <li class="nav-item">
-                      <a class="nav-link amenu" data-bs-toggle="tab" href="#home" style="font-size: 20px">6-9</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link amenu" data-bs-toggle="tab" href="#menu1" style="font-size: 20px">10-13</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link amenu" data-bs-toggle="tab" href="#menu2" style="font-size: 20px">14-17</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link amenu" data-bs-toggle="tab" href="#menu3" style="font-size: 20px">18-21</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link amenu" data-bs-toggle="tab" href="#menu4" style="font-size: 20px">22-25</a>
-                      </li>
-                  </ul>
-                  <div class="tab-content">
-                    <div id="allmenu" class="container tab-pane active"><br>
-                        <div class="row">
-                            @foreach ($mpasis as $mpasi )
-                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
-                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
-                                <div class="profile-name">{{ $mpasi->nama }}</div>
-                                </div>
-                            </div>
-                            @endforeach
-                            </div>
-                        </div>
-                        <div id="home" class="container tab-pane fade"><br>
-                            <div class="row">
-                                @foreach ($category1 as $mpasi )
-                                <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
-                                    <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
-                                    <div class="profile-name">{{ $mpasi->nama }}</div>
-                                    </div>
-                                </div>
-                                @endforeach
-                                </div>
-                            </div>
-                    <div id="menu1" class="container tab-pane fade"><br>
-                        <div class="row">
-                            @foreach ($category2 as $mpasi )
-                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
-                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
-                                <div class="profile-name">{{ $mpasi->nama }}</div>
-                                </div>
-                            </div>
-                            @endforeach
-                            </div>
-                    </div>
-                    <div id="menu2" class="container tab-pane fade"><br>
-                        <div class="row">
-                            @foreach ($category3 as $mpasi )
-                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
-                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
-                                <div class="profile-name">{{ $mpasi->nama }}</div>
-                                </div>
-                            </div>
-                            @endforeach
-                            </div>
-                  </div>
-                  <div id="menu3" class="container tab-pane fade"><br>
+    <button type="submit" class="btn btn-primary" style="background-color: #FFD600; border-top-right-radius: 15px; border-bottom-right-radius: 15px;">
+      <i class="fas fa-search" style="color: black"></i>
+    </button>
+  </div>
+</form>
+<div class="container mt-5">
+    <div class="tabs">
+        <div class="tab-2">
+          <label for="tab2-1" style="color: #ffb800; font-size:30px">Jadwal Makan</label>
+          <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+          <div>
+            <ul class="nav" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-bs-toggle="tab" href="#all" style="font-size: 20px">All</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#breakfast" style="font-size: 20px">Breakfast</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#lunch" style="font-size: 20px">Lunch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#dinner" style="font-size: 20px">Dinner</a>
+                </li>
+              </ul>
+              <div class="tab-content" >
+                <div id="all" class="container tab-pane active"><br>
                     <div class="row">
-                        @foreach ($category4 as $mpasi )
+                        @foreach ($mpasis as $mpasi )
                         <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
                             <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
                             <div class="profile-name">{{ $mpasi->nama }}</div>
@@ -452,9 +293,20 @@ body {
                         @endforeach
                         </div>
                     </div>
-                    <div id="menu4" class="container tab-pane fade"><br>
+                <div id="breakfast" class="container tab-pane fade"><br>
+                    <div class="row">
+                        @foreach ($breakfast as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
+                            </div>
+                        </div>
+                        @endforeach
+                        </div>
+                </div>
+                <div id="lunch" class="container tab-pane fade"><br>
                         <div class="row">
-                            @foreach ($category5 as $mpasi )
+                            @foreach ($lunch as $mpasi )
                             <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
                                 <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
                                 <div class="profile-name">{{ $mpasi->nama }}</div>
@@ -462,14 +314,118 @@ body {
                             </div>
                             @endforeach
                             </div>
-                    </div>
-                  </div>
                 </div>
-
+                <div id="dinner" class="container tab-pane fade"><br>
+                        <div class="row">
+                            @foreach ($dinner as $mpasi )
+                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                                <div class="profile-name">{{ $mpasi->nama }}</div>
+                                </div>
+                            </div>
+                            @endforeach
+                            </div>
+                </div>
               </div>
             </div>
+          </div>
+        <div class="tab-2">
+          <label for="tab2-2" style="color: #ffb800; font-size:30px">Umur Bayi</label>
+          <input id="tab2-2" name="tabs-two" type="radio">
+          <div>
+            <ul class="nav" role="tablist" >
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#allmenu" style="font-size: 20px">All</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#home" style="font-size: 20px">6-9</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#menu1" style="font-size: 20px">10-13</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#menu2" style="font-size: 20px">14-17</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#menu3" style="font-size: 20px">18-21</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#menu4" style="font-size: 20px">22-25</a>
+                  </li>
+              </ul>
+              <div class="tab-content">
+                <div id="allmenu" class="container tab-pane active"><br>
+                    <div class="row">
+                        @foreach ($mpasis as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
+                            </div>
+                        </div>
+                        @endforeach
+                        </div>
+                    </div>
+                    <div id="home" class="container tab-pane fade"><br>
+                        <div class="row">
+                            @foreach ($category1 as $mpasi )
+                            <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                                <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                                <div class="profile-name">{{ $mpasi->nama }}</div>
+                                </div>
+                            </div>
+                            @endforeach
+                            </div>
+                        </div>
+                <div id="menu1" class="container tab-pane fade"><br>
+                    <div class="row">
+                        @foreach ($category2 as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
+                            </div>
+                        </div>
+                        @endforeach
+                        </div>
+                </div>
+                <div id="menu2" class="container tab-pane fade"><br>
+                    <div class="row">
+                        @foreach ($category3 as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
+                            </div>
+                        </div>
+                        @endforeach
+                        </div>
+              </div>
+              <div id="menu3" class="container tab-pane fade"><br>
+                <div class="row">
+                    @foreach ($category4 as $mpasi )
+                    <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                        <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                        <div class="profile-name">{{ $mpasi->nama }}</div>
+                        </div>
+                    </div>
+                    @endforeach
+                    </div>
+                </div>
+                <div id="menu4" class="container tab-pane fade"><br>
+                    <div class="row">
+                        @foreach ($category5 as $mpasi )
+                        <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
+                            <div class="profile-card-2"><img src="{{ $mpasi->gambar }}" width="350px" height="350px" class="img img-responsive">
+                            <div class="profile-name">{{ $mpasi->nama }}</div>
+                            </div>
+                        </div>
+                        @endforeach
+                        </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-</div>
+    </div>
 
 <script>
   $('.fa.fa-expand').on("click", function(){

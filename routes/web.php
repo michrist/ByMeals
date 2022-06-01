@@ -44,7 +44,7 @@ Route::get('/article', function () {
         'comments' => Comment::all()
     ]);
 });
-Route::get('/article/{id}', [PostModelController::class, 'show']);
+Route::get('/article/{idartikel}', [PostModelController::class, 'show']);
 Route::get('/categories', function () {
     return view('categories', [
         'title' => 'Blog'
@@ -91,6 +91,7 @@ Route::get('/register', function () {
 });
 Route::get('/test', [testController::class, 'index']);
 Route::get('/menu', [MpasiController::class, 'show']);
+Route::get('/menu/cari', [MpasiController::class, 'cari']);
 Route::get('/menu/detail/{idmpasi}', [MenuController::class, 'detail']);
 
 Route::get('/jadwal', [JadwalController::class, 'displayList']); //Halaman List Jadwal
@@ -104,6 +105,3 @@ Route::get('user/favorit/hapus/{idbookmark}',[FavoritController::class,'hapusfav
 Route::get('hapusJadwal/{scheduleId}', [JadwalController::class, 'hapusjadwal']); //Hapus jadwal
 Route::get('editJadwal/{scheduleId}', [JadwalController::class, 'editjadwal']); //Menampilkan halaman edit jadwal
 Route::put('editJadwal/{scheduleId}', [JadwalController::class, 'updatejadwal']); //Menyimpan data yang diperbarui
-
-Route::get('/tambah-menu', [MenuController::class, 'tambahmenu']); //menampilkan halaman form
-Route::post('/tambah-menu', [MenuController::class, 'storemenu']); //menyimpan input menu
