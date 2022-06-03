@@ -14,6 +14,9 @@
                     <div class="text-muted fst-italic mb-2">Posted by {{ $posts -> user -> name }} {{ $posts->created_at->diffForHumans() }}</div>
                     <!-- Post categories-->
                     <a class="badge bg-secondary text-decoration-none link-light" href="/categories/{{ $posts -> category -> slug }}">{{ $posts -> category -> name }}</a>
+
+                    <livewire:like-index :idartikel="$idartikel"></livewire:like-index>
+
                     @if ( $posts->user_id === Auth::id())
                         <a href="/edit/{{ $posts->id }}" class="badge bg-warning text-decoration-none link-light edit">Edit Post</a>
                     @endif
@@ -25,7 +28,7 @@
                     @endif
                     </div>
                 </header>
-                @if ($posts->image)
+                @if ($posts->image_upload)
                 <figure class="mb-4"><img class="img-fluid rounded" src="{{ asset('storage/'.$posts->image) }}" alt="..." /></figure>
                 @else
                 <figure class="mb-4"><img class="img-fluid rounded" src="https://source.unsplash.com/900x400?" alt="..." /></figure>
