@@ -92,16 +92,18 @@ Route::get('/register', function () {
 Route::get('/test', [testController::class, 'index']);
 Route::get('/menu', [MpasiController::class, 'show']);
 Route::get('/menu/cari', [MpasiController::class, 'cari']);
-Route::get('/menu/detail/{idmpasi}', [MenuController::class, 'detail']);
+Route::get('/menu/detail/{idmpasi}', [MenuController::class, 'detail'])->name('detailMenu'); //halaman Detail Menu
 
 Route::get('/jadwal', [JadwalController::class, 'displayList']); //Halaman List Jadwal
 //fitur jadwal
-Route::get('/report-jadwal', [JadwalController::class, 'index']);
+Route::get('/report-jadwal', [JadwalController::class, 'index']); //halaman awal jadwal
+Route::post('/report-jadwal', [JadwalController::class, 'reportJadwal'])->name('reportJadwal'); //halaman jadwal setelah pilih tanggal
+
 Route::get('/add-jadwal', [JadwalController::class, 'addJadwal']);
 Route::post('add-jadwal', [JadwalController::class, 'storeJadwal']);
 
 Route::get('/favorit', [FavoritController::class, 'favorit']);
 Route::get('user/favorit/hapus/{idbookmark}',[FavoritController::class,'hapusfavorit']);
-Route::get('hapusJadwal/{scheduleId}', [JadwalController::class, 'hapusjadwal']); //Hapus jadwal
-Route::get('editJadwal/{scheduleId}', [JadwalController::class, 'editjadwal']); //Menampilkan halaman edit jadwal
-Route::put('editJadwal/{scheduleId}', [JadwalController::class, 'updatejadwal']); //Menyimpan data yang diperbarui
+Route::get('hapusJadwal/{scheduleId}', [JadwalController::class, 'hapusjadwal'])->name('hapusJadwal'); //Hapus jadwal
+Route::get('editJadwal/{scheduleId}', [JadwalController::class, 'editjadwal'])->name('editJadwal'); //Menampilkan halaman edit jadwal
+Route::put('editJadwal/{scheduleId}', [JadwalController::class, 'updatejadwal'])->name('updateJadwal'); //Menyimpan data yang diperbarui

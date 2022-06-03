@@ -15,21 +15,40 @@ use Illuminate\Support\Facades\DB;
 
 class JadwalController extends Controller
 {
-    public function displayList()
-    {
+    public function displayList(){
     }
+
     public function index()
     {
-
         $check = Schedule::count();
-        //$menus = Mpasi::all();
-        $menus = DB::table('mpasi')->get();
         $schedule = DB::table('schedule')->where('user_id', Auth::id())->get();
+        $menuPagi = DB::table('schedule')->select('id', 'tanggal', 'nama', 'waktu_pagi', 'gambar', 'deskripsi', 'menu_pagi_id as idmpasi')->join('mpasi', 'mpasi.idmpasi', '=', 'schedule.menu_pagi_id')->where('user_id', Auth::id())->latest('tanggal')->first();
+        $menuSiang = DB::table('schedule')->select('id', 'tanggal', 'nama', 'waktu_siang', 'gambar', 'deskripsi', 'menu_siang_id as idmpasi')->join('mpasi', 'mpasi.idmpasi', '=', 'schedule.menu_siang_id')->where('user_id', Auth::id())->latest('tanggal')->first();
+        $menuMalam = DB::table('schedule')->select('id', 'tanggal', 'nama', 'waktu_malam', 'gambar', 'deskripsi', 'menu_malam_id as idmpasi')->join('mpasi', 'mpasi.idmpasi', '=', 'schedule.menu_malam_id')->where('user_id', Auth::id())->latest('tanggal')->first();
         return view('jadwal.report-jadwal', [
             'title' => 'Jadwal',
             'check' => $check,
             'schedules' => $schedule,
-            'menus' => $menus
+            'menuPagi' => $menuPagi,
+            'menuSiang' => $menuSiang,
+            'menuMalam' => $menuMalam
+        ]);
+    }
+
+    public function reportJadwal(Request $request)
+    {
+        $check = Schedule::count();
+        $schedule = DB::table('schedule')->where('user_id', Auth::id())->get();
+        $menuPagi = DB::table('schedule')->select('id', 'tanggal', 'nama', 'waktu_pagi', 'gambar', 'deskripsi', 'menu_pagi_id as idmpasi')->join('mpasi', 'mpasi.idmpasi', '=', 'schedule.menu_pagi_id')->where('user_id', Auth::id())->where('id', $request->tanggalJadwal)->first();
+        $menuSiang = DB::table('schedule')->select('id', 'tanggal', 'nama', 'waktu_siang', 'gambar', 'deskripsi', 'menu_siang_id as idmpasi')->join('mpasi', 'mpasi.idmpasi', '=', 'schedule.menu_siang_id')->where('user_id', Auth::id())->where('id', $request->tanggalJadwal)->first();
+        $menuMalam = DB::table('schedule')->select('id','tanggal', 'nama', 'waktu_malam', 'gambar', 'deskripsi', 'menu_malam_id as idmpasi')->join('mpasi', 'mpasi.idmpasi', '=', 'schedule.menu_malam_id')->where('user_id', Auth::id())->where('id', $request->tanggalJadwal)->first();
+        return view('jadwal.report-jadwal', [
+            'title' => 'Jadwal',
+            'check' => $check,
+            'schedules' => $schedule,
+            'menuPagi' => $menuPagi,
+            'menuSiang' => $menuSiang,
+            'menuMalam' => $menuMalam
         ]);
     }
 
