@@ -84,10 +84,11 @@
    text-align: center;
 }
 </style>
+@if (count($mpasi)>0)
 <div class="text-center mt-5">
     <h1 style="color: #000638; font-size:66px">Hasil Pencarian Menu "{{ $cari }}"</h1>
 </div>
-<div class="container">
+<div class="container mb-4">
     <div class="row">
         @foreach ($mpasi as $mpasi )
         <div class="col-md-4" onclick="location.href='/menu/detail/{{ $mpasi->idmpasi }}';">
@@ -98,4 +99,9 @@
         @endforeach
     </div>
 </div>
+@else
+<div class="text-center mt-5" style="margin-bottom: 120px">
+    <h1 style="color: #000638; font-size:66px">Hasil Pencarian Menu "{{ $cari }}" tidak ditemukan</h1>
+</div>
+@endif
 @endsection
