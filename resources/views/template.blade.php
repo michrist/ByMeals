@@ -90,26 +90,35 @@
             <!-- Back to Top -->
             {{-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> --}}
         </div>
+        
+
 
     </div>
-    <footer class="bg-dark" style="bottom: 0">
-        <ul class="menu mt-4" style="display: flex; justify-content:space-between; ">
-            <li class="mx-5"><a href="" style="font-size:1.4rem">ABOUT US</a></li>
-            <li class="mx-5"><a href="" style="font-size:1.4rem">HOME</a></li>
-            <li class="mx-5"><a href="" style="font-size:1.4rem">ARTICLE</a></li>
-            <li class="mx-5"><a href="" style="font-size:1.4rem">MENU</a></li>
-            <li class="mx-5"><a href="" style="font-size:1.4rem">FAQ</a></li>
-        </ul>
-        <ul class="social_icon">
-            <li><a href=""><i class="fab fa-facebook"></i></a></li>
-            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-            <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-            <li><a href=""><i class="fab fa-telegram"></i></a></li>
-            <li><a href=""><i class="fab fa-instagram"></i></a></li>
-        </ul>
-        <p class="text-secondary mt-3"> &copy; 2022 ByMeals | All Right Reserved</p>
-    </footer>
-
+   
+        <footer class="bg-dark" style="bottom: 0">
+            <ul class="menu mt-4" style="display: flex; justify-content:space-between; ">
+              {{-- <li class="mx-5"><a href="" style="font-size:1.4rem">ABOUT US</a></li> --}}
+             @auth
+             <li class="mx-5"><a href="/" style="font-size:1.4rem">HOME</a></li>
+             <li class="mx-5"><a href="/allpost" style="font-size:1.4rem">ARTICLE</a></li>
+             <li class="mx-5"><a href="/report-jadwal" style="font-size:1.4rem">JADWAL</a></li>
+             <li class="mx-5"><a href="/menu" style="font-size:1.4rem">MENU</a></li>
+             @else
+             <li class="mx-5"><a href="/" style="font-size:1.4rem">HOME</a></li>
+             <li class="mx-5"><a href="/allpost" style="font-size:1.4rem">ARTICLE</a></li>
+             <li class="mx-5"><a href="/menu" style="font-size:1.4rem">MENU</a></li>
+             @endauth
+              {{-- <li class="mx-5"><a href="" style="font-size:1.4rem">FAQ</a></li> --}}
+            </ul>
+            <ul class="social_icon">
+                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                <li><a href=""><i class="fab fa-telegram"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+              </ul>
+            <p class="text-secondary mt-3"> &copy; 2022 ByMeals | All Right Reserved</p>
+              </footer>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -91,6 +91,8 @@ Route::get('/register', function () {
 });
 Route::get('/test', [testController::class, 'index']);
 Route::get('/menu', [MpasiController::class, 'show']);
+Route::get('/tambah-menu', [MenuController::class, 'tambahmenu'])->name('tambahMenu'); //halaman form tambah menu
+Route::post('/tambah-menu', [MenuController::class, 'storemenu'])->name('storeMenu'); //simpan input tambah menu
 Route::get('/menu/cari', [MpasiController::class, 'cari']);
 Route::get('/menu/detail/{idmpasi}', [MenuController::class, 'detail'])->name('detailMenu'); //halaman Detail Menu
 

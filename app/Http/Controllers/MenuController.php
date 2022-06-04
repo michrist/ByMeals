@@ -57,7 +57,7 @@ class MenuController extends Controller
 
             return redirect()->back()->with('success', 'Menu Added Successfully');
         }else{
-            return redirect()->back()->with('fail', 'Fail to Add Menu');
+            return redirect()->back()->with('fail', 'Fail to Add Menu. Menu is already exist');
         };
     }
 }
