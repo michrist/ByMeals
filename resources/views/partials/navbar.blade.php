@@ -13,7 +13,7 @@
         @if (Auth::check())
             <div class="navbar-nav ms-auto py-0 pe-4">
                 <a href="/" class="nav-item nav-link {{ $title === 'Home' ? 'active' : '' }}">Home</a>
-               
+
                 {{-- <a href="/blog" class="nav-item nav-link {{ ($title === "Blog") ? 'active' : '' }}">Blog</a> --}}
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ $title === 'Blog' ? 'active' : '' }}"
@@ -29,7 +29,7 @@
                         data-bs-toggle="dropdown">Menu</a>
                     <div class="dropdown-menu m-0">
                         <a href="/menu" class="dropdown-item">Lihat Menu</a>
-                        <a href="/tambah-menu" class="dropdown-item">Tambah Menu</a>
+                        <a href="{{route('tambahMenu')}}" class="dropdown-item">Tambah Menu</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
@@ -70,7 +70,7 @@
         @else
             <div class="navbar-nav ms-auto py-0 pe-4">
                 <a href="/" class="nav-item nav-link {{ $title === 'Home' ? 'active' : '' }}">Home</a>
-                
+
                 {{-- <a href="/blog" class="nav-item nav-link {{ ($title === "Blog") ? 'active' : '' }}">Blog</a> --}}
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ $title === 'Blog' ? 'active' : '' }}"
