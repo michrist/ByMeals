@@ -66,7 +66,7 @@
             @csrf
             <div class="col-12">
                 <label for="inputDate" class="form-label">Tanggal</label>
-                <input type="date" class="form-control" id="inputDate" name="tanggal">
+                <input type="date" class="form-control" id="inputDate" name="tanggal" required>
             </div>
             <div class="col-md-6">
                 <label for="inputMakanPagi" class="form-label">Makan Pagi</label>
@@ -76,7 +76,7 @@
                         <option value="{{ $menuPagi->id }}">{{ $menuPagi->nama }}</option>
                     @endforeach
                 </select> --}}
-                <select name="menu_pagi_id" id="inputMakanPagi" class="form-select">
+                <select name="menu_pagi_id" id="inputMakanPagi" class="form-select" required>
                     <option selected>Pilih Menu</option>
                     @foreach ($menusPagi as $menuPagi)
                         <option value="{{ $menuPagi->idmpasi }}">{{ $menuPagi->nama }}</option>
@@ -85,11 +85,11 @@
             </div>
             <div class="col-md-6">
                 <label for="inputWaktuPagi" class="form-label">Waktu Makan Pagi</label>
-                <input type="time" name="waktu_pagi" class="form-control" id="inputWaktuPagi" placeholder="1234 Main St">
+                <input type="time" name="waktu_pagi" class="form-control" id="inputWaktuPagi" placeholder="1234 Main St" required>
             </div>
             <div class="col-md-6">
                 <label for="inputMakanSiang" class="form-label">Makan Siang</label>
-                <select name="menu_siang_id" id="inputMakanSiang" class="form-select">
+                <select name="menu_siang_id" id="inputMakanSiang" class="form-select" required>
                     <option selected>Pilih Menu</option>
                     @foreach ($menusSiang as $menuSiang)
                         <option value="{{ $menuSiang->idmpasi }}">{{ $menuSiang->nama }}</option>
@@ -99,11 +99,11 @@
             <div class="col-md-6">
                 <label for="inputWaktuSiang" class="form-label">Waktu Makan Siang</label>
                 <input type="time" name="waktu_siang" class="form-control" id="inputWaktuSiang"
-                    placeholder="1234 Main St">
+                    placeholder="1234 Main St" required>
             </div>
             <div class="col-md-6">
                 <label for="inputMakanMalam" class="form-label">Makan Malam</label>
-                <select name="menu_malam_id" id="inputMakanMalam" class="form-select menu_malam">
+                <select name="menu_malam_id" id="inputMakanMalam" class="form-select menu_malam" required>
                     <option selected class="menu_malam">Pilih Menu</option>
                     @foreach ($menusMalam as $menuMalam)
                         <option value="{{ $menuMalam->idmpasi }}">{{ $menuMalam->nama }}</option>
@@ -113,7 +113,7 @@
             <div class="col-md-6">
                 <label for="inputWaktuMalam" class="form-label">Waktu Makan Malam</label>
                 <input name="waktu_malam" type="time" class="form-control" id="inputWaktuMalam"
-                    placeholder="1234 Main St">
+                    placeholder="1234 Main St" required>
             </div>
 
             <div class="col-12">

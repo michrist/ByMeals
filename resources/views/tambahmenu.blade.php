@@ -17,7 +17,7 @@
 @endif
 
 <div class="container mb-2">
-    <form action="/tambah-menu" method="POST">
+    <form action="/tambah-menu" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="col-12 m-2">
             <div class="row">
@@ -49,6 +49,15 @@
                 <textarea class="form-control" id="langkah" class="col-9" name="langkah" required value="{{old('langkah')}}"></textarea>
             </div>
         </div>
+        <div class="mb-3">
+            <label for="gambarMenu" class="form-label">Gambar Menu</label>
+            <input class="form-control @error('gambarMenu') is-invalid @enderror" type="file" id="gambarMenu" name="gambarMenu">
+          </div>
+          @error('gambarMenu')
+              <div class="invalid-feedback">
+                  {{$message}}
+              </div>
+          @enderror
         <button type="submit" class="btn btn-primary rounded-2">Tambah</button>
     </form>
 </div>
