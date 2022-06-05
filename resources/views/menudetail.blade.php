@@ -224,13 +224,13 @@ h1.heading {
                     <div class="row">
                         @foreach ($menu as $m )
                         <div class="col-xs-12 col-sm-4">
-                            <div class="card1" onclick="location.href='/menu/detail/{{ $m->id }}';">
-                                <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                            <div class="card1" onclick="location.href='/menu/detail/{{ $m->idmpasi }}';">
+                                <a class="img-card" href="/menu/detail/{{ $m->idmpasi }}">
                                 <img src="{{ $m->gambar }}" />
                               </a>
                                 <div class="card-content">
                                     <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html"> {{ $m->nama }}
+                                        <a href="/menu/detail/{{ $m->idmpasi }}"> {{ $m->nama }}
                                       </a>
                                     </h4>
                                 </div>
@@ -267,12 +267,12 @@ h1.heading {
         <div class="d-flex justify-content-center">
           <h5 class="modal-title text-center" id="exampleModalLabel" style="margin-left: 57px">Ups, Anda belum masuk</h5>
         </div>
-        
+
       </div>
       <div class="modal-body">
         <div class="d-flex justify-content-center mb-4">
             <a href="/login" class="btn btn-primary">Login</a>
-            
+
         </div>
         <p class="text-center mx-4">Atau</p>
         <div class="d-flex justify-content-center">
@@ -291,4 +291,3 @@ h1.heading {
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 @endsection
-
