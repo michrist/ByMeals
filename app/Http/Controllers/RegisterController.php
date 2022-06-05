@@ -45,33 +45,44 @@ class RegisterController extends Controller
         //      'berat'=>'required',
         //      'gender'=>'required'
         //  ]);
-      
-
         $user = User::find($id);
-        $validatedData = $request->validate([
-            'image'=>'image|file|max:1024'
-        ]);
-        $file = $request->file('image');
 
-        $nama_file = time()."_".$file->getClientOriginalName();
+        if(!$request->file('image')){
+            $validatedData = $request->validate([
+                'name'=>'required'
+            ]);
 
-        $tujuan_upload = 'data_file';
-        
-     $file->move($tujuan_upload,$nama_file);
-        $user->name = $request->name;
-        $user->namebayi = $request->namebayi;
-        $user->date1 = $request->date1;
-        $user->date = $request->date;
-        $user->berat = $request->berat;
-        $user->tinggi = $request->tinggi;
-        $user->gender = $request->gender;
-        $user->pekerjaan = $request->pekerjaan;
-        $user->alamat = $request->alamat;
-        $user->save();
-        $user->update([
-            'image' => $nama_file
-        ]);
-         $request->session()->flash('success', 'Your profile has been updated');
+            $user->name = $request->name;
+            $user->namebayi = $request->namebayi;
+            $user->date1 = $request->date1;
+            $user->date = $request->date;
+            $user->berat = $request->berat;
+            $user->tinggi = $request->tinggi;
+            $user->gender = $request->gender;
+            $user->pekerjaan = $request->pekerjaan;
+            $user->alamat = $request->alamat;
+            $user->save();
+
+            $request->session()->flash('success', 'Your profile has been updated');
+        }else{
+            $validatedData = $request->validate([
+                'image'=>'image|file|max:1024'
+            ]);
+
+            $file = $request->file('image');
+
+            $nama_file = time()."_".$file->getClientOriginalName();
+
+            $tujuan_upload = 'data_file';
+
+            $file->move($tujuan_upload,$nama_file);
+
+            $user->update([
+                'image' => $nama_file
+            ]);
+
+            $request->session()->flash('success', 'Your image has been updated');
+        }
          return redirect()->back();
         }
 }
