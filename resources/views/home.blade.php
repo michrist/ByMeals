@@ -64,7 +64,6 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-primary py-3 px-5 mt-2" href="/menu">Read More</a>
         </div>
     </div>
 </div>
@@ -85,6 +84,7 @@
                     <div class="col-5">
                         <h3>{{$m->nama}}</h3>
                         <p>{{$m->deskripsi}} </p>
+                        <a href="/menu/detail/{{ $m->idmpasi }}" class="btn btn-primary">Selengkapnya</a>
                     </div>
                 </div>
             </div>

@@ -36,15 +36,16 @@ class PostModelController extends Controller
     //     'comments'=>Comment::all()
     //     ]);
     // }
-    public function show($id){
-        $posts = PostModel::find($id);
+    public function show($idartikel){
+        $posts = PostModel::find($idartikel);
         // $posts = PostModel::find($id);
         // return view('blog.article', ['posts'=>$posts]);
         return view('blog.article', [
         'title'=>'Blog',
         'posts'=>$posts,
         'categories'=>Category::all(),
-        'comments'=>Comment::where('postmodel_id','=', $id)->get()
+        'comments'=>Comment::where('postmodel_id','=', $idartikel)->get(),
+        'idartikel'=>$idartikel
         ]);
     }
     public function test(){

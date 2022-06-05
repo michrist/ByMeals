@@ -68,7 +68,7 @@
                             <!-- Parent comment-->
                             <h3>Comments</h3>
                         </div>
-                         <livewire:list-comment :posts="$posts">
+                         <livewire:list-comment :idartikel="$idartikel">
 
                         <!-- Single comment-->
                        {{-- @if ($comments->count())

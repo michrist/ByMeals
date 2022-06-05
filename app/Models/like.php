@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class like extends Model
+{
+    use HasFactory;
+    protected $table = "likes";
+    protected $primarykey = "idlike";
+    protected $fillable = [
+        'idartikel',
+        'id',
+    ];
+    public $timestamps = false;
+    public $guarded = [];
+}

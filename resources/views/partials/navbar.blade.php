@@ -13,7 +13,7 @@
         @if (Auth::check())
             <div class="navbar-nav ms-auto py-0 pe-4">
                 <a href="/" class="nav-item nav-link {{ $title === 'Home' ? 'active' : '' }}">Home</a>
-               
+
                 {{-- <a href="/blog" class="nav-item nav-link {{ ($title === "Blog") ? 'active' : '' }}">Blog</a> --}}
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ $title === 'Blog' ? 'active' : '' }}"
@@ -41,14 +41,14 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><i
-                    class="fas fa-user-circle" style="font-size: 36px"></i></a>
+            <a href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><img height="50px" src="{{ url('/data_file/'.Auth::user()->image) }}" alt=""></a>
             <div class="nav-item dropdown">
                 <a style="color:white" href="#"
                     class="nav-link dropdown-toggle {{ $title === 'Profile' ? 'active' : '' }}"
-                    data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
+                    data-bs-toggle="dropdown">{{ Auth::user()->username }}</a>
                 <div class="dropdown-menu m-0">
                     <a href="/user/profile/{{ Auth::id() }}" class="dropdown-item">Profile</a>
+                    <a href="/favorit" class="dropdown-item">Favorit</a>
                     <form action="/logout" method="POST">
                         @csrf
                         <button class="dropdown-item">Logout</button>
@@ -70,7 +70,7 @@
         @else
             <div class="navbar-nav ms-auto py-0 pe-4">
                 <a href="/" class="nav-item nav-link {{ $title === 'Home' ? 'active' : '' }}">Home</a>
-                
+
                 {{-- <a href="/blog" class="nav-item nav-link {{ ($title === "Blog") ? 'active' : '' }}">Blog</a> --}}
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle {{ $title === 'Blog' ? 'active' : '' }}"
