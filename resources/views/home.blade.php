@@ -7,7 +7,7 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-6 text-center text-lg-start">
                 <h1 class="display-3 text-white animated slideInLeft">Pencernaan Bayi Berkembang,<br>Mama pun Tenang</h1>
-                <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                <p class="text-white animated slideInLeft mb-4 pb-2">MKami membantu Anda menjadi kepala koki hebat untuk pelanggan kecil yang sangat spesial</p>
             </div>
             <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                 <img class="img-fluid" src="img/piring-muter.png" alt="">
@@ -42,8 +42,7 @@
         <div class="col-lg-6">
             <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
             <h1 class="mb-4">Welcome to ByMeals</h1>
-            <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.</p>
-            <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+            <p class="mb-4">Temukan ide menu dan resep MPASI dan makanan sehat terbaru untuk sarapan, makan siang, dan makan malam. Menu MPASI kami dipercaya bergizi, mudah dikonsumsi, dan mudah disiapkan. Masing-masing dirancang untuk bayi dibawah satu tahun. Lihat setiap resep untuk tips penyajian, kandungan, dan banyak lagi.</p>
             <div class="row g-4 mb-4">
                 <div class="col-sm-6">
                     <div class="d-flex align-items-center border-start border-5 border-primary px-3">
