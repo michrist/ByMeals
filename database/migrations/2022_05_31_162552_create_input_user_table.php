@@ -23,6 +23,7 @@ class CreateInputUserTable extends Migration
             $table->string('bahan_menu');
             $table->string('langkah_memasak');
             $table->integer('status');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

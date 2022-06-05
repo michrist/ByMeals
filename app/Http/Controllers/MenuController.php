@@ -39,9 +39,11 @@ class MenuController extends Controller
             'umurBayi' => 'required|numeric',
             'bahan' => 'required|max:255',
             'langkah' => 'required|max:255',
+            'gambarMenu' => 'image|file|max:1024',
         ]);
 
-        if(Mpasi::where('nama', $request->namaMenu)->count() !== 0){
+
+        if(Mpasi::where('nama', $request->namaMenu)->count() === 0){
             $today = new DateTime();
             $input = new Input();
             $input->user_id = Auth::id();
@@ -53,11 +55,12 @@ class MenuController extends Controller
             $input->langkah_memasak = $request->langkah;
             $input->created_at = $today;
             $input->updated_at = $today;
+            $input->image = $input->image ? $request->file('gambarMenu')->store('gambar-menu') : null;
             $input->save();
 
             return redirect()->back()->with('success', 'Menu Added Successfully');
         }else{
-            return redirect()->back()->with('fail', 'Fail to Add Menu');
+            return redirect()->back()->with('fail', 'Fail to Add Menu. Menu is already exist');
         };
     }
 }

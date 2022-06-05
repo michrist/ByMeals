@@ -1,90 +1,108 @@
 @extends('template')
+@section('css')
+    <link href="css/jadwal/report.css" rel="stylesheet">
+@endsection
 @section('container')
-
-@if ($check == null)
-<div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin:50px">
-    <strong>Holy {{ Auth::user()->name }} ! </strong> anda belum memiliki jadwal buat sekarang
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-<div class="d-grid gap-2 col-6 mx-auto" style="padding-bottom:50px">
-    <a href="/add-jadwal" class="btn btn-primary me-md-2" type="button">Buat Jadwal</a>
-</div>
-@else
-<div class="row mb-lg-2">
-    <center>
-        <h2>Pilih Tanggal : </h2>
-        <form action="/report-jadwal" method="POST">
-            @csrf
-            <select name="tanggalJadwal" id="tanggalJadwal">
-                @foreach ($schedules as $s)
-                <option value="{{$s->id}}">{{$s->tanggal}}</option>
-                @endforeach
-            </select>
-            <button type="submit" class="btn btn-primary">Lihat Jadwal</button>
-        </form>
-    </center>
-</div>
-<div class="row">
-    <div class="col-1"></div>
-    <div class="card-group col-10">
-        <div class="col-lg-4 mb-lg-4">
-            <center>
-                <div class="card" style="width: 19rem;">
-                    <img class="card-img" src="{{$menuPagi->gambar}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$menuPagi->nama}}</h5>
-                        <p class="card-text">{{Str::limit($menuPagi->deskripsi, 100)}}</p>
-                        <a href="{{route('detailMenu', $menuPagi->idmpasi)}}" class="btn btn-primary">Lihat Selengkapnya</a>
-                    </div>
+    @if ($check == null)
+        <div class="container null">
+            <div class="col-auto">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin:50px">
+                    <strong>Hallo {{ Auth::user()->name }} ! </strong> anda belum memiliki jadwal, buat sekarang
                 </div>
-            </center>
+            </div>
+            <div class="col-auto">
+                <div class="d-grid gap-2 col-6 mx-auto btn-add">
+                    <a href="/add-jadwal" class="btn btn-primary me-md-2 btn-end" type="button">Buat Jadwal</a>
+                </div>
+            </div>
+
+        </div>
+    @else
+        <div class="container option">
+            <div class="title">
+                <p class="h1">Report Jadwal</p>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <form action="/report-jadwal" method="POST" class="row g-3">
+                        @csrf
+                        <div class="col-auto">
+                            <label for="tanggalJadwal" class="col-form-label">Pilih Tanggal :</label>
+                        </div>
+                        <div class="col-auto">
+                            <select name="tanggalJadwal" id="tanggalJadwal" class="form-select">
+                                @foreach ($schedules as $s)
+                                    <option value="{{ $s->id }}">{{ $s->tanggal }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-lihat">Lihat Jadwal</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{{ route('editJadwal', $menuPagi->id) }}" class="btn btn-warning me-md-2"
+                            type="button">Edit</a>
+                        <a href="{{ route('hapusJadwal', $menuPagi->id) }}" class="btn btn-danger" type="button">Hapus
+                        </a>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-        <div class="col-lg-4 mb-lg-4">
-            <center>
-                <div class="card" style="width: 19rem;">
-                    <img class="card-img-top" src="{{$menuSiang->gambar}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$menuSiang->nama}}</h5>
-                        <p class="card-text" >{{Str::limit($menuSiang->deskripsi, 100)}}</p>
-                        <a href="{{route('detailMenu', $menuSiang->idmpasi)}}" class="btn btn-primary">Lihat Selengkapnya</a>
+        <section class="card-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card card-report">
+                            <img class="card-img-top" src="{{ $menuPagi->gambar }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h4>{{ $menuPagi->nama }}</h4>
+                                <b><p>Menu Pagi</p></b>
+                                <p>{{date("h:i a", strtotime($menuPagi->waktu_pagi))}}</p>
+                                <p class="card-text">{{ Str::limit($menuPagi->deskripsi, 75) }}</p>
+                                <a href="{{ route('detailMenu', $menuPagi->idmpasi) }}"
+                                    class="btn btn-primary btn-sm">Lihat
+                                    Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card card-report">
+                            <img class="card-img-top" src="{{ $menuSiang->gambar }}" alt="Card image cap">
+                            <div class="card-body">
+
+                                <h4>{{ $menuSiang->nama }}</h4>
+                                <b><p>Menu Siang</p></b>
+                                <p>{{date("h:i a", strtotime($menuSiang->waktu_siang))}}</p>
+                                <p class="card-text">{{ Str::limit($menuSiang->deskripsi, 75) }}</p>
+                                <a href="{{ route('detailMenu', $menuSiang->idmpasi) }}"
+                                    class="btn btn-primary btn-sm">Lihat
+                                    Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 crd">
+                        <div class="card card-report">
+                            <img class="card-img-top" src="{{ $menuMalam->gambar }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h4>{{ $menuMalam->nama }}</h4>
+                                <b><p>Menu Malam</p></b>
+                                <p>{{date("h:i a", strtotime($menuMalam->waktu_malam))}}</p>
+                                <p class="card-text">{{ Str::limit($menuMalam->deskripsi, 75) }}</p>
+                                <a href="{{ route('detailMenu', $menuMalam->idmpasi) }}"
+                                    class="btn btn-primary btn-sm">Lihat
+                                    Selengkapnya</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </center>
-        </div>
-
-        <div class="col-lg-4 mb-lg-4">
-            <center>
-                <div class="card" style="width: 19rem;">
-                    <img class="card-img-top" src="{{$menuMalam->gambar}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$menuMalam->nama}}e</h5>
-                        <p class="card-text">{{Str::limit($menuMalam->deskripsi, 100)}}</p>
-                        <a href="{{route('detailMenu', $menuMalam->idmpasi)}}" class="btn btn-primary">Lihat Selengkapnya</a>
-                    </div>
-                </div>
-            </center>
-        </div>
-    </div>
-    <div class="col-1"></div>
-</div>
-<div class="row">
-    <h3 style="text-align: center">Aksi : </h3>
-</div>
-<div class="row">
-    <div class="col-3"></div>
-    <div class="col-3 mb-lg-3">
-        <center>
-            <a href="{{route('editJadwal', $menuPagi->id)}}"><button class="btn btn-info">Edit Jadwal</button></a>
-        </center>
-    </div>
-    <div class="col-3">
-        <center>
-            <a href="{{route('hapusJadwal', $menuPagi->id)}}"><button class="btn btn-warning">Hapus Jadwal</button></a>
-        </center>
-    </div>
-    <div class="col-3"></div>
-</div>
-
-@endif
+            </div>
+        </section>
+    @endif
 @endsection
