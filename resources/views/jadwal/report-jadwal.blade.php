@@ -63,6 +63,8 @@
                             <img class="card-img-top" src="{{ $menuPagi->gambar }}" alt="Card image cap">
                             <div class="card-body">
                                 <h4>{{ $menuPagi->nama }}</h4>
+                                <b><p>Menu Pagi</p></b>
+                                <p>{{date("h:i a", strtotime($menuPagi->waktu_pagi))}}</p>
                                 <p class="card-text">{{ Str::limit($menuPagi->deskripsi, 75) }}</p>
                                 <a href="{{ route('detailMenu', $menuPagi->idmpasi) }}"
                                     class="btn btn-primary btn-sm">Lihat
@@ -74,7 +76,10 @@
                         <div class="card card-report">
                             <img class="card-img-top" src="{{ $menuSiang->gambar }}" alt="Card image cap">
                             <div class="card-body">
+
                                 <h4>{{ $menuSiang->nama }}</h4>
+                                <b><p>Menu Siang</p></b>
+                                <p>{{date("h:i a", strtotime($menuSiang->waktu_siang))}}</p>
                                 <p class="card-text">{{ Str::limit($menuSiang->deskripsi, 75) }}</p>
                                 <a href="{{ route('detailMenu', $menuSiang->idmpasi) }}"
                                     class="btn btn-primary btn-sm">Lihat
@@ -87,6 +92,8 @@
                             <img class="card-img-top" src="{{ $menuMalam->gambar }}" alt="Card image cap">
                             <div class="card-body">
                                 <h4>{{ $menuMalam->nama }}</h4>
+                                <b><p>Menu Malam</p></b>
+                                <p>{{date("h:i a", strtotime($menuMalam->waktu_malam))}}</p>
                                 <p class="card-text">{{ Str::limit($menuMalam->deskripsi, 75) }}</p>
                                 <a href="{{ route('detailMenu', $menuMalam->idmpasi) }}"
                                     class="btn btn-primary btn-sm">Lihat
