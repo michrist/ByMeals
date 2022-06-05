@@ -20,7 +20,7 @@
                         data-bs-toggle="dropdown">Blog</a>
                     <div class="dropdown-menu m-0">
                         <a href="/allpost" class="dropdown-item">Blog & Articles</a>
-                        <a href="/create" class="dropdown-item">Add Post</a>
+                        <a href="/create" class="dropdown-item">Tambah Post</a>
                     </div>
                 </div>
 
@@ -37,11 +37,16 @@
                         data-bs-toggle="dropdown">Jadwal</a>
                     <div class="dropdown-menu m-0">
                         <a href="/report-jadwal" class="dropdown-item">Report Jadwal</a>
-                        <a href="/add-jadwal" class="dropdown-item">Add Jadwal</a>
+                        <a href="/add-jadwal" class="dropdown-item">Tambah Jadwal</a>
                     </div>
                 </div>
             </div>
+            @if (Auth::user()->image)
             <a href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><img height="50px" src="{{ url('/data_file/'.Auth::user()->image) }}" alt=""></a>
+            @else
+            <a  href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><i class="fas fa-user-circle" style="font-size: 36px"></i></a>
+            @endif
+
             <div class="nav-item dropdown">
                 <a style="color:white" href="#"
                     class="nav-link dropdown-toggle {{ $title === 'Profile' ? 'active' : '' }}"
