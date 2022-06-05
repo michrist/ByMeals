@@ -1,203 +1,208 @@
 @extends('template')
 @section('container')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
-<div class="container-xxl py-5 bg-dark hero-header">
-<div class="kotak">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="display-3 text-white animated slideInLeft">Pencernaan Bayi Berkembang,<br>Mama pun Tenang</h1>
-                <p class="text-white animated slideInLeft mb-4 pb-2" style="text-align: justify">Kami membantu Anda menjadi kepala koki hebat untuk pelanggan kecil yang sangat spesial. MPASI sangat baik untuk tumbuh kembang bayi dibawah 1 tahun. Selamat mencoba berbagai resep MPASI yang mudah, sehat, dan lezat untuk si kecil</p>
-            </div>
-            <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                <img class="img-fluid" src="img/piring-muter.png" alt="">
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!-- Navbar & Hero End -->
+<style>
+.title {
+
+ margin-bottom: 50px;
+ text-transform: uppercase;
+}
+
+.card-block {
+ font-size: 1em;
+ position: relative;
+ margin: 0;
+ padding: 1em;
+ border: none;
+ border-top: 1px solid rgba(34, 36, 38, .1);
+ box-shadow: none;
+
+}
+.card {
+ font-size: 1em;
+ overflow: hidden;
+ height: 350px;
+ border: none;
+ border-radius: .28571429rem;
+ box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+ margin-top:20px;
+}
+
+.carousel-indicators li {
+ border-radius: 12px;
+ width: 12px;
+ height: 12px;
+ background-color: #404040;
+}
+.carousel-indicators li {
+ border-radius: 12px;
+ width: 12px;
+ height: 12px;
+ background-color: #404040;
+}
+.carousel-indicators .active {
+ background-color: white;
+ max-width: 12px;
+ margin: 0 3px;
+ height: 12px;
+}
+.carousel-control-prev-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+lex-direction: column;
 
 
-<!-- About Start -->
-<div class="container-xxl py-5">
+.btn {
+margin-top: auto;
+}
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card1 {
+  margin: 30px auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 40px;
+box-shadow: 5px 5px 6px 4px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card1 .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card1 .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card1 .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: -80px;
+  height: 40px;
+  color: black
+}
+
+.card1:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+/*
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+}
+*/
+</style>
+<div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
+    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Blog</h5>
+    <h1 class="mb-3">Blog & Artikel</h1>
+</div>
+@if (session()->has('successs'))
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="container">
-    <div class="row g-5 align-items-center">
-        <div class="col-lg-6">
-            <div class="row g-3">
-                <div class="col-6 text-start">
-                    <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/Puree-Alpukat.jpg">
-                </div>
-                <div class="col-6 text-start">
-                    <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="img/bayam-jagung.jpeg" style="margin-top: 25%;">
-                </div>
-                <div class="col-6 text-end">
-                    <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="img/kentang-salmon.jpg">
-                </div>
-                <div class="col-6 text-end">
-                    <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.7s" src="img/sup-kentang.jpg">
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
-            <h1 class="mb-4">Welcome to ByMeals</h1>
-            <p class="mb-4">Temukan ide menu dan resep MPASI dan makanan sehat terbaru untuk sarapan, makan siang, dan makan malam. Menu MPASI kami dipercaya bergizi, mudah dikonsumsi, dan mudah disiapkan. Masing-masing dirancang untuk bayi dibawah satu tahun. Lihat setiap resep untuk tips penyajian, kandungan, dan banyak lagi.</p>
-            {{-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p> --}}
-            <div class="row g-4 mb-4">
-                <div class="col-sm-6">
-                    <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                        <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">15</h1>
-                        <div class="ps-4">
-                            <p class="mb-0">Years of</p>
-                            <h6 class="text-uppercase mb-0">Experience</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                        <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">20+</h1>
-                        <div class="ps-4">
-                            <p class="mb-0">Popular</p>
-                            <h6 class="text-uppercase mb-0">Menus</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h3>Categories</h3>
+    <p>Pilih artikel berdasarkan kategori</p>
 </div>
-</div>
-<!-- About End -->
-{{-- Menu Rekomendasi MPASI --}}
-<section>
-    <div class="container">
-        <h1 class="text-center" >Rekomendasi MP-ASI</h1>
-        <p class="text-center mb-4" style="font-size:1.3rem">Berbagai menu MP-ASI untuk si buah hati</p>
-        <div class="row">
-            @foreach ($menu as $m)
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-6 my-auto">
-                        <img width="250px" height="250px" src="{{$m->gambar}}" alt="" style="border-radius: 10px">
-                    </div>
-                    <div class="col-5">
-                        <h3>{{$m->nama}}</h3>
-                        <p>{{$m->deskripsi}} </p>
-                        <a href="/menu/detail/{{ $m->idmpasi }}" class="btn btn-primary">Selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-{{-- Planner --}}
-<section>
-
-</section>
-
-{{-- Blog --}}
-
-<!-- Menu Start -->
-
-<!-- Menu End -->
-
-
-<!-- Reservation Start -->
-<div class="container-xxl mt-5 py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-<div class="row g-0">
-    <div class="col-md-6">
-        <div class="">
-            <img height="525px" width="650px"  src="{{asset('img/gambar_planner.jpeg')}}" alt="">
-        </div>
-    </div>
-    <div class="col-md-6 bg-warning d-flex align-items-center">
-        <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="" style="color: #000638">
-                <h1 class="text-white mb-4">Planner</h1>
-                 <h1 class="fw-bold" style="font-size:60px;margin-top:-20px">Best Free Meal Planning App</h1>
-            </div>
-            <p style="font-size:1.2rem;color:#605C59">Plan your baby’s meals for the week all while barely lifting a finger.</p>
-            @Auth
-            <a href="/add-jadwal" class="btn btn-primary" style="background: #FEA116: color:white">Plan yours</a>
-            @else
-            {{-- <a data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary" style="background: #FEA116: color:white">Plan yours</a> --}}
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Plan yours
-              </button>
-            @endauth
-        </div>
-    </div>
-</div>
-</div>
-
-{{-- <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content rounded-0">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <!-- 16:9 aspect ratio -->
-            <div class="ratio ratio-16x9">
-                <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                    allow="autoplay"></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-</div> --}}
-<section class="" style="margin-bottom: 60px">
-    <h1 class="text-center">
-        Blog & Artikel
-    </h1>
-    <p class="text-center  mb-5">Deretan artikel tentang fakta, MP-ASI, dan tips untuk bayi</p>
-    <div class="container">
-        <div class="row">
-            @foreach ($artikel as $a)
-            <div class="col-6">
-                <img class="mb-3" height="500px" width="532px"  src="{{asset('img/baby-eating.jpg')}}" alt="">
-                <a href="/article/{{$a->id}}" class="btn btn-primary" style="background: white;color:black;border:1px solid black">Read More</a>
-                <h1>{{$a->title}}</h1>
-                <p>
-                    {!! Str::limit($a->body, 350) !!}
-                </p>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-</section>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-left:-80px;">
-    <div class="modal-dialog" role="document" style="">
-      <div class="modal-content" style="width: 700px;border-radius:20px;background:#E5E5E5">
-        <div class="modal-header">
-          <div class="d-flex justify-content-center">
-            <h5 class="modal-title text-center" id="exampleModalLabel" style="margin-left: 57px">Ups, Anda belum masuk</h5>
+<div class="container">
+    <div class="cards-list">
+        @foreach ($categories as $category )
+        <div class="card1 1" onclick="location.href='/categories/{{ $category->slug }}';"        >
+          <div class="card_image"> <img src="{{ $category->picture }}" /> </div>
+          <div class="card_title title-white">
+            <p>{{ $category->name }}</p>
           </div>
+        </div>
+        @endforeach
 
         </div>
-        <div class="modal-body">
-          <div class="d-flex justify-content-center mb-4">
-              <a href="/login" class="btn btn-primary">Login</a>
+</div>
+<div class="container mb-4">
+    <!-- Card Start -->
+    @foreach ($posts as $post )
+    <div class="card">
+      <div class="row ">
+        <!-- Carousel start -->
+        <div class="col-md-5">
+          <div id="CarouselTest" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                @if(count((array)$post->image_upload))
+                <figure><img class="d-block" src="{{ url('/data_file/'.$post->image_upload) }}" alt="" width="400px"></figure>
+                @else
+                <figure><img class="d-block" src="{{ $post->image }}" alt="" style="height: 350px" ></figure>
+                @endif
 
+              </div>
+            </div>
           </div>
-          <p class="text-center mx-4">Atau</p>
-          <div class="d-flex justify-content-center">
-            <a href="/register" class="btn btn-primary mb-4">Register</a>
         </div>
-        <p class="text-center" style="font-size: 1.2rem">untuk membuat jadwal  dan simpan wishlist MPASI bayi Anda!</p>
-        </div>
-        <div class="modal-footer">
-          {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
+        <div class="col-md-7 px-3">
+            <div class="card-block px-6">
+              <h4 class="card-title">{{ $post->title }}</h4>
+              <p class="card-text">
+                {!! Str::limit($post->body, 300) !!}
+              </p>
+              <br>
+              <a href="/article/{{ $post->id }}" class="mt-auto btn btn-primary" wire:click="getComment({{ $post->id }})">Read More</a>
+            </div>
+          </div>
+        <!-- End of carousel -->
       </div>
     </div>
+    @endforeach
+
+    {{-- {{$posts->links()}} --}}
+    <!-- End of card -->
+
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-@endsection
+@endsection()
+

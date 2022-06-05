@@ -7,7 +7,7 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-6 text-center text-lg-start">
                 <h1 class="display-3 text-white animated slideInLeft">Pencernaan Bayi Berkembang,<br>Mama pun Tenang</h1>
-                <p class="text-white animated slideInLeft mb-4 pb-2">MKami membantu Anda menjadi kepala koki hebat untuk pelanggan kecil yang sangat spesial</p>
+                <p class="text-white animated slideInLeft mb-4 pb-2" style="text-align: justify">Kami membantu Anda menjadi kepala koki hebat untuk pelanggan kecil yang sangat spesial. MPASI sangat baik untuk tumbuh kembang bayi dibawah 1 tahun. Selamat mencoba berbagai resep MPASI yang mudah, sehat, dan lezat untuk si kecil</p>
             </div>
             <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                 <img class="img-fluid" src="img/piring-muter.png" alt="">
@@ -43,6 +43,7 @@
             <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
             <h1 class="mb-4">Welcome to ByMeals</h1>
             <p class="mb-4">Temukan ide menu dan resep MPASI dan makanan sehat terbaru untuk sarapan, makan siang, dan makan malam. Menu MPASI kami dipercaya bergizi, mudah dikonsumsi, dan mudah disiapkan. Masing-masing dirancang untuk bayi dibawah satu tahun. Lihat setiap resep untuk tips penyajian, kandungan, dan banyak lagi.</p>
+            {{-- <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p> --}}
             <div class="row g-4 mb-4">
                 <div class="col-sm-6">
                     <div class="d-flex align-items-center border-start border-5 border-primary px-3">
@@ -55,7 +56,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                        <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">50</h1>
+                        <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">20+</h1>
                         <div class="ps-4">
                             <p class="mb-0">Popular</p>
                             <h6 class="text-uppercase mb-0">Menus</h6>
@@ -119,7 +120,7 @@
             </div>
             <p style="font-size:1.2rem;color:#605C59">Plan your baby’s meals for the week all while barely lifting a finger.</p>
             @Auth
-            <a href="/jadwal" class="btn btn-primary" style="background: #FEA116: color:white">Plan yours</a>
+            <a href="/add-jadwal" class="btn btn-primary" style="background: #FEA116: color:white">Plan yours</a>
             @else
             {{-- <a data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary" style="background: #FEA116: color:white">Plan yours</a> --}}
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
