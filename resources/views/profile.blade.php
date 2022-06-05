@@ -358,7 +358,9 @@ h1 {
                 <div class="card-body">
                     <div class="mb-3">
                         <div class="d-flex justify-content-center">
-                            <img src="" alt="" class="img-preview img-fluid col-sm-6">
+                            <img src="@if($user->image)
+                            {{ url('/data_file/'.Auth::user()->image) }}
+                            @endif" alt="Belum ada foto profil" class="img-preview img-fluid col-sm-6">
                         </div> <br>
                         {{-- <label for="formFile" class="form-label">Pilih Gambar</label> --}}
                         <input class="form-control" class="image" name="image" type="file" id="image" onchange="previewImage()">
