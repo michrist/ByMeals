@@ -7,6 +7,8 @@ use App\Http\Requests\StorePostModelRequest;
 use App\Http\Requests\UpdatePostModelRequest;
 use App\Models\Category;
 use App\Models\Comment;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class PostModelController extends Controller
 {
@@ -56,5 +58,17 @@ class PostModelController extends Controller
             'categories'=>$categories,
             'posts'=>$posts
         ]);
+    }
+    public function cari(Request $request){
+        $cari = $request->cari;
+        $posts = DB::table('post_models')
+		->where('title','like',"%".$cari."%")
+		->get();
+        return view('caripost', [
+            'posts'=>$posts,
+            'title'=>'Blog',
+            'cari'=>$cari
+        ]);
+
     }
 }
