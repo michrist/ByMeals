@@ -46,7 +46,6 @@ class RegisterController extends Controller
         //      'gender'=>'required'
         //  ]);
         $user = User::find($id);
-        ddd($user->image);
         if(!$request->file('image')){
             $validatedData = $request->validate([
                 'name'=>'required'
