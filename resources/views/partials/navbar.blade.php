@@ -29,7 +29,7 @@
                         data-bs-toggle="dropdown">Menu</a>
                     <div class="dropdown-menu m-0">
                         <a href="/menu" class="dropdown-item">Lihat Menu</a>
-                        <a href="{{route('tambahMenu')}}" class="dropdown-item">Tambah Menu</a>
+                        <a href="{{ route('tambahMenu') }}" class="dropdown-item">Tambah Menu</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
@@ -41,10 +41,12 @@
                     </div>
                 </div>
             </div>
-            @if (Auth::user()->image)
-            <a href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><img height="50px" src="{{ url('/data_file/'.Auth::user()->image) }}" alt=""></a>
+           @if (Auth::user()->image)
+                <a href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><img height="50px"
+                        src="{{ url('/data_file/' . Auth::user()->image) }}" alt=""></a>
             @else
-            <a  href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><i class="fas fa-user-circle" style="font-size: 36px"></i></a>
+                <a href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><i
+                        class="fas fa-user-circle" style="font-size: 36px"></i></a>
             @endif
 
             <div class="nav-item dropdown">
@@ -54,10 +56,11 @@
                 <div class="dropdown-menu m-0">
                     <a href="/user/profile/{{ Auth::id() }}" class="dropdown-item">Profile</a>
                     <a href="/favorit" class="dropdown-item">Favorit</a>
-                    <form action="/logout" method="POST">
+                    <a data-toggle="modal" data-target="#exampleLogout" class="dropdown-item">Logout</a>
+                    {{-- <form action="/logout" method="POST">
                         @csrf
                         <button class="dropdown-item">Logout</button>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
 
@@ -82,10 +85,25 @@
                         data-bs-toggle="dropdown">Blog</a>
                     <div class="dropdown-menu m-0">
                         <a href="/allpost" class="dropdown-item">Blog & Articles</a>
-                        <a href="/create" class="dropdown-item">New Article</a>
+                        <a data-toggle="modal" data-target="#exampleModal" class="dropdown-item">Tambah Article</a>
                     </div>
                 </div>
-                <a href="/menu" class="nav-item nav-link {{ $title === 'Menu' ? 'active' : '' }}">Menu</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle {{ $title === 'Menu' ? 'active' : '' }}"
+                        data-bs-toggle="dropdown">Menu</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="/menu" class="dropdown-item">Lihat Menu</a>
+                        <a data-toggle="modal" data-target="#exampleModal" class="dropdown-item">Tambah Menu</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle {{ $title === 'Jadwal' ? 'active' : '' }}"
+                        data-bs-toggle="dropdown">Jadwal</a>
+                    <div class="dropdown-menu m-0">
+                        <a data-toggle="modal" data-target="#exampleModal" class="dropdown-item">Report Jadwal</a>
+                        <a data-toggle="modal" data-target="#exampleModal" class="dropdown-item">Tambah Jadwal</a>
+                    </div>
+                </div>
                 {{-- <div class="nav-item dropdown">
                 <a href="/menu" class="nav-link nav-item {{ ($title === "Menu") ? 'active' : '' }}" data-bs-toggle="dropdown">Menu</a>
                 <div class="dropdown-menu m-0">
@@ -99,3 +117,80 @@
         @endif
     </div>
 </nav>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="margin-left:-80px;">
+    <div class="modal-dialog" role="document" style="">
+        <div class="modal-content" style="width: 700px;border-radius:20px;background:#E5E5E5">
+            <div class="modal-header">
+                <div class="d-flex justify-content-center">
+                    <h5 class="modal-title text-center" id="exampleModalLabel" style="margin-left: 57px">Ups, Anda belum
+                        masuk</h5>
+                </div>
+
+            </div>
+            <div class="modal-body">
+                <div class="d-flex justify-content-center mb-4">
+                    <a href="/login" class="btn btn-primary">Login</a>
+
+                </div>
+                <p class="text-center mx-4">Atau</p>
+                <div class="d-flex justify-content-center">
+                    <a href="/register" class="btn btn-primary mb-4">Register</a>
+                </div>
+                <p class="text-center" style="font-size: 1.2rem">untuk membuat jadwal dan simpan wishlist MPASI bayi
+                    Anda!</p>
+            </div>
+            <div class="modal-footer">
+                {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- Popup Logout --}}
+<div class="modal fade" id="exampleLogout" tabindex="-1" role="dialog" aria-labelledby="exampleLogoutLabel"
+    aria-hidden="true" style="margin-left:-80px;">
+    <div class="modal-dialog" role="document" style="">
+        <div class="modal-content" style="width: 700px;border-radius:20px;background:#E5E5E5">
+            <div class="modal-header">
+                <div class="d-flex justify-content-center">
+                    <h5 class="modal-title text-center" id="exampleModalLabel" style="margin-left: 57px">Apakah Anda
+                        Yakin untuk Logout?</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex justify-content-center mb-4">
+                    <div class="row">
+
+                        <div class="col-4">
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button class="btn btn-primary">Ya</button>
+                            </form>
+                        </div>
+                        <div class="col-4 mx-3"><a class="btn btn-primary" data-dismiss="modal">Tidak</a></div>
+
+                    </div>
+
+                </div>
+                {{-- <p class="text-center mx-4">Atau</p>
+          <div class="d-flex justify-content-center">
+            <a href="/register" class="btn btn-primary mb-4">Register</a>
+        </div> --}}
+                <p class="text-center" style="font-size: 1.2rem">Anda tidak bisa lagi untuk membuat jadwal dan simpan
+                    wishlist MPASI bayi jika logout</p>
+            </div>
+            <div class="modal-footer">
+                {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                {{-- <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button> --}}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
