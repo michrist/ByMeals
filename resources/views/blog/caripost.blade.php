@@ -140,7 +140,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 </style>
 <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Blog</h5>
-    <h1 class="mb-3">Blog & Artikel</h1>
+    <h1 class="mb-3">Hasil Pencarian Blog & Artikel tentang {{ $cari }}</h1>
 </div>
 @if (session()->has('successs'))
 <div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -148,23 +148,6 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-<div class="container">
-    <h3>Categories</h3>
-    <p>Pilih artikel berdasarkan kategori</p>
-</div>
-<div class="container">
-    <div class="cards-list">
-        @foreach ($categories as $category )
-        <div class="card1 1" onclick="location.href='/categories/{{ $category->slug }}';"        >
-          <div class="card_image"> <img src="{{ $category->picture }}" /> </div>
-          <div class="card_title title-white">
-            <p>{{ $category->name }}</p>
-          </div>
-        </div>
-        @endforeach
-
-        </div>
-</div>
 <div class="container mb-4">
     <!-- Card Start -->
     @foreach ($posts as $post )
@@ -205,4 +188,3 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 
   </div>
 @endsection()
-

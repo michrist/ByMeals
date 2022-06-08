@@ -37,7 +37,7 @@ class DashboardPostController extends Controller
         $post->user_id = Auth::id();
         // $post->excerpt = Str::limit($request->body, 200);
         $post->save();
-        return redirect('blog') -> with('success', 'Post has been updated');
+        return redirect('allpost') -> with('success', 'Post has been updated');
     }
     public function edit($id)
     {

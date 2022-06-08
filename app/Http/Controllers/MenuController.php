@@ -17,7 +17,9 @@ class MenuController extends Controller
     }
     public function detail($idmpasi){
         $mpasi = DB::table('mpasi')->where('idmpasi', $idmpasi)->first();
-        $menu = Mpasi::all()->take(3);
+        $menu = Mpasi::inRandomOrder()
+        ->limit(3)
+        ->get();
         return view('menudetail', [
             'title'=>'Menu',
             'mpasi'=>$mpasi,
@@ -25,7 +27,6 @@ class MenuController extends Controller
             'idmpasi'=>$idmpasi
         ]);
     }
-
     public function tambahmenu(){
         return view('tambahmenu', [
             'title' => 'Menu'

@@ -13,13 +13,26 @@
                     <!-- Post meta content-->
                     <div class="text-muted fst-italic mb-2">Posted by {{ $posts -> user -> name }} {{ $posts->created_at->diffForHumans() }}</div>
                     <!-- Post categories-->
-                    <a class="badge bg-secondary text-decoration-none link-light" href="/categories/{{ $posts -> category -> slug }}">{{ $posts -> category -> name }}</a>
+                    <div class="row">
+                        <div class="col-1"> <a class="badge bg-secondary text-decoration-none link-light" href="/categories/{{ $posts -> category -> slug }}">{{ $posts -> category -> name }}</a></div>
+                        <div class="col-3"><livewire:like-index :idartikel="$idartikel"></livewire:like-index></div>
+                        {{-- <div class="col-1">
+                        @if ( $posts->user_id === Auth::id())
+                            <a href="/edit/{{ $posts->id }}" class="badge bg-warning text-decoration-none link-light edit">Edit Post</a>
+                         @endif
+                        </div> --}}
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            @if ( $posts->user_id === Auth::id())
+                            <a href="/edit/{{ $posts->id }}" class="badge bg-warning text-decoration-none link-light edit">Edit Post</a>
+                         @endif
+                        </div>
+                    </div>
 
-                    <livewire:like-index :idartikel="$idartikel"></livewire:like-index>
 
-                    @if ( $posts->user_id === Auth::id())
-                        <a href="/edit/{{ $posts->id }}" class="badge bg-warning text-decoration-none link-light edit">Edit Post</a>
-                    @endif
+
+
                     <div class="container">
                     @if(session()->has('success'))
                     <div class="alert alert-success mt-3">
@@ -68,31 +81,7 @@
                             <!-- Parent comment-->
                             <h3>Comments</h3>
                         </div>
-                         <livewire:list-comment :posts="$posts">
-
-                        <!-- Single comment-->
-                       {{-- @if ($comments->count())
-                       @foreach ($comments as $comment )
-                       <div class="d-flex">
-                           <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                           <div class="ms-3 mb-3">
-                               <div class="fw-bold">{{ $comment->user->name }}</div>
-                               {{ $comment->comment }}
-                           </div>
-                       </div>
-                       @endforeach
-                       @else
-                       <div class="ms-3 mb-2">
-                        <div class="fw-bold">No comment found</div>
-                        </div>
-                       @endif --}}
-                        {{-- <div class="d-flex">
-                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="ms-3">
-                                <div class="fw-bold">Alfito</div>
-                                Mantab
-                            </div>
-                        </div> --}}
+                         <livewire:list-comment :idartikel="$idartikel">
 
                     </div>
                 </div>
@@ -104,9 +93,9 @@
             <div class="card mb-4">
                 <div class="card-header">Search</div>
                 <div class="card-body">
-                    <form action="/blog" method="GET">
+                    <form action="/allpost/cari" method="GET">
                         <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" name="search" value="{{ request('search') }}"/>
+                            <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" name="cari" value="{{ request('search') }}"/>
                             <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
                         </div>
                     </form>
@@ -128,9 +117,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Side widget-->
+
         </div>
     </div>
 </div>
-
 @endsection()

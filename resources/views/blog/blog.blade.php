@@ -1,111 +1,190 @@
 @extends('template')
 @section('container')
-<div class="container">
+<style>
+.title {
+
+ margin-bottom: 50px;
+ text-transform: uppercase;
+}
+
+.card-block {
+ font-size: 1em;
+ position: relative;
+ margin: 0;
+ padding: 1em;
+ border: none;
+ border-top: 1px solid rgba(34, 36, 38, .1);
+ box-shadow: none;
+
+}
+.card {
+ font-size: 1em;
+ overflow: hidden;
+ height: 350px;
+ border: none;
+ border-radius: .28571429rem;
+ box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+ margin-top:20px;
+}
+
+.carousel-indicators li {
+ border-radius: 12px;
+ width: 12px;
+ height: 12px;
+ background-color: #404040;
+}
+.carousel-indicators li {
+ border-radius: 12px;
+ width: 12px;
+ height: 12px;
+ background-color: #404040;
+}
+.carousel-indicators .active {
+ background-color: white;
+ max-width: 12px;
+ margin: 0 3px;
+ height: 12px;
+}
+.carousel-control-prev-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+lex-direction: column;
 
 
-    <div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
-        <h5 class="section-title ff-secondary text-center text-primary fw-normal">Blog</h5>
-        <h1 class="mb-5">{{ $judul }}</h1>
-    </div>
-    <div class="container">
-        @if(session()->has('success'))
-        <div class="alert alert-success">
-            {{ session()->get('success') }}
-        </div>
-        @endif
-    </div>
-    <div class="row justify-content-center mb-4">
-        <div class="col-md-6">
-    <form action="/blog" method="GET">
+.btn {
+margin-top: auto;
+}
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" name="search" placeholder="Search" value="{{ request('search') }}">
-            <button class="btn btn-primary" type="submit" id="button-addon2">Search</button>
-          </div>
-    </form>
-        </div>
-    </div>
-    {{-- <div class="container"> --}}
-        <div class="row justify-content-center">
-{{-- @foreach ($posts as $post ) --}}
-@if ($posts->count())
-<div class="card mb-3">
-    @if ($posts[0]->image)
-   <div class="" style="max-height: 400px; overflow:hidden">
-    <img src="{{ asset('storage/'.$posts[0]->image) }}" class="card-img-top" alt="...">
-   </div>
-    @else
-    <img src="https://source.unsplash.com/1200x400?" class="card-img-top" alt="...">
-    @endif
-    <div class="card-body text-center">
-    <h3 class="card-title"><a class="text-decoration-none text-dark" href="">{{ $posts[0]-> title }}</a></h3>
-    <p>By <a class="text-decoration-none" href="/user/{{ $posts[0]->user->username }}">{{ $posts[0]->user->username }}</a> in <a  class="text-decoration-none" href="/categories/{{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a></p>
-    <p class="card-text">{!! Str::limit($posts[0]->body, 150) !!}</p>
-    <p class="card-text"><small class="text-muted">Last updated {{ $posts[0]->created_at->diffForHumans() }}</small></p>
-    <a href="/article/{{ $posts[0]->id }}" class="text-decoration-none btn btn-primary">Read More</a>
-    </div>
+.card1 {
+  margin: 30px auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 40px;
+box-shadow: 5px 5px 6px 4px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card1 .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card1 .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card1 .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: -80px;
+  height: 40px;
+  color: black
+}
+
+.card1:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+/*
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+}
+*/
+</style>
+<div class="text-center wow fadeInUp mt-4" data-wow-delay="0.1s">
+    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Blog</h5>
+    <h1 class="mb-3">Blog & Artikel tentang {{ $judul }}</h1>
 </div>
-{{-- @endforeach --}}
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        @foreach ($posts->skip(1) as $post )
-        <div class="col-md-4 mb-5">
-            <div class="card">
-                <div class="position-absolute bg-dark p-2 "><a class="text-decoration-none text-white" href="">{{ $post->category->name }}</a></div>
-                @if ($post->image)
-               <div class="" style="max-height: 400px;max-width:500px; overflow:hidden">
-                <img src="{{ asset('storage/'.$post->image) }}" class="card-img-top" alt="...">
-               </div>
+@if (session()->has('successs'))
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+<div class="container mb-4">
+    <!-- Card Start -->
+    @foreach ($posts as $post )
+    <div class="card">
+      <div class="row ">
+        <!-- Carousel start -->
+        <div class="col-md-5">
+          <div id="CarouselTest" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                @if(count((array)$post->image_upload))
+                <figure><img class="d-block" src="{{ url('/data_file/'.$post->image_upload) }}" alt="" width="400px"></figure>
                 @else
-                <img src="https://source.unsplash.com/500x400?" class="card-img-top" alt="...">
+                <figure><img class="d-block" src="{{ $post->image }}" alt="" style="height: 350px" ></figure>
                 @endif
-                <div class="card-body">
-                <h5 class="card-title">{{ $post->title }}</h5>
-                <p>By <a class="text-decoration-none" href="">{{ $post->user->username }}</a></p>
-                <p class="card-text">{!! Str::limit($post->body, 150) !!}</p>
-                <a href="/article/{{ $post->id }}" class="btn btn-primary">Read More</a>
-                </div>
+
+              </div>
             </div>
+          </div>
         </div>
+        <div class="col-md-7 px-3">
+            <div class="card-block px-6">
+              <h4 class="card-title">{{ $post->title }}</h4>
+              <p class="card-text">
+                {!! Str::limit($post->body, 300) !!}
+              </p>
+              <br>
+              <a href="/article/{{ $post->id }}" class="mt-auto btn btn-primary" wire:click="getComment({{ $post->id }})">Read More</a>
+            </div>
+          </div>
+        <!-- End of carousel -->
+      </div>
+    </div>
     @endforeach
-    </div>
-</div> --}}
-<div class="container">
-    <div class="row justify-content-center">
-      @foreach ($posts->skip(1) as $post )
-        <div class="col-md-4 mb-5">
-          <div class="card" style="height: 580px">
-              <div class="position-absolute bg-dark p-2 "><a class="text-decoration-none text-white" href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a></div>
-              @if ($post->image)
-              <div class="" style="max-height: 400px;max-width:500px; overflow:hidden">
-               <img src="{{ asset('storage/'.$post->image) }}" class="card-img-top" alt="...">
-              </div>
-               @else
-               <img src="https://source.unsplash.com/500x400?" class="card-img-top" alt="...">
-               @endif
-              <div class="card-body">
-                <h5 class="card-title">{{ $post->title }}</h5>
-                <p>By <a class="text-decoration-none" href="/posts?user={{ $post->user->username }}">{{ $post->user->name }}</a></p>
-                <p class="card-text">{{ Str::limit($post->body, 150) }}</p>
-                <a style="bottom: 0; left:0; position: absolute;" href="/article/{{ $post->id }}" class="btn btn-primary">Read More</a>
-              </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-</div>
 
-    </div>
-{{-- </div> --}}
-@else
-<p class="text-center fs-4">No Post Found</p>
-@endif
-@if (Auth::check())
-<div class="container">
-    <a href="/create" class="btn btn-warning">Add Post</a>
-</div>
+    {{-- {{$posts->links()}} --}}
+    <!-- End of card -->
 
-@endif
-
-@endsection
-</div>
+  </div>
+@endsection()

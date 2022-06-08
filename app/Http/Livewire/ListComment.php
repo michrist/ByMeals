@@ -39,18 +39,18 @@ use Illuminate\Support\Facades\DB;
 // }
 class ListComment extends Component
 {
-    public $posts;
+    public $idartikel;
     protected $listeners = [
         'commentCreated'=>'$refresh'
     ];
-    public function mount($posts){
-        $this->posts=$posts;
+    public function mount($idartikel){
+        $this->idartikel=$idartikel;
     }
     public function render()
     {
         return view('livewire.list-comment',[
             // 'comments'=>DB::table('comments')->where('postmodel_id', $this->posts)->get()
-            'comments'=>Comment::all()
+            'comments'=>Comment::where(['postmodel_id' => $this->idartikel])->get(),
         ]);
     }
 }

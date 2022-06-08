@@ -7,6 +7,8 @@ use App\Http\Requests\StorePostModelRequest;
 use App\Http\Requests\UpdatePostModelRequest;
 use App\Models\Category;
 use App\Models\Comment;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class PostModelController extends Controller
 {
@@ -36,15 +38,16 @@ class PostModelController extends Controller
     //     'comments'=>Comment::all()
     //     ]);
     // }
-    public function show($id){
-        $posts = PostModel::find($id);
+    public function show($idartikel){
+        $posts = PostModel::find($idartikel);
         // $posts = PostModel::find($id);
         // return view('blog.article', ['posts'=>$posts]);
         return view('blog.article', [
         'title'=>'Blog',
         'posts'=>$posts,
         'categories'=>Category::all(),
-        'comments'=>Comment::where('postmodel_id','=', $id)->get()
+        'comments'=>Comment::where('postmodel_id','=', $idartikel)->get(),
+        'idartikel'=>$idartikel
         ]);
     }
     public function test(){
@@ -55,5 +58,17 @@ class PostModelController extends Controller
             'categories'=>$categories,
             'posts'=>$posts
         ]);
+    }
+    public function cari(Request $request){
+        $cari = $request->cari;
+        $posts = DB::table('post_models')
+		->where('title','like',"%".$cari."%")
+		->get();
+        return view('caripost', [
+            'posts'=>$posts,
+            'title'=>'Blog',
+            'cari'=>$cari
+        ]);
+
     }
 }
