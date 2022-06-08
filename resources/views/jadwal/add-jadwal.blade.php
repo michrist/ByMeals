@@ -1,4 +1,21 @@
 @extends('template')
+@section('script')
+    <script>
+        $(document).ready(function(){
+            $('#btnsubmit').click(function(){
+                if($('#inputMakanPagi').val() === '0'){
+                    alert("Pilih menu pagi terlebih dahulu!")
+                };
+                if($('#inputMakanSiang').val() === '0'){
+                    alert("Pilih menu siang terlebih dahulu!")
+                };
+                if($('#inputMakanMalam').val() === '0'){
+                    alert("Pilih menu malam terlebih dahulu!")
+                };
+            });
+        });
+    </script>
+@endsection
 @section('css')
     <link href="css/jadwal/add.css" rel="stylesheet">
 @endsection
@@ -21,7 +38,7 @@
                 <div class="col-md-6">
                     <label for="inputMakanPagi" class="form-label">Makan Pagi</label>
                     <select name="menu_pagi_id" id="inputMakanPagi" class="form-select" required>
-                        <option selected>Pilih Menu</option>
+                        <option selected value="0">Pilih Menu</option>
                         @foreach ($menusPagi as $menuPagi)
                             <option value="{{ $menuPagi->idmpasi }}">{{ $menuPagi->nama }}</option>
                         @endforeach
@@ -35,7 +52,7 @@
                 <div class="col-md-6">
                     <label for="inputMakanSiang" class="form-label">Makan Siang</label>
                     <select name="menu_siang_id" id="inputMakanSiang" class="form-select" required>
-                        <option selected>Pilih Menu</option>
+                        <option selected value="0">Pilih Menu</option>
                         @foreach ($menusSiang as $menuSiang)
                             <option value="{{ $menuSiang->idmpasi }}">{{ $menuSiang->nama }}</option>
                         @endforeach
@@ -49,7 +66,7 @@
                 <div class="col-md-6">
                     <label for="inputMakanMalam" class="form-label">Makan Malam</label>
                     <select name="menu_malam_id" id="inputMakanMalam" class="form-select menu_malam" required>
-                        <option selected class="menu_malam">Pilih Menu</option>
+                        <option selected value="0">Pilih Menu</option>
                         @foreach ($menusMalam as $menuMalam)
                             <option value="{{ $menuMalam->idmpasi }}">{{ $menuMalam->nama }}</option>
                         @endforeach
@@ -61,7 +78,7 @@
                         placeholder="1234 Main St" required>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button type="submit" class="btn btn-primary me-md-2" type="button">Tambahkan</button>
+                    <button type="submit" class="btn btn-primary me-md-2" type="button" id="btnsubmit">Tambahkan</button>
                 </div>
             </form>
         </div>
