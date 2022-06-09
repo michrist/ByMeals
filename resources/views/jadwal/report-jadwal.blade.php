@@ -25,7 +25,6 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-
                     <form action="/report-jadwal" method="POST" class="row g-3">
                         @csrf
                         <div class="col-auto">

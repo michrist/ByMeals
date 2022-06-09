@@ -29,7 +29,7 @@
                         data-bs-toggle="dropdown">Menu</a>
                     <div class="dropdown-menu m-0">
                         <a href="/menu" class="dropdown-item">Lihat Menu</a>
-                        <a href="{{route('tambahMenu')}}" class="dropdown-item">Tambah Menu</a>
+                        <a href="{{ route('tambahMenu') }}" class="dropdown-item">Tambah Menu</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
@@ -44,7 +44,8 @@
             @if (Auth::user()->image)
             <a href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><img style="border-radius: 50%" height="50px" width="50px" src="{{ url('/data_file/'.Auth::user()->image) }}" alt=""></a>
             @else
-            <a  href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><i class="fas fa-user-circle" style="font-size: 36px"></i></a>
+                <a href="#" class="nav-link" data-bs-toggle="dropdown" style="color: white"><i
+                        class="fas fa-user-circle" style="font-size: 36px"></i></a>
             @endif
 
             <div class="nav-item dropdown">

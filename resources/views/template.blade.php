@@ -58,6 +58,7 @@
         }
 
     </style>
+    @yield('script')
     @yield('css')
     @livewireStyles
 </head>
@@ -90,11 +91,11 @@
             <!-- Back to Top -->
             {{-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> --}}
         </div>
-        
+
 
 
     </div>
-   
+
         <footer class="bg-dark" style="bottom: 0">
             <ul class="menu mt-4" style="display: flex; justify-content:space-between; ">
               {{-- <li class="mx-5"><a href="" style="font-size:1.4rem">ABOUT US</a></li> --}}
