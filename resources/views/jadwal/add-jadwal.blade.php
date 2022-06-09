@@ -25,7 +25,7 @@
             <h6 class="alert alert-success">{{ session('status') }}</h6>
         @endif
         <div class="title">
-            <p class="h1">Report Jadwal</p>
+            <p class="h1">Tambah Jadwal</p>
             <hr>
         </div>
         <div class="form-jadwal">
