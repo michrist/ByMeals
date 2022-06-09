@@ -97,7 +97,7 @@ class DatabaseSeeder extends Seeder
             - Model dipping the spoon in the puree and bringing it up to your mouth. You can do this with your baby’s spoon before offering it to them and with your own food during the meal.
             - You can simply hand baby the spoon and see what they’ll do, but you may also want to consider pre-loading the spoon to help baby get started. Just scoop up a small amount and either set the spoon on the tray for your baby to grasp or place the spoon in their hand. This may help decrease frustration with unsuccessful attempts in the early stages of learning.
             - Don’t worry if your baby doesn’t seem interested in using the spoon or is more distracted by throwing it off their tray at first. You can always remove the spoon and offer it again at another meal. Your baby can still get in great practice with hand-eye coordination needed for spoon-feeding by dipping their fingers in a bowl and slurping the puree off of them!',
-            'image' => 'https://source.unsplash.com/900x400?'
+            'image' => 'https://cdn.discordapp.com/attachments/897774150716887081/984304422958014545/unknown.png'
         ]);
        PostModel::create([
             'id'=>2,
@@ -178,7 +178,7 @@ class DatabaseSeeder extends Seeder
             b. Pilih cara memasak yang dapat menjaga nutrisi dengan baik. Misalnya, dibandingkan direbus, lebih baik Bunda mengukus buah dan sayur.
             c. Berikan Si Kecil makanan dengan 1 bahan terlebih dahulu. Bila ia sudah terbiasa, cobalah campur 2 bahan makanan untuk diolah menjadi bubur.
             d. Apabila Bunda masih memiliki pertanyaan terkait cara memperkenalkan makanan bayi sesuai usia atau bingung memilih makanan yang tepat untuk Si Kecil, jangan ragu bertanya kepada dokter, ya.',
-            'image' => 'https://source.unsplash.com/900x400?'
+            'image' => 'https://cdn.discordapp.com/attachments/897774150716887081/984304717016465428/unknown.png'
         ]);
         PostModel::create([
             'id'=>3,
@@ -213,7 +213,7 @@ class DatabaseSeeder extends Seeder
             - Pastikan makanan yang diberikan tetap segar, bersih, dan disimpan dengan benar untuk mengurangi kemungkinan keracunan makanan. Simpan makanan di lemari es hanya selama 1 hingga 2 hari.
             - Ibu dapat melihat perubahan pada kotoran bayi saat mengonsumsi makanan jenis baru. Ini terbilang normal dan dapat berubah tergantung makanan yang dikonsumsi.
             - Biasakan untuk memeriksa pertumbuhan bayi sesering mungkin dan pastikan selalu dicatat pada grafik pertumbuhan. Perhatikan apakah pertumbuhan anak sesuai dengan pola yang ada pada grafik tersebut. Jika tidak sesuai, ada baiknya menemui dokter untuk memastikannya.',
-            'image' => 'https://source.unsplash.com/900x400?'
+            'image' => 'https://cdn.discordapp.com/attachments/897774150716887081/984304985607131187/unknown.png'
         ]);
         PostModel::create([
             'id'=>4,
@@ -265,7 +265,7 @@ class DatabaseSeeder extends Seeder
             Sekitar sembilan bulan, makanan yang mudah diambil dengan ibu jari dan telunjuk dapat diperkenalkan kepada Si Kecil. Pada usia 12 bulan, bayi pada umumnya dapat makan sebagian besar makanan yang sama yang dimakan oleh anggota keluarga lainnya. Namun, porsi dan teksturnya tentu perlu diperhatikan, untuk membuatnya lebih mudah dan aman untuk dikunyah dan ditelan.
 
             Itulah yang perlu diketahui mengenai pemberian MPASI pada bayi. Pastikan agar Si Kecil mendapatkan asupan yang bergizi seimbang ya, Bu.',
-            'image' => 'https://source.unsplash.com/900x400?'
+            'image' => 'https://cdn.discordapp.com/attachments/897774150716887081/984305144478961694/unknown.png'
         ]);
         PostModel::create([
             'id'=>5,
@@ -278,7 +278,7 @@ class DatabaseSeeder extends Seeder
             Sebagian ibu pasti tidak sabar menunggu bayinya mencapai usia enam bulan untuk diberi MPASI. Jenis makanan yang menjadi favorit ibu adalah buah-buahan, misalnya alpukat karena buah ini mudah diolah dan mengandung nilai gizi yang tinggi.
 
             Buah alpukat mengandung nutrisi dan lemak tak jenuh yang baik untuk bayi, yang dibutuhkan untuk mendukung perkembangan otak dan tubuhnya. Buah alpukat mengandung banyak nutrisi yang baik untuk bayi seperti vitamin dan mineral. Beberapa di antaranya vitamin C, A, K, E, dan B6, serta folat, thiamin, kalsium, zat besi, kalium, dan natrium.',
-            'image' => 'https://source.unsplash.com/900x400?'
+            'image' => 'https://cdn.discordapp.com/attachments/897774150716887081/984305344664707132/unknown.png'
         ]);
         Mpasi::create([
             'nama'=>'Puree Alpukat Kembang Kol',
@@ -551,7 +551,7 @@ class DatabaseSeeder extends Seeder
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'waktu'=>'lunch',
             'kategorirentang'=> 3,
-            'gambar'=>''
+            'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/984306765359349760/2_Sup_Krim_Brokoli.width-800.jpg'
         ]);
         Mpasi::create([
             'nama'=>'Potato cream soup',
@@ -564,7 +564,7 @@ class DatabaseSeeder extends Seeder
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'waktu'=>'lunch',
             'kategorirentang'=> 4,
-            'gambar'=>''
+            'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/984306562380226581/Potato-Soup-1.jpg'
         ]);
         Mpasi::create([
             'nama'=>'Banana rise raisin',
@@ -577,7 +577,7 @@ class DatabaseSeeder extends Seeder
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'waktu'=>'lunch',
             'kategorirentang'=> 5,
-            'gambar'=>''
+            'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/984307100639432714/shutterstock_340576355.jpg'
         ]);
         Mpasi::create([
             'nama'=>'Chicken bolognese',
@@ -590,7 +590,7 @@ class DatabaseSeeder extends Seeder
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'waktu'=>'lunch',
             'kategorirentang'=> 1,
-            'gambar'=>''
+            'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/984308197978411008/images.jpg'
         ]);
         Mpasi::create([
             'nama'=>'Bubur ayam jamur',
@@ -604,7 +604,7 @@ Ketika sudah matang, blender kemudian saring bubur hingga benar-benar halus---5.
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'waktu'=>'lunch',
             'kategorirentang'=> 2,
-            'gambar'=>''
+            'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/984308614300839986/photo.jpg'
         ]);
         Mpasi::create([
             'nama'=>'Nasi Tim Salmon',
@@ -618,7 +618,7 @@ Nasi tim salmon siap disajikan.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'waktu'=>'lunch',
             'kategorirentang'=> 3,
-            'gambar'=>''
+            'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/984309086856302634/klinikdrtiwi-Cermat-Memulai-MPASI.jpg'
         ]);
         Mpasi::create([
             'nama'=>'Bubur Tim Ayam Keju',
@@ -631,7 +631,7 @@ Nasi tim salmon siap disajikan.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'waktu'=>'lunch',
             'kategorirentang'=> 4,
-            'gambar'=>''
+            'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/984309471813705748/Tim-Ayam-Jagung-Manis.png'
         ]);
         Mpasi::create([
             'nama'=>'Cream Soup Bayam',
@@ -644,7 +644,7 @@ Nasi tim salmon siap disajikan.',
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'waktu'=>'lunch',
             'kategorirentang'=> 5,
-            'gambar'=>''
+            'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/984309743067750421/img.jpg'
         ]);
         Mpasi::create([
             'nama'=>'Nasi Tim Ati Ayam',
@@ -658,7 +658,7 @@ Potong dadu semua bahan---3. Langkah ketiga---Panaskan Unsalted butter, tumis bu
             'durasi'=>'PREP TIME---15 min---COOK TIME---45 min---AVOCADO',
             'waktu'=>'lunch',
             'kategorirentang'=> 1,
-            'gambar'=>''
+            'gambar'=>'https://cdn.discordapp.com/attachments/897774150716887081/984310125768622150/photo_1.jpg'
         ]);
     }
 
